@@ -1,0 +1,133 @@
+.profile {
+    &__content {
+        @include md(flex-direction, column);
+        @include md(align-items, center);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin: {
+            left: 0;
+            right: 0;
+        }
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__title {
+        margin-bottom: rem(40);
+    }
+    &__img {
+        @include col();
+        @include size(2);
+        @include size-lg(3);
+        @include md(width, auto);
+        @include md(margin-bottom, rem(30));
+        position: relative;
+    }
+    &__member {
+        @include md(right, 0);
+        @include sm(max-width, 60vw);
+        @include xs(max-width, 80vw);
+        max-width: 45vw;
+        float: right;
+        overflow: auto;
+        position: relative;
+        right: -100%;
+
+    }
+    &__info {
+        @include col();
+        @include size(9);
+        @include size-md(11);
+        @include size-sm(12);
+        @include lg(margin-bottom, rem(50));
+        position: relative;
+        z-index: 1;
+        margin-bottom: rem(100);
+    }
+    &__beforeafter {
+        @include row-flex();
+        justify-content: space-between;
+
+        &-item {
+            @include col();
+            margin-bottom: rem(10);
+        }
+    }
+    &__card-inner {
+        padding: {
+            left: rem(60);
+            right: rem(60);
+            top: rem(30);
+            bottom: rem(30);
+        }
+        @media (max-width: $break_md) {
+            padding: {
+                left: rem(30);
+                right: rem(30);
+                top: rem(20);
+                bottom: rem(20);
+            }
+        }
+    }
+    &__card-title {
+        margin-bottom: rem(20);
+
+        @media (max-width: $break_md) {
+            @include h4();
+        }
+    }
+    &__parallax {
+        position: absolute !important;
+
+        img {
+            min-width: 100%;
+        }
+
+        &_chevron {
+            @include lg(min-width, rem(100));
+            @include lg(left, 80%);
+            bottom: 15%;
+            left: rem(80);
+            z-index: 1;
+            min-width: rem(150);
+        }
+        &_dots {
+            @include lg(min-width, rem(250));
+            @include lg(left, -15%);
+            @include md(left, 10%);
+            top: 20%;
+            left: -220%;
+            min-width: rem(360);
+        }
+        &_up {
+            @include lg(min-width, rem(125));
+            @include lg(left, -25%);
+            @include md(left, 0%);
+            min-width: rem(175);
+            left: -270%;
+        }
+    }
+
+    &__conclusion {
+        &-title {
+            margin-bottom: rem(30);
+        }
+        &-inner {
+            padding: {
+                left: rem(60);
+                right: rem(60);
+                top: rem(30);
+                bottom: rem(30);
+            }
+            @media (max-width: $break_md) {
+                padding: {
+                    left: rem(30);
+                    right: rem(30);
+                    top: rem(20);
+                    bottom: rem(20);
+                }
+            }
+        }
+    }
+}

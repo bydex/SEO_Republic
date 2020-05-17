@@ -1,0 +1,87 @@
+-
+    let advantageCompare = {
+        good: [
+            {
+                icon: 'purse',
+                title: 'Фиксированная стоимость',
+                description: 'Работаем со столькими запросами, сколько сможем подобрать и по которым есть смысл продвигать сайт.'
+            },
+            {
+                icon: 'law',
+                title: 'Законно и безопасно',
+                description: 'Вместо покупки ссылок используем естественные ссылки – в соответствии с рекомендациями Яндекса и Google.'
+            },
+            {
+                icon: 'clearly',
+                title: 'Понятнее',
+                description: 'Доступно объясняем, как добились тех или иных показателей.'
+            },
+            {
+                icon: 'cheaper',
+                title: 'Дешевле',
+                description: 'Оплата за конкретный перечень работ, без лишних накруток.'
+            },
+        ],
+        bad: [
+            {
+                icon: 'difficult',
+                title: 'Сложнее',
+                description: 'Рассказывают только об ограниченном количестве кейсов, не поясняя особенности ситуации.'
+            },
+            {
+                icon: 'expensive',
+                title: 'Дороже',
+                description: 'Огромные наценки и чрезмерно расстянутый график обучения.'
+            },
+            {
+                icon: 'coupons',
+                title: 'Скрытые услуги',
+                description: 'Даже после полной оплаты обучения вам предлагаются дополнительные уроки за отдельную плату  '
+            },
+            {
+                icon: 'illegaly',
+                title: 'Не всегда законно',
+                description: 'Многие курсы предлагают идти более легким и быстрым путем, продвигая сайты незаконными методами.'
+            },
+        ],
+    };
+section.compare-section.section
+    .section__container
+        .section__row
+            .section__content
+                h2.section__title Чем наш курс лучше других?
+        .compare-section__wrapper.beforeafter(data-before-after)
+            .beforeafter-item.beforeafter-itemActive(data-before-after-item-active)
+                .compare-section__container.card.card_pink.card_bg_pink
+                    .compare-section__before.section__row
+                        .compare-section__inner
+                            .compare-section__inner-wrapper
+                                .compare-section__advantages
+                                    h3.compare-section__title У других:
+                                    - i = .2;
+                                    each val, index in advantageCompare.bad
+                                        .advantage.compare-section__advantage(class="wow animate__fadeInBottomLeft" data-wow-duration=`${i=i+.4}s`)
+                                            .advantage__icon.compare-section__icon
+                                                +icon(`compare-${val.icon}`)
+                                            .advantage__info
+                                                h3.advantage__title= val.title
+                                                p.advantage__description= val.description
+                                .compare-section__img
+                                    +webp('compare-guy-angry', 'png')
+            .beforeafter-item(data-before-after-item)
+                .compare-section__container.card.card_pink
+                    .compare-section__before.section__row
+                        .compare-section__inner
+                            .compare-section__inner-wrapper
+                                .compare-section__advantages
+                                    h3.compare-section__title В нашей школе:
+                                    - i = .2;
+                                    each val, index in advantageCompare.good
+                                        .advantage.compare-section__advantage(class="wow animate__fadeInBottomLeft" data-wow-duration=`${i=i+.4}s`)
+                                            .advantage__icon.compare-section__icon
+                                                +icon(`compare-${val.icon}`)
+                                            .advantage__info
+                                                h3.advantage__title= val.title
+                                                p.advantage__description= val.description
+                                .compare-section__img
+                                    +webp('compare-guy', 'png')

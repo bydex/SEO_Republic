@@ -1,0 +1,35 @@
+.advantages {
+    overflow: hidden;
+    &__card {
+        height: 100%;
+        padding: rem(30) rem(25);
+        text-align: center;
+
+        @include sm(max-width, rem(320));
+        @include sm(margin-left, auto);
+        @include sm(margin-right, auto);
+        @include sm(margin-bottom, rem(30));
+        @include sm(box-shadow, rem(0) rem(4) rem(48) $shadow);
+
+        &:last-child {
+            @include sm(margin-bottom, 0);
+        }
+    }
+
+
+    .slick-slide {
+        height: auto;
+        margin: 0 rem(15);
+
+        & > div {
+            height: 100%;
+        }
+    }
+    .slick-track {
+        display: flex;
+    }
+    .slick-list {
+        margin: 0 rem(-15);
+        overflow: visible;
+    }
+}

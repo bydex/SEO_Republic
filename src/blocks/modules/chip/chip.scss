@@ -1,0 +1,38 @@
+.chip-field {
+  position: fixed;
+  right: rem(10);
+  z-index: 999999;
+  top: 0;
+  bottom: 0;
+  width: rem(250);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+.chip {
+    padding: rem(20);
+    margin: rem(10) 0;
+    width: 100%;
+    color: $white;
+    border: {
+        radius: rem(5);
+        width: rem(1);
+        color: $white;
+        style: solid;
+    }
+  pointer-events: auto;
+}
+.chip.blue {
+    background-color: rgba(0,0,255,.4);
+}
+.chip.green {
+    background-color: rgba(0,255,0,.4);
+}
+.chip.red {
+    background-color: rgba(255,0,0,.4);
+}
+.chip.yellow {
+    background-color: rgba(152, 155, 0, 0.8);
+}

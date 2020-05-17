@@ -1,0 +1,76 @@
+.feedback {
+    &__content {
+        @include lg(flex-wrap, wrap);
+        @include lg(justify-content, center);
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__inner {
+        padding: rem(64);
+    }
+    &__video {
+        position: relative;
+        @include col();
+        @include lg(width, col(10));
+        @include sm(width, col(12));
+        @include lg(margin-bottom, rem(25));
+        @include lg(box-shadow, none);
+        width: col(8);
+        margin: {
+            left: 0;
+            right: 0;
+        }
+    }
+    &__video-wrapper {
+        @include shift-right(2.5);
+        @include lg(margin-right, 0);
+    }
+    &__video-inner {
+        @include lg(padding,0);
+        padding: rem(35) rem(45);
+    }
+    &__info {
+        @include col();
+        position: relative;
+        z-index: 1;
+        margin: {
+            left: 0;
+            right: 0;
+        }
+        width: col(5);
+        @include shift-left(-1);
+        @include lg(margin-left, 0);
+        @include lg(width, col(10));
+        @include sm(width, col(12));
+    }
+    &__arrow {
+        $padding: rem(10);
+
+        position: absolute;
+        bottom: calc(100% + #{rem(5)} - #{$padding});
+        padding: $padding;
+
+        &_left {
+            right: calc(20% + #{rem(55)} - (#{$padding} / 2));
+            @include lg(right, calc(#{rem(55)} - (#{$padding} / 2)));
+        }
+        &_right {
+            right: 20%;
+            @include lg(right, 0);
+        }
+        &:hover {
+            svg {
+                fill: $red;
+            }
+        }
+        svg {
+            max-width: rem(32);
+            max-height: rem(26);
+            transition: {
+                property: fill;
+                duration: .3s;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+section.feedback.section
+    .section__container
+        .section__row
+            .section__content
+                h3.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) отзывы
+        .feedback__content
+            .feedback__video.card(class="wow animate__fadeInUp" data-wow-duration=`2s`)
+                .feedback__video-slider
+                    .card__inner.feedback__video-inner
+                        .feedback__video-wrapper
+                            .video
+                                iframe(class="loading" width="560" height="315" data-src="https://youtube.com/embed/ub374Fhs-8Y" allowfullscreen)
+                    .card__inner.feedback__video-inner
+                        .feedback__video-wrapper
+                            .video
+                                iframe(class="loading" width="560" height="315" data-src="https://youtube.com/embed/ub374Fhs-8Y" allowfullscreen)
+                button.feedback__arrow.feedback__arrow_left
+                    +icon('slider-arrow-left')
+                button.feedback__arrow.feedback__arrow_right
+                    +icon('slider-arrow-right')
+            .feedback__info.card.card_pink(class="wow animate__fadeInRight" data-wow-duration=`1.5s`)
+                .card__inner.feedback__inner
+                    .card__info
+                        p.card__paragraph Курс построен очень грамотно, логично, доступно, позволяет постепенно, но очень глубоко постигнуть все азы, секреты и самое главное-наработать навык СММщика!
+                        p.card__paragraph Во время прохождения я на каждом занятии думала, как мне повезло, что я СРАЗУ попала к ребятам. Ничего лишнего, но так много полезных знаний и навыков. Если ты что-то не понимаешь или не получается, у тебя не будет выхода, как понять и научиться (куратор, ребята в чате, Антоны). Все условия для того, чтобы развиваться в этой теме!
+                    .user
+                        +webp('user-irina', 'png', 'user__img')
+                        h3.user__name Ирина Дульчак
+                .card__inner.feedback__inner
+                    .card__info
+                        p.card__paragraph Курс построен очень грамотно, логично, доступно, позволяет постепенно, но очень глубоко постигнуть все азы, секреты и самое главное-наработать навык СММщика!
+                        p.card__paragraph Во время прохождения я на каждом занятии думала, как мне повезло, что я СРАЗУ попала к ребятам. Ничего лишнего, но так много полезных знаний и навыков. Если ты что-то не понимаешь или не получается, у тебя не будет выхода, как понять и научиться (куратор, ребята в чате, Антоны). Все условия для того, чтобы развиваться в этой теме!
+                    .user
+                        +webp('user-irina', 'png', 'user__img')
+                        h3.user__name Ирина Дульчак

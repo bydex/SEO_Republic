@@ -1,0 +1,68 @@
+.card {
+    background-color: $white;
+    border-radius: rem(16);
+    box-shadow: 0 rem(3) rem(2) rgba(0, 0, 0, 0.02), 0 rem(6.5) rem(5.3) rgba(0, 0, 0, 0.0282725), 0 rem(12.5) rem(10) rgba(0, 0, 0, 0.035), 0 rem(22) rem(17.8) rgba(0, 0, 0, 0.0417275), 0 rem(41) rem(33.5) rgba(0, 0, 0, 0.05), 0 rem(100) rem(80) rgba(0, 0, 0, 0.07);
+    &_pink {
+        box-shadow: 0 rem(4) rem(48) #FFE2DD;
+    }
+    &_bg {
+        &_pink {
+            background-color: $shadow;
+        }
+        &_transparent {
+            background: rgba($color: $white, $alpha: .65);
+            border: {
+                width: rem(1);
+                style: solid;
+                color: $red;
+            }
+        }
+        &_gradient {
+            color: #fff;
+            background: linear-gradient(180deg, #A8F454 0%, #A6B1E1 81.77%);
+        }
+    }
+    &__icon {
+        max-width: 100%;
+        max-height: rem(160);
+        margin: 0 auto rem(30) auto;
+    }
+    &__title {
+        @include h3();
+        margin-bottom: rem(10);
+    }
+    &__subtitle {
+        @include h4();
+        margin-bottom: rem(25);
+        font-weight: 400;
+    }
+    &__img {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: rem(240);
+        border-radius: rem(16) rem(16) 0 0;
+        overflow: hidden;
+        @include sm(min-height, rem(200));
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__inner {
+        padding: rem(35);
+    }
+    &__detail {
+        &:not(:last-child) {
+            margin-bottom: rem(8);
+        }
+    }
+    &__info {
+        margin-bottom: rem(35);
+    }
+}

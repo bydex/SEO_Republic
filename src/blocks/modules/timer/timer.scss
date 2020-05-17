@@ -1,0 +1,22 @@
+.timer {
+    text-align: center;
+    &__title {
+        @include h3();
+        margin-bottom: rem(20);
+    }
+    &__date {
+        @include row-flex();
+        justify-content: center;
+    }
+    &__item {
+        @include col();
+    }
+    &__item-title {
+        @include h3();
+        margin-bottom: rem(8);
+    }
+    &__item-info {
+        @include h4();
+        margin-bottom: 0;
+    }
+}

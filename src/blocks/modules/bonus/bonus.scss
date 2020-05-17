@@ -1,0 +1,130 @@
+.bonus {
+    &__card-inner {
+        $padding: rem(60);
+        padding: {
+            top: $padding;
+            left: $padding;
+            right: $padding;
+            bottom: $padding;
+        }
+
+        @media (max-width: $break_md) {
+            $padding-m: rem(40);
+            padding: {
+                top: $padding;
+                left: $padding-m;
+                right: $padding-m;
+                bottom: $padding;
+            }
+        }
+    }
+    &__list {
+        margin-bottom: rem(60);
+    }
+    &__form-title {
+        @include h3();
+        display: block;
+        margin-bottom: rem(30);
+        text-align: center;
+    }
+    &__form-btn {
+        @include md(display, none);
+        @include md(justify-content, center);
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    &__btn-mobile {
+        @include md(display, flex);
+        display: none;
+        justify-content: center;
+    }
+    &__item {
+        counter-increment: my-awesome-counter;
+        @media (max-width: $break_md) {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: rem(25);
+            text-align: center;
+
+            &:after {
+                content: '';
+                width: rem(120);
+                height: rem(1);
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate3d(-50%,0,0);
+                background-color: $red;
+            }
+            &:last-child {
+                &:after {
+                    content: none;
+                }
+                padding-bottom: 0;
+            }
+        }
+    }
+    &__icon {
+        @media (max-width: $break_md) {
+            margin-right: 0;
+            max-width: rem(55);
+            max-height: rem(55);
+        }
+        &_desktop {
+            @include md(display, none);
+        }
+        &_mobile {
+            @include md(display, block);
+            display: none;
+        }
+    }
+    &__icon-wrapper {
+        @media (max-width: $break_md) {
+            display: flex;
+            align-items: center;
+            margin-bottom: rem(20);
+            &:after {
+                content: counter(my-awesome-counter);
+                position: relative;
+                right: rem(20);
+                top: rem(15);
+                font-size: rem(48);
+                color: $iconOutline;
+                font-weight: 900;
+                transform: rotate(4deg);
+            }
+        }
+    }
+    &__input, &__form-info {
+        @include md(display, none);
+    }
+    &__btn {
+        @media (max-width: $break_md) {
+            @include btn-filled();
+            @include btn-normal();
+            position: static;
+            min-width: rem(200);
+            transform: none;
+            font-size: rem(16);
+        }
+    }
+    &__btn-icon {
+        @include md(display, inline-block);
+        display: none;
+        max-width: rem(20);
+        max-height: rem(20);
+        fill: $white;
+        vertical-align: middle;
+        margin-left: rem(10);
+    }
+    &__details {
+        @include h3();
+        @media (max-width: $break_md) {
+            @include h4();
+        }
+    }
+}

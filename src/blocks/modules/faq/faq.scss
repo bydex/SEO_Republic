@@ -1,0 +1,33 @@
+.faq {
+    &__wrapper {
+        position: relative;
+        z-index: 1;
+        padding: {
+            top: rem(32);
+            bottom: rem(32);
+        }
+        margin: {
+            top: rem(-32);
+            bottom: rem(-32);
+        }
+
+        &::before {
+            @include md(content, none);
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            width: 50vw;
+            height: 100%;
+            background-color: $pink;
+            border-radius: rem(16) 0 0 rem(16);
+        }
+    }
+    &__accordeon {
+        margin-bottom: rem(24);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

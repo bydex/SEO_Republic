@@ -1,0 +1,39 @@
+-
+    let gift = [
+        'Список выжженных ниш - тематики сайтов, которые новичкам следует избегать.',
+        'Специально настроенная тема оформления для вашего сайта на платформе Wordpress. ',
+        '100 фирменных шаблонов от нашего курса.',
+        'Настройки для Key Collector, что позволяет вам сэкономить время при работе с программой',
+        'Доступ к сервису TZ.BINET.PRO, который автоматически генерирует технические задания для статей.',
+        'Доступ к сервису Анализ Конкуренции, чтобы вы знали, какие статьи нужно писать и добавлять на сайт в первую очередь.',
+    ]
+
+section.bonus.section
+    .section__container
+        .section__row
+            .section__content
+                h2.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) Бонусы для участников
+                .bonus.card.card_pink
+                    .card__inner.bonus__card-inner
+                        - i = .6;
+                        ul.bonus__list.list.list_size_large
+                            each val, index in gift
+                                li.list__item.bonus__item(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.2}s`)
+                                    .bonus__icon-wrapper
+                                        +icon('gift_open', 'list__icon bonus__icon  bonus__icon_mobile')
+                                        +icon('gift', 'list__icon bonus__icon bonus__icon_desktop')
+                                    h3.list__details.bonus__details= val
+                        form.bonus__form(data-activity="Бонусы" class="wow animate__fadeInUp" data-wow-duration=`${i=i+.2}s`)
+                            h3.bonus__form-title Хочу бонусы!
+                            .bonus__form-btn.input.input_btn
+                                span.bonus__form-info.input__info
+                                input.bonus__input.input__field(placeholder="Ваш номер телефона" required)
+                                button.bonus__btn.input__btn.btn.btn_theme_transparent.btn_size_small
+                                    |   Записаться
+                                    +icon('slider-arrow-right', 'bonus__btn-icon')
+                        .bonus__btn-mobile(class="wow animate__fadeInLeft" data-wow-duration=`${i}s`)
+                            button.bonus__btn.input__btn.btn.btn_theme_filled.btn_size_small(data-micromodal-trigger="modal-1")
+                                |   Записаться
+                                <span class="btn__right-icon">
+                                    +icon('btn-arrow')
+                                </span>

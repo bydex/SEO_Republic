@@ -1,0 +1,39 @@
+section.today.section
+    .section__container
+        .section__row
+            .today__content
+                .today__row
+                    - i = .6;
+                    .today__form-wrapper
+                        .today__info
+                            h2.today__title(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.4}s`) запишитесь сегодня
+                            p.today__description(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.4}s`) Создайте информационный сайт с доходом от 60 000 тенге в месяц, уделяя ему 2 часа в день.
+                        form.form.form_red.today__form(data-activity="Курс" class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.4}s`)
+                            +timer('form__timer',0,0,0,'course')
+                            .form__input.input.input_size_normal
+                                span.input__info
+                                input.input__field(placeholder="Ваш номер телефона" required)
+                            button.form__send.btn.btn_theme_filled.btn_size_normal(class=buttonClassname) Записаться на курс
+                                <span class="btn__right-icon">
+                                    +icon('btn-arrow')
+                                </span>
+                    .today__img-wrapper(data-relative-input="true")
+                        h3.today__title.today__title_mobile запишитесь сегодня
+                        .tiday__img-wrapper(data-parallax)
+                            picture(data-depth-x=".1")
+                                source(srcset="./img/today-woman_mobile.webp" media=`(max-width: ${media.md})`)
+                                source(srcset="./img/today-woman_mobile.png" media=`(max-width: ${media.md})`)
+                                source(srcset="./img/today-woman.webp")
+                                img(src="./img/today-woman.png" class="today__img" alt="Today-woman")
+                        span.today__img-circle-wrapper.today__img-circle-wrapper_1(data-parallax)
+                            span.today__img-circle.today__img-circle_1(data-depth="1")
+                        span.today__img-circle-wrapper.today__img-circle-wrapper_2(data-parallax)
+                            span.today__img-circle.today__img-circle_2(data-depth=".3")
+                        span.today__img-circle-wrapper.today__img-circle-wrapper_3(data-parallax)
+                            span.today__img-circle.today__img-circle_3(data-depth="0.1")
+                        span.today__line.today__line_1(data-parallax)
+                            svg(class=`icon-sprite` data-depth-y='-2' data-depth-x='1')
+                                use(xlink:href=`./img/sprites/sprite.svg#today-line`)
+                        span.today__line.today__line_2(data-parallax)
+                            svg(class=`icon-sprite` data-depth-x='-1' data-depth-y='1')
+                                use(xlink:href=`./img/sprites/sprite.svg#today-line`)

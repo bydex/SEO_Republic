@@ -1,0 +1,59 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "New Page";
+    -
+        let nav = [
+            {
+                title: 'О курсе',
+                href: '#about'
+            },
+            {
+                title: 'Истории успеха',
+                href: '#history'
+            },
+            {
+                title: 'Преподаватель',
+                href: '#teacher'
+            },
+            {
+                title: 'Стоимость',
+                href: '#price'
+            },
+            {
+                title: 'Гарантии',
+                href: '#assurance'
+            },
+        ];
+
+block content
+    header.header.header_no-bg.another-page(id="about")
+        include ../../blocks/modules/nav/nav
+    main
+        include ../../blocks/modules/modal/modal
+        include ../../blocks/modules/profile/profile
+block scripts
+    script.
+        let timerInfo = {
+            course: {
+                month: {
+                    eng: 'Jun',
+                    ru: 'Января'
+                },
+                date: '15',
+                year: '2020',
+                time: '18:00',
+            },
+            master: {
+                month: {
+                    eng: 'Jul',
+                    ru: 'Июля'
+                },
+                date: '3',
+                year: '2020',
+                time: '15:00',
+            }
+        };
+    script(src="js/main.js")
+    script(src="js/vendor.js")

@@ -1,0 +1,170 @@
+.compare-section {
+    .beforeafter {
+        position: relative;
+        min-height: rem(600);
+        @include md(overflow, visible);
+
+        .beforeafter-cursor {
+            overflow: visible !important;
+            background-color: #000;
+            background-image: linear-gradient(180deg, $white 0%, $red 50%, $white 100%);
+            cursor: pointer;
+            &:after {
+                content: url(../img/svg/divider.svg);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%,-50%,0);
+                z-index: 999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: rem(30);
+                height: rem(30);
+                border-radius: 50%;
+            }
+        }
+        .beforeafter-itemActive {
+            .compare-section__container {
+                position: absolute;
+                right: 0;
+                height: 100%;
+
+                @include md(position, static);
+            }
+        }
+    }
+    .beforeafter-item {
+        @include md(position, static);
+        @include md(overflow, visible);
+        .beforeafter-wrapperImage {
+            position: static !important;
+            width: auto !important;
+        }
+        img {
+            width: auto;
+            height: auto;
+        }
+    }
+    &__container {
+        padding: {
+            top: rem(30);
+            bottom: rem(60);
+        };
+        @media (max-width: $break_md) {
+            background-color: $white;
+            padding: {
+                top: rem(50);
+                bottom: rem(50);
+                left: rem(20);
+                right: rem(20);
+            }
+            max-width: rem(640);
+            margin: {
+                left: auto;
+                right: auto;
+                bottom: rem(30);
+            };
+        }
+        @include sm(max-width, rem(320));
+    }
+    &__inner {
+        @include col();
+        @include size(10);
+        @include shift-left(2);
+
+        @include size-xl(11);
+        @include shift-xl-left(0);
+    }
+    &__wrapper {
+        border-radius: rem(16);
+        box-shadow: 0 rem(4) rem(48) #FFE2DD;
+        @include md(box-shadow, none);
+    }
+    &__inner-wrapper {
+        @include row-flex();
+    }
+    &__advantages {
+        @include col();
+        @include size(5);
+
+        @media (max-width: $break_md) {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: {
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+    &__img {
+        @include col();
+        @include size(7);
+        @include md(display, none);
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+    }
+    &__title {
+        @include h3();
+        margin-bottom: rem(35);
+        font-weight: 600;
+        width: 100%;
+
+        @media (max-width: $break_md) {
+            @include col();
+            text-transform: uppercase;
+        }
+        @include md(text-align, center);
+    }
+    &__advantage {
+        margin-bottom: rem(30);
+        &:last-child {
+            margin-bottom: 0;
+            @include sm(margin-bottom, 0);
+            @include sm(padding-bottom, 0);
+            &::after {
+                @include sm(content, none);
+            }
+        }
+        &:nth-last-child(-n + 2) {
+            @include md(margin-bottom, rem(0));
+        }
+        &:nth-last-child(-2n + 2) {
+            @include sm(margin-bottom, rem(50));
+        }
+        @media (max-width: $break_md) {
+            @include col();
+            position: relative;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: rem(50);
+            padding-bottom: rem(50);
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: rem(120);
+                height: rem(1);
+                background-color: $red;
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+        @include size-md(6);
+        @include size-sm(12);
+    }
+    &__icon {
+        @include md(margin-right,0);
+    }
+    &__before {
+        .compare-section__img {
+            img {
+                margin-top: -10%;
+                margin-bottom: -7%;
+            }
+        }
+    }
+}

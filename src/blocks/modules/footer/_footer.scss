@@ -1,0 +1,65 @@
+.footer {
+    @include md(display, none);
+    position: relative;
+    z-index: 1;
+    padding: {
+        top: rem(85);
+        bottom: rem(85);
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        right: rem(50);
+        background-color: $pink;
+        border-radius: 0 rem(160) 0 0;
+    }
+    &__content {
+        @include row-flex();
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo-wrapper {
+        @include col();
+        @include size(4);
+    }
+    &__logo {
+        max-width: rem(217);
+        max-height: rem(176);
+    }
+    &__nav {
+        @include col();
+        padding: {
+            top: 0;
+            bottom: 0;
+        }
+    }
+    &__list {
+        flex-direction: column;
+        margin-bottom: rem(8);
+    }
+    &__item {
+        display: block;
+        margin: {
+            left: 0;
+            right: 0;
+        }
+    }
+    &__link {
+        display: inline-block;
+        padding: {
+            top: rem(8);
+            bottom: rem(8)
+        };
+        margin: {
+            top: 0;
+            bottom: 0;
+        }
+    }
+    &__btn {
+        padding: rem(6.5) rem(24);
+    }
+}

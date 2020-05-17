@@ -1,0 +1,24 @@
+@mixin h2() {
+    font-size: rem(42);
+    font-weight: 600;
+
+    @include md(font-size, rem(28))
+}
+@mixin h3() {
+    font-size: rem(26);
+
+    @include md(font-size, rem(24))
+}
+@mixin h4() {
+    font-size: rem(16);
+}
+@mixin section($type: 'padding') {
+    #{$type}: {
+        bottom: rem(125);
+    }
+    @media (max-width: $break_md) {
+        #{$type}: {
+            bottom: rem(100);
+        }
+    }
+}

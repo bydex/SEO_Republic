@@ -1,0 +1,40 @@
+#modal-1.modal.micromodal-slide(aria-hidden='true')
+  .modal__overlay(tabindex='-1', data-micromodal-close='')
+    .modal__section
+        .modal__row
+            .modal__container.card.card_pink(role='dialog', aria-modal='true')
+                .modal__content
+                    button.modal__close(aria-label='Close modal', data-micromodal-close='')
+                        +icon('close', 'modal__close-icon')
+                    section.modal__details
+                        .modal__info
+                            h3.modal__title Успейте записаться на бесплатный мастер-класс!
+                            p.modal__description Получите ценный опыт и уникальную возможность выиграть полный курс абсолютно бесплатно.
+                        picture
+                            source(srcset="./img/modal-video_mobile.webp" media=`(max-width: ${media.md})`)
+                            source(srcset="./img/modal-video_mobile.png" media=`(max-width: ${media.md})`)
+                            source(srcset="./img/modal-video.webp")
+                            img(class="modal__video" src="./img/modal-video.png" alt="Modal picture")
+                    section.modal__form-wrapper
+                        form.form.modal__form(data-activity="Мастер класс")
+                            +timer('form__timer',0,0,0,'master')
+                            .form__input.input.input_blue.input_size_normal.modal__input
+                                span.input__info
+                                input.input__field(placeholder="Ваш номер телефона" required)
+                            button.modal__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=buttonClassname) Записаться на
+                                <span class="master-class">мастер-класс
+                                    <span class="btn__right-icon">
+                                        +icon('btn-arrow')
+                                    </span>
+                                </span>
+                                <span class="master-class master-class_mobile">МК</span>
+                            +icon('logo', 'modal__logo')
+
+
+#modal-2.modal.micromodal-slide(aria-hidden='true')
+  .modal__overlay(tabindex='-1', data-micromodal-close='')
+    .modal__section
+        .modal__row
+            .modal__container.modal__container_video(role='dialog', aria-modal='true')
+                .video
+                    iframe(width="560" height="315" data-src="https://youtube.com/embed/ub374Fhs-8Y?enablejsapi=1&" data-video="false" allowfullscreen)

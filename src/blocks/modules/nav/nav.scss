@@ -1,0 +1,304 @@
+.nav {
+    padding: {
+        top: rem(20);
+        bottom: rem(20);
+    }
+    &_header {
+        @include lg(width, 100%);
+        @include lg(padding-top, rem(14));
+        @include lg(padding-bottom, rem(14));
+        @include lg(background-color, $white);
+        @include lg(box-shadow, 0 rem(4) rem(4) rgba($color: $red, $alpha: .2));
+    }
+    &_fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 15;
+        width: 100%;
+        padding: {
+            top: rem(8);
+            bottom: rem(8);
+        };
+        background-color: $white;
+        border-bottom: {
+            width: rem(1);
+            color: $red;
+            style: solid;
+        }
+
+        .nav__link_active {
+            background-color: $shadow;
+            box-shadow: 0 rem(4) rem(48) $shadow;
+            border-radius: rem(12);
+        }
+        .nav__logo {
+            max-width: rem(65);
+            max-height: rem(42);
+        }
+        .nav__btn {
+            padding: {
+                top: rem(7);
+                bottom: rem(7);
+            }
+            &_modal {
+                @include lg(margin-left, 0);
+                display: inline-block;
+                margin-left: rem(15);
+            }
+            @media (max-width: $break_lg) {
+                padding: {
+                    top: rem(14);
+                    bottom: rem(14);
+                }
+            }
+        }
+    }
+    &__btn {
+        @media (max-width: $break_lg) {
+            padding: {
+                left: rem(30);
+                right: rem(30);
+            }
+        }
+    }
+    &__container {
+        @include container();
+    }
+    &__inner {
+        @include row-flex();
+        flex-wrap: nowrap;
+
+        @include lg(justify-content, space-between);
+        align-items: center;
+    }
+    &__logo-wrapper {
+        @include col();
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__arrow {
+        display: none;
+    }
+    &__logo {
+        max-width: rem(92);
+        max-height: rem(72);
+        @include lg(max-width, rem(65));
+        @include lg(max-height, rem(42));
+    }
+    &__btn {
+        @include lg(margin-bottom, rem(30));
+
+        &_modal {
+            @include lg(display, block);
+            display: none;
+        }
+    }
+    &__list {
+        display: flex;
+        @include lg(display, block);
+        @include lg(width, 100%);
+        @include lg(margin-bottom, rem(30));
+    }
+    &__item {
+        @include col();
+        @include lg(margin-bottom, rem(22));
+        @include lg(margin-left, 0);
+        @include lg(margin-right, 0);
+    }
+    &__link {
+        display: inline-block;
+        padding: rem(10);
+        margin: rem(-10);
+        transition: {
+            property: color;
+            duration: .3s;
+        };
+
+        &:hover {
+            color: $red;
+            fill: $red;
+        }
+
+        @media (max-width: $break_lg) {
+            display: block;
+            width: 100%;
+            padding: {
+                top: rem(10);
+                bottom: rem(10);
+            }
+        }
+    }
+
+
+
+    // MOBILE HEADER
+    &__list-wrapper {
+        display: flex;
+        align-items: center;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        @media (max-width: $break_lg) {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 999;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: rem(110) rem(70);
+            transform: translate3d(-100%,0,0);
+            background-color: $white;
+            transition: {
+                property: transform;
+                duration: .5s;
+            };
+        }
+        @media (max-width: $break_sm) {
+            align-items: center;
+            padding: rem(110) rem(60);
+        }
+    }
+    &_menu_active {
+        @media (max-width: $break_lg) {
+            .nav__arrow {
+                display: inline-block;
+            }
+            .nav__list-wrapper {
+                min-width: rem(320);
+                transform: translate3d(0,0,0);
+            }
+            .nav__control_menu {
+                max-width: rem(67);
+                .nav__control-title {
+                    &::before {
+                        width: 0;
+                    }
+                    &::after {
+                        width: 100%;
+                    }
+                }
+                span {
+                    &:nth-child(1) {
+                        transform: translate3d(0,-50%,0) rotate(45deg);
+                        top: 50%;
+                        width: 110%;
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                        transform: translate3d(-150%,-50%,0);
+                    }
+                    &:nth-child(3) {
+                        transform: translate3d(0,-50%,0) rotate(-45deg);
+                        top: 50%;
+                        width: 110%;
+                    }
+                }
+            }
+        }
+    }
+    &__control {
+        display: none;
+
+        @include col();
+        @include lg(display, block);
+
+        &:hover {
+            .nav__control-icon {
+                fill: $red;
+            }
+        }
+        &_menu {
+            position: relative;
+            z-index: 1001;
+            max-width: rem(45);
+            transition: {
+                property: max-width;
+                duration: .3s;
+            };
+            overflow: hidden;
+            .nav__control-icon {
+                position: relative;
+                min-height: rem(20);
+                margin-bottom: rem(1);
+            }
+            .nav__control-title {
+                position: relative;
+                &::before {
+                    content: 'Меню';
+                    width: 100%;
+                    display: inline-block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    transition: {
+                        property: width;
+                        duration: .3s;
+                    };
+                }
+                &::after {
+                    content: 'Закрыть';
+                    display: inline-block;
+                    width: 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    background-color: $white;
+                    transition: {
+                        property: width;
+                        duration: .3s;
+                    };
+                }
+            }
+            span {
+                position: absolute;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: rem(4);
+                border: {
+                    width: rem(1);
+                    color: $red;
+                    style: solid;
+                    radius: rem(3);
+                }
+                transition: {
+                    property: opacity, transform, top, width;
+                    duration: .3s;
+                };
+                &:nth-child(1) {
+                    top: 0;
+                }
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translate3d(0,-50%,0);
+                }
+                &:nth-child(3) {
+                    top: 100%;
+                    transform: translate3d(0,-100%,0);
+                }
+            }
+        }
+        cursor: pointer;
+    }
+    &__control-icon {
+        max-width: rem(24);
+        max-height: rem(20);
+        display: block;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        fill: transparent;
+        stroke: $red;
+        transition: {
+            property: fill;
+            duration: .3s;
+        }
+    }
+    &__control-title {
+        color: $red;
+        user-select: none;
+    }
+}

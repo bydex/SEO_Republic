@@ -1,0 +1,197 @@
+.assurance {
+    @include section('margin');
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        height: 100%;
+        width: 70vw;
+        background-image: linear-gradient(180deg, #FEF9F6 0%, #FFE2DD 100%);
+        border-radius: rem(16) rem(0) rem(0) rem(16);
+        @include md(height, 70%);
+        @include md(width, 50vw);
+    }
+    &__description {
+        @include col();
+        @include size(6);
+        @include size-md(10);
+        @include size-sm(12);
+        margin-bottom: 0;
+
+        @media (max-width: $break_md) {
+            padding: rem(24) rem(30);
+            background-color: $white;
+            box-shadow: 0 rem(4) rem(32) #FFE2DD;
+            border-radius: rem(16);
+        }
+    }
+    &__img-wrapper {
+        @include col();
+        @include md(width,auto);
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0,-50%);
+
+        @media (max-width: $break_md) {
+            position: relative;
+            top: 0;
+            transform: none;
+            margin-bottom: rem(24);
+        }
+    }
+    &__row {
+        justify-content: flex-start;
+        @media (max-width: $break_md) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+    &__card-mobile {
+        @media (max-width: $break_md) {
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+    &__img {
+        position: relative;
+        z-index: 1;
+        @media (max-width: $break_md) {
+            max-width: 80vw;
+        }
+    }
+    &__card {
+        position: relative;
+        padding: rem(80) rem(50);
+        @include md(padding,0);
+    }
+    &__parallax {
+        position: absolute;
+
+        img {
+            width: 100%;
+        }
+
+        &_chevron {
+            bottom: 0;
+            left: -20%;
+
+            @media (max-width: $break_xs) {
+                max-width: rem(100);
+            }
+        }
+        &_line {
+            top: 0;
+            left: 10%;
+            z-index: 1;
+            @media (max-width: $break_xs) {
+                max-width: rem(125);
+            }
+        }
+    }
+    $circle: 150;
+    $circle-xl: 150;
+    $circle-lg: 150;
+    $circle-md: 150;
+    $circle-sm: 125;
+    $circle-xs: 100;
+    &__img-circle-wrapper {
+        position: absolute;
+        top: 41%;
+        left: 57%;
+        z-index: -1;
+
+        @media (max-width: $break_md) {
+            top: 60%;
+
+        }
+        @media (max-width: $break_sm) {
+        }
+        &_2 {
+            $translate: ($circle * 1.5 - $circle) / 2;
+            transform: translate3d(rem(-$translate),rem(-$translate),0) !important;
+
+            @media (max-width: $break_sm) {
+                $translate-sm: ($circle-sm * 1.5 - $circle-sm) / 2;
+                transform: translate3d(rem(-$translate-sm),rem(-$translate-sm),0) !important;
+            }
+            @media (max-width: $break_xs) {
+                $translate-xs: ($circle-xs * 1.5 - $circle-xs) / 2;
+                transform: translate3d(rem(-$translate-xs),rem(-$translate-xs),0) !important;
+            }
+        }
+        &_3 {
+            $translate: ($circle * 2 - $circle) / 2;
+            transform: translate3d(rem(-$translate),rem(-$translate),0) !important;
+
+            @media (max-width: $break_sm) {
+                $translate-sm: ($circle-sm * 2 - $circle-sm) / 2;
+                transform: translate3d(rem(-$translate-sm),rem(-$translate-sm),0) !important;
+            }
+            @media (max-width: $break_xs) {
+                $translate-xs: ($circle-xs * 2 - $circle-xs) / 2;
+                transform: translate3d(rem(-$translate-xs),rem(-$translate-xs),0) !important;
+            }
+        }
+    }
+    &__img-circle {
+        width: rem($circle);
+        height: rem($circle);
+        background-color: $red;
+        border-radius: 50%;
+
+        @media (max-width: $break_sm) {
+            width: rem($circle-sm);
+            height: rem($circle-sm);
+        }
+        @media (max-width: $break_xs) {
+            width: rem($circle-xs);
+            height: rem($circle-xs);
+        }
+
+        &_2 {
+            width: rem($circle * 1.5);
+            height: rem($circle * 1.5);
+            background-color: transparent;
+            border: {
+                width: rem(1);
+                color: $primaryText;
+                style: solid;
+            }
+
+            @media (max-width: $break_sm) {
+                width: rem($circle-sm * 1.5);
+                height: rem($circle-sm * 1.5);
+            }
+            @media (max-width: $break_xs) {
+                width: rem($circle-xs * 1.5);
+                height: rem($circle-xs * 1.5);
+            }
+        }
+        &_3 {
+            width: rem($circle * 2);
+            height: rem($circle * 2);
+            background-color: transparent;
+            border: {
+                width: rem(1);
+                color: $primaryText;
+                style: solid;
+            }
+
+            @media (max-width: $break_sm) {
+                width: rem($circle-sm * 2);
+                height: rem($circle-sm * 2);
+            }
+            @media (max-width: $break_xs) {
+                width: rem($circle-xs * 2);
+                height: rem($circle-xs * 2);
+            }
+        }
+    }
+}

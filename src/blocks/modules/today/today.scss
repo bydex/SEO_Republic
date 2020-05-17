@@ -1,0 +1,229 @@
+.today {
+    @include section('margin');
+    padding-bottom: 0;
+    background: {
+        image:url(../img/header-wave.svg);
+        repeat: no-repeat;
+        position: bottom,center 30%;
+        size: 100%;
+    }
+    @media (max-width: $break_md) {
+        background: {
+            image: url(../img/header-wave.svg), linear-gradient(189.43deg, rgba(254, 249, 246, 0) 49.81%, $shadow 81.59%);
+            position: top center, 0 -43%;
+            size: auto rem(390), auto rem(390);
+        }
+        margin-bottom: 0;
+    }
+    &__content {
+        @include col();
+        @include size(10);
+        @include shift-left(2);
+
+        @include size-xl(11);
+        @include shift-xl-left(0);
+    }
+    &__row {
+        @include row-flex();
+        align-items: flex-end;
+
+        @media (max-width: $break_md) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+    &__form-wrapper {
+        @include size(6);
+        @include size-md(12);
+        margin-bottom: rem(30);
+
+        @media (max-width: $break_md) {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &__title {
+        @include h2();
+        @include md(display, none);
+        margin-bottom: rem(15);
+        text-transform: uppercase;
+
+        &_mobile {
+            @include md(display, block);
+            position: absolute;
+            top: 55%;
+            left: 0;
+            transform: translate3d(0,-50%,0);
+            max-width: rem(230);
+            display: none;
+            font-weight: 800;
+        }
+    }
+    &__description {
+        @include md(display, none);
+    }
+    &__info {
+        @include md(margin-bottom, 0);
+        margin-bottom: rem(65);
+    }
+    &__form {
+        text-align: center;
+    }
+
+    &__img-wrapper {
+        position: relative;
+        z-index: 1;
+        @include col();
+        @include size(6);
+
+        @media (max-width: $break_md) {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            margin: {
+                left: 0;
+                right: 0;
+                bottom: rem(-20);
+            }
+        }
+    }
+    &__img {
+        max-width: 45vw;
+        @include xl(max-width, 54vw);
+        @media (max-width: $break_md) {
+            max-width: rem(400);
+            margin-right: rem(-30);
+        }
+        @include sm(margin-right, rem(-90));
+    }
+    $circle: 400;
+    $circle-xl: 350;
+    $circle-lg: 280;
+    $circle-md: 150;
+    &__img-circle-wrapper {
+        position: absolute;
+        top: 18%;
+        left: 57%;
+        z-index: -1;
+
+        @media (max-width: $break_md) {
+            right: 4%;
+            left: auto;
+            top: -5%;
+        }
+        @media (max-width: $break_sm) {
+            right: -5%;
+        }
+        &_2 {
+            @include md(display, none);
+            $translate: ($circle * 1.5 - $circle) / 2;
+            transform: translate3d(rem(-$translate),rem(-$translate),0) !important;
+
+            @media (max-width: $break_xl) {
+                $translate-xl: ($circle-xl * 1.5 - $circle-xl) / 2;
+                transform: translate3d(rem(-$translate-xl),rem(-$translate-xl),0) !important;
+            }
+            @media (max-width: $break_lg) {
+                $translate-lg: ($circle-lg * 1.5 - $circle-lg) / 2;
+                transform: translate3d(rem(-$translate-lg),rem(-$translate-lg),0) !important;
+            }
+        }
+        &_3 {
+            @include md(display, none);
+            $translate: ($circle * 2 - $circle) / 2;
+            transform: translate3d(rem(-$translate),rem(-$translate),0) !important;
+
+            @media (max-width: $break_xl) {
+                $translate-xl: ($circle-xl * 2 - $circle-xl) / 2;
+                transform: translate3d(rem(-$translate-xl),rem(-$translate-xl),0) !important;
+            }
+            @media (max-width: $break_lg) {
+                $translate-lg: ($circle-lg * 2 - $circle-lg) / 2;
+                transform: translate3d(rem(-$translate-lg),rem(-$translate-lg),0) !important;
+            }
+        }
+    }
+    &__img-circle {
+        width: rem($circle);
+        height: rem($circle);
+        background-color: $iconOutline;
+        border-radius: 50%;
+
+        @media (max-width: $break_xl) {
+            width: rem($circle-xl);
+            height: rem($circle-xl);
+        }
+        @media (max-width: $break_lg) {
+            width: rem($circle-lg);
+            height: rem($circle-lg);
+        }
+        @media (max-width: $break_md) {
+            width: rem($circle-md);
+            height: rem($circle-md);
+            background-color: $red;
+        }
+
+        &_2 {
+            width: rem($circle * 1.5);
+            height: rem($circle * 1.5);
+            background-color: transparent;
+            border: {
+                width: rem(1);
+                color: $primaryText;
+                style: solid;
+            }
+
+            @media (max-width: $break_xl) {
+                width: rem($circle-xl * 1.5);
+                height: rem($circle-xl * 1.5);
+            }
+            @media (max-width: $break_lg) {
+                width: rem($circle-lg * 1.5);
+                height: rem($circle-lg * 1.5);
+            }
+        }
+        &_3 {
+            width: rem($circle * 2);
+            height: rem($circle * 2);
+            background-color: transparent;
+            border: {
+                width: rem(1);
+                color: $primaryText;
+                style: solid;
+            }
+
+            @media (max-width: $break_xl) {
+                width: rem($circle-xl * 2);
+                height: rem($circle-xl * 2);
+            }
+            @media (max-width: $break_lg) {
+                width: rem($circle-lg * 2);
+                height: rem($circle-lg * 2);
+            }
+        }
+    }
+    &__line {
+        @include lg(display, none);
+        position: absolute;
+        z-index: 1;
+
+        &_1 {
+            top: 10%;
+            right: -9vw;
+
+            @media (max-width: $break_xl) {
+                right: -10vw;
+            }
+        }
+        &_2 {
+            top: 23%;
+            right: -17vw;
+
+            @media (max-width: $break_xl) {
+                right: -20vw;
+            }
+        }
+    }
+}

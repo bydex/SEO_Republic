@@ -1,0 +1,110 @@
+.course {
+    @include lg(border-radius, rem(16));
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: {
+        width: rem(2);
+        style: solid;
+        radius: 0 0 rem(16) rem(16);
+    }
+    box-shadow: rem(0) rem(4) rem(48) $shadow;
+    &_blue {
+        border-color: $blue;
+
+        .webp & .course__header {
+            background-image: url(../img/course-blue-bg.webp);
+        }
+        .no-webp & .course__header {
+            background-image: url(../img/course-blue-bg.jpg);
+        }
+
+        .course__field {
+            border-color: $blue;
+
+            &::placeholder {
+                color: $blue;
+            }
+        }
+        .course__btn {
+            background-color: $blue;
+            border-color: $blue;
+
+            &:hover {
+                color: $white;
+                fill: $white;
+                background-color: rgba($color: $blue, $alpha: .85);
+            }
+        }
+    }
+    &_red {
+        border-color: $red;
+
+        .webp & .course__header {
+            background-image: url(../img/course-red-bg.webp);
+        }
+        .no-webp & .course__header {
+            background-image: url(../img/course-red-bg.jpg);
+        }
+
+        .course__field {
+            border-color: $red;
+        }
+        .course__btn {
+            background-color: $red;
+            border-color: $red;
+
+            &:hover {
+                color: $white;
+                fill: $white;
+                background-color: rgba($color: $red, $alpha: .85);
+            }
+        }
+    }
+
+    &__header {
+        @include lg(border-radius, rem(13) rem(13) 0 0);
+        height: rem(128);
+        padding: rem(40) rem(15) rem(20) rem(15);
+        color: $white;
+        text-align: center;
+        background: {
+            size: 100% auto;
+            position: center;
+            repeat: repeat-y;
+        }
+    }
+    &__title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-height: rem(62);
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 0 auto;
+        padding: rem(20) rem(35) rem(40) rem(35);
+    }
+    &__list {
+        margin-bottom: rem(35);
+    }
+    &__timer {
+        @include md(display, none);
+        margin-bottom: rem(25);
+    }
+    &__timer-mobile {
+        @include md(display, block);
+        display: none;
+        margin-bottom: rem(30);
+    }
+    &__form {
+        text-align: center;
+    }
+    &__input {
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+}

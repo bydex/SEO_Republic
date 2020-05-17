@@ -1,0 +1,74 @@
+.accordeon {
+    &_active {
+        .accordeon__header {
+            &::before {
+                transform: translate3d(0,-50%,0) rotate(0);
+            }
+        }
+        .accordeon__dropdown {
+            opacity: 1;
+        }
+    }
+    &__header {
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        user-select: none;
+
+        &::before,&::after {
+            content: '';
+            position: absolute;
+            right: rem(65);
+            top: 50%;
+            transform: translate3d(0,-50%,0);
+            width: rem(32);
+            height: rem(2);
+            background-color: $red;
+
+            @include md(right, rem(40));
+        }
+        &::before {
+            transform: translate3d(0,-50%,0) rotate(90deg);
+            transition: {
+                property: transform;
+                duration: .5s;
+            };
+            will-change: transform;
+        }
+    }
+    &__dropdown {
+        max-height: rem(10);
+        margin-top: rem(-10);
+        padding-top: rem(10);
+        overflow: hidden;
+        background-color: $accordeon;
+        opacity: 0;
+        border-radius: 0 0 rem(16) rem(16);
+        transition: {
+            property: max-height, opacity;
+            duration: .5s;
+        }
+        will-change: max-height, opacity;
+    }
+    &__inner {
+        padding: rem(35) rem(150) rem(35) rem(65);
+        @include md(padding, rem(24) rem(100) rem(24) rem(30));
+
+        &_description {
+            @include md(padding, rem(24) rem(30) rem(24) rem(30));
+        }
+    }
+    &__title {
+    }
+    &__description {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__title, &__description {
+        @include h3();
+        @media (max-width: $break_md) {
+            @include h4();
+        }
+    }
+}

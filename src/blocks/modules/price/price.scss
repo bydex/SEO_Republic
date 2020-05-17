@@ -1,0 +1,15 @@
+.price {
+    &__courses {
+        @include row-flex();
+        justify-content: center;
+    }
+    &__course {
+        @include col();
+        @include size(6);
+        @include size-lg(10);
+        @include size-sm(12);
+        @media (max-width: $break_lg) {
+            margin-bottom: rem(40);
+        }
+    }
+}

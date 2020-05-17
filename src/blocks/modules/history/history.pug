@@ -1,0 +1,56 @@
+-
+    let histories = [
+        {
+            img: 'history-1',
+            title: 'Работает врачом, делает сайты',
+            subtitle: 'С 18 000 до 1 800 000 тенге/мес.',
+            detail: [
+                'Владимир Сенченко',
+                '37 лет, Смоланд, Швеция',
+            ]
+        },
+        {
+            img: 'history-2',
+            title: 'Из инженера авиации в вебмастера',
+            subtitle: 'С 0 до 420 000 тенге/мес. ',
+            detail: [
+                'Всеволод Козлове',
+                '50 лет, Москва, Россия',
+            ]
+        },
+        {
+            img: 'history-3',
+            title: 'Перешел из офлайн бизнеса в онлайн',
+            subtitle: 'С 0 до 350 000 тенге/мес.',
+            detail: [
+                'Виктор Поп',
+                '21 год, Усть-Каменегорск, Казахстан',
+            ]
+        },
+    ]
+
+section.history.section(id="history")
+    .section__container
+        .section__row
+            .section__content
+                h3.section__title Истории успеха
+                .history__items
+                    - i = .2;
+                    each val, index in histories
+                        .history__item.card.card_pink(class="wow animate__slideInUp" data-wow-duration=`${i=i+.4}s`)
+                            .card__img
+                                +webp(val.img, 'jpg')
+                            .card__inner
+                                h3.card__title= val.title
+                                h4.card__subtitle= val.subtitle
+                                each value, index in val.detail
+                                    p.card__detail= value
+                    .history__item.history__item_form.card.card_pink.card_bg_transparent(class="wow animate__slideInUp" data-wow-duration=`${i=i+.4}s`)
+                        .card__img
+                            +icon('card-icon')
+                        .card__inner
+                            h3.card__title Хочу так же!
+                            form.input.input_btn.history__form(data-activity="Хочу также")
+                                span.input__info
+                                input.input__field(placeholder="Ваш номер телефона" required)
+                                button.input__btn.btn.btn_theme_transparent.btn_size_small Записаться

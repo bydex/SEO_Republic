@@ -1,0 +1,114 @@
+.header {
+    padding-bottom: rem(125);
+    background: {
+        image: url(../img/header-wave.svg), linear-gradient(180deg, #FFE2DD 0%, #FEF9F6 57.29%);
+        position: center bottom, top center;
+        repeat: no-repeat;
+        size: 100% auto, 100% 50%;
+    }
+    &_no-bg {
+        background-image: none;
+    }
+    @media (max-width: $break_md) {
+        padding-bottom: rem(30);
+        background: {
+            size: cover;
+            position: 37% 0, top center;
+        }
+    }
+
+    &__container {
+        @include container();
+        padding-top: rem(30);
+    }
+    &__wrapper {
+        @include row-flex();
+        justify-content: center;
+        align-items: center;
+
+        &_mobile {
+            @media (max-width: $break_md) {
+                min-height: rem(400);
+                min-height: calc(100vh - #{rem(150)});
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+        }
+    }
+    &__btn-mobile {
+        @include sm(display, block);
+        @include col();
+        @include size-sm(8);
+        @include size-xs(12);
+        display: none;
+        margin-bottom: rem(40);
+    }
+    &__notify-mobile {
+        @include col();
+        @include sm(display, block);
+        display: none;
+        color: #B9B9B9;
+    }
+    &__notify-icon {
+        display: inline-block;
+        max-width: rem(8);
+        max-height: rem(12);
+        margin-right: rem(5);
+    }
+    &__info {
+        @include col();
+        @include size(7);
+        @include shift-right(1);
+
+        @include size-lg(10);
+        @include shift-lg-right(0);
+        @include lg(margin-bottom, rem(40));
+
+        @include size-sm(12);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        mark {
+            display: inline-block;
+            color: $red;
+            background-color: transparent;
+        }
+    }
+    &__title {
+        @include h2();
+        margin-bottom: rem(25);
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        @include h3();
+
+        @include md(display, none);
+    }
+    &__form {
+        @include col();
+        @include size(4);
+        @include size-lg(12);
+        @include sm(display, none);
+        display: flex;
+        justify-content: center;
+    }
+    &__form-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__description {
+        @include col();
+        @include size(9);
+
+        @include size-lg(10);
+
+        @include size-md(6);
+
+        @include size-sm(8);
+
+        @include size-xs(11);
+        margin-top: rem(65);
+    }
+}

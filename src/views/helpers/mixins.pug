@@ -1,0 +1,34 @@
+mixin icon(iconName, className = '')
+    svg(class=`icon-sprite ${className}`)
+        use(xlink:href=`./img/sprites/sprite.svg#${iconName}`)
+
+mixin webp(imgName, type = 'jpg', className = '')
+    picture
+        source(srcset=`./img/${imgName}.webp` type="image/webp")
+        img(src=`./img/${imgName}.${type}` class=className alt=imgName)
+
+
+mixin timer(timerClassname = '', days = '05', hours = '10', minutes = '12', type = false)
+    .timer(class=timerClassname data-type=type)
+        h3.timer__title До начала осталось:
+        ul.timer__date
+            li.timer__item
+                h4.timer__item-title(data-days)= days
+                p.timer__item-info дней
+            li.timer__item
+                h4.timer__item-title(data-hours)= hours
+                p.timer__item-info часов
+            li.timer__item
+                h4.timer__item-title(data-minutes)= minutes
+                p.timer__item-info минут
+
+mixin form(formClassname = '', buttonClassname = '')
+    form.form.form_red(class=formClassname)
+        +timer('form__timer')
+        .form__input.input.input_size_normal
+            span.input__info
+            input.input__field(placeholder="Ваш номер телефона" required)
+        button.form__send.btn.btn_theme_filled.btn_size_normal(class=buttonClassname) Записаться на курс
+            <span class="btn__right-icon">
+                +icon('btn-arrow')
+            </span>

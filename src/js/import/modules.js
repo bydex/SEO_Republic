@@ -1,0 +1,16 @@
+import "%modules%/header/header";
+import "%modules%/nav/nav";
+import "%modules%/promo-video/promo-video";
+import "%modules%/advantages/advantages";
+import "%modules%/compare-section/compare-section";
+import "%modules%/structure/structure";
+import "%modules%/feedback/feedback";
+import "%modules%/accordeon/accordeon";
+import "%modules%/history/history";
+import "%modules%/timer/timer";
+import "%modules%/input/input";
+import "%modules%/today/today";
+import "%modules%/teacher/teacher";
+import "%modules%/patent/patent";
+import "%modules%/form/form";
+import "%modules%/footer/footer";

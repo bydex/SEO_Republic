@@ -1,0 +1,133 @@
+@mixin btn-filled() {
+    color: $white;
+    border-color: $red;
+    background-color: $red;
+
+    &:hover {
+        color: $red;
+        background-color: transparent;
+    }
+}
+@mixin btn-normal() {
+    padding: rem(14) rem(20);
+}
+.btn {
+    @include md(border-radius, rem(8));
+    display: inline-block;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border: {
+        width: rem(1);
+        style: solid;
+        radius: rem(4);
+    }
+    transition: {
+        property: color, background-color;
+        duration: .3s;
+    };
+    will-change: color, background-color;
+    cursor: pointer;
+    &_theme {
+        &_transparent {
+            color: $red;
+            fill: $red;
+            border-color: $red;
+            &:hover {
+                color: $white;
+                fill: $white;
+                background-color: $red;
+            }
+        }
+        &_filled {
+            color: $white;
+            fill: $white;
+            border-color: $red;
+            background-color: $red;
+
+            &:hover {
+                color: $red;
+                fill: $red;
+                background-color: transparent;
+            }
+        }
+        &_telegram {
+            display: inline-flex;
+            align-items: center;
+            background: {
+                color: $telegram;
+            };
+            color: $white;
+            fill: $white;
+
+            &:hover {
+                background-color: rgba($color: $telegram, $alpha: .8);
+                fill: $white;
+            }
+        }
+        &_whatsapp {
+            display: inline-flex;
+            align-items: center;
+            background: {
+                color: $whatsapp;
+            };
+            color: $white;
+            fill: $white;
+
+            &:hover {
+                background-color: rgba($color: $whatsapp, $alpha: .8);
+                fill: $white;
+            }
+        }
+        &_blue {
+            background-color: $blue;
+            color: $white;
+            fill: $white;
+
+            &:hover {
+                background-color: rgba($color: $blue, $alpha: .8);
+                fill: $white;
+            }
+        }
+        &__close {
+            position: absolute;
+            top: rem(24);
+            right: rem(30);
+        }
+    }
+    &_size {
+        &_normal {
+            @media (max-width: $break_md) {
+                padding: {
+                    left: rem(30);
+                    right: rem(30);
+                }
+            }
+            padding: rem(14) rem(20);
+        }
+        &_small {
+            padding: rem(3);
+        }
+    }
+    &__icon {
+        max-width: rem(22);
+        max-height: rem(22);
+        margin-right: rem(15);
+    }
+    &__right-icon {
+        margin-left: rem(3);
+
+        svg {
+            max-width: rem(15);
+            max-height: rem(20);
+            vertical-align: middle;
+            transition: {
+                property: fill;
+                duration: .3s;
+            }
+        }
+    }
+}

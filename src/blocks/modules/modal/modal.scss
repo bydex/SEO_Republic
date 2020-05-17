@@ -1,0 +1,272 @@
+.modal {
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1002;
+        background: rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__section {
+        @include container();
+        width: 100%;
+        pointer-events: none;
+    }
+    &__row {
+        @include row-flex();
+        justify-content: center;
+    }
+    &__container {
+        @include col();
+        @include size(8);
+        @include size-xl(9);
+        @include size-lg(12);
+        padding: {
+            top: rem(110);
+            bottom: rem(110);
+            left: rem(48);
+            right: rem(48);
+        };
+        max-height: 100vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+        background: {
+            image: url(../img/header-wave.svg), $wave;
+            position: top center;
+            repeat: no-repeat;
+            size: cover;
+        };
+        pointer-events: all;
+
+        @media (max-width: $break_md) {
+            padding: {
+                left: rem(15);
+                right: rem(15);
+                top: rem(80);
+                bottom: rem(35);
+            }
+            background: {
+                position: 33% 0;
+            }
+        }
+
+        &_video {
+            @media (max-width: $break_md) {
+                padding: {
+                    left: rem(0);
+                    right: rem(0);
+                    top: rem(0);
+                    bottom: rem(0);
+                }
+            }
+            padding: 0;
+            background: {
+                image: none;
+                color: $white;
+            };
+        }
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .modal__close {
+            &::before {
+                content: "\2715";
+            }
+        }
+    }
+    &__info {
+        margin-bottom: rem(20);
+        text-align: center;
+    }
+    &__title {
+        @include h3();
+        margin-bottom: rem(18);
+    }
+    &__description {
+        @include h4();
+        margin-bottom: rem(15);
+    }
+    &__content {
+        @include row-flex();
+        justify-content: center;
+    }
+    &__details {
+        @include col();
+        @include size(6);
+        @include size-md(9);
+        @include size-sm(10);
+        @include size-xs(12);
+        @include md(margin-bottom, rem(-60));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__form-wrapper {
+        @include col();
+        @include size(6);
+        @include size-md(8);
+        @include size-sm(10);
+        @include size-xs(12);
+    }
+    &__form {
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: rem(48) rem(38);
+        background-color: rgba($color: $white, $alpha: .65);
+        border: {
+            width: rem(1);
+            style: solid;
+            color: rgba($color: $blue, $alpha: .65);
+            radius: rem(8);
+        }
+    }
+    &__video {
+        display: block;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        max-width: 100%;
+    }
+    &__logo {
+        max-width: rem(54);
+        max-height: rem(58);
+        margin-top: rem(35);
+    }
+    &__input {
+        width: 100%;
+        max-width: none;
+    }
+    &__btn {
+        width: 100%;
+        max-width: none;
+    }
+    &__close {
+        position: absolute;
+        top: rem(24);
+        right: rem(30);
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem(10);
+
+        &:hover {
+            .modal__close-icon {
+                fill: $red;
+            }
+        }
+
+        @media (max-width: $break_md) {
+            top: rem(25);
+            right: rem(15);
+            display: flex;
+            align-items: center;
+            border: {
+                width: rem(1);
+                color: $red;
+                style: solid;
+                radius: rem(8);
+            }
+            transition: {
+                property: background-color;
+                duration: .3s;
+            }
+            &:hover {
+                background-color: $red;
+
+                &:before {
+                    color: $white;
+                }
+                .modal__close-icon {
+                    stroke: $white;
+                }
+            }
+            &:before {
+                content: 'Закрыть';
+                margin-right: rem(10);
+                color: $red;
+                transition: {
+                    property: color;
+                    duration: .3s;
+                }
+            }
+        }
+    }
+    &__close-icon {
+        max-width: rem(15);
+        max-height: rem(15);
+        fill: $shadow;
+        transition: {
+            property: fill, stroke;
+            duration: .3s;
+        }
+        will-change: fill, stroke;
+
+        @media (max-width: $break_md) {
+            max-width: rem(17);
+            max-height: rem(17);
+            fill: none;
+            stroke: $red;
+        }
+    }
+}
+
+@keyframes mmfadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+  from { transform: translateY(15%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10%); }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}

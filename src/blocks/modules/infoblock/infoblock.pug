@@ -1,0 +1,21 @@
+-
+    let infoblock = [
+        {
+            name: 'старт обучения',
+            title: '1.04.2020'
+        },
+        {
+            name: 'Формат',
+            title: 'Онлайн уроки'
+        },
+        {
+            name: 'Длительность курса',
+            title: '2 месяца'
+        },
+    ];
+
+ul.infoblock
+    each val, index in infoblock
+        li.infoblock__item
+            p.infoblock__name= val.name
+            h3.infoblock__title= val.title

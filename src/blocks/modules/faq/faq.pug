@@ -1,0 +1,38 @@
+-
+    let accordeon = [
+        {
+            title: 'Может, нужно какое-то специальное оборудование для участия в курсе или специальные программы?',
+            desc: 'Всё, что вам понадобится — компьютер с быстрым доступом в интернет.',
+        },
+        {
+            title: 'Состоится ли Марафон Начало в следующем году?',
+            desc: 'Всё, что вам понадобится — компьютер с быстрым доступом в интернет.',
+        },
+        {
+            title: 'Где можно узнать конкретное расписание занятий и о прочих организационных вещах подробнее?',
+            desc: 'Всё, что вам понадобится — компьютер с быстрым доступом в интернет.',
+        },
+        {
+            title: 'Сколько необходимо денег на начальном этапе?',
+            desc: 'Всё, что вам понадобится — компьютер с быстрым доступом в интернет.',
+        },
+    ];
+
+section.faq.section
+    .section__container
+        .section__row
+            .section__content
+                h3.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) Часто задаваемые вопросы
+    .faq__wrapper
+        .section__container
+            .section__row
+                .section__content
+                    - i = .4;
+                    each val, index in accordeon
+                        .accordeon.card.faq__accordeon.card_pink(data-accordeon class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.4}s`)
+                            .accordeon__header.card.card_pink(data-accordeon-head)
+                                .accordeon__inner
+                                    h3.accordeon__title= val.title
+                            .accordeon__dropdown(data-accordeon-body)
+                                .accordeon__inner.accordeon__inner_description
+                                    p.accordeon__description= val.desc

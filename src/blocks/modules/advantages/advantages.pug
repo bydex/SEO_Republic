@@ -1,0 +1,36 @@
+-
+    let advantage = [
+        {
+            icon: 'socials',
+            title: 'Готовый информационный сайт',
+            description: 'По окончанию курса у вас на руках будет сайт готовый для дальнейшего роста'
+        },
+        {
+            icon: 'money',
+            title: 'Дополнительный источник дохода',
+            description: 'Освоите базовые методы заработка на сайтах и получите первые деньги уже во время прохождения курса'
+        },
+        {
+            icon: 'magnet',
+            title: 'Важные практические навыки',
+            description: 'Получите важные “мягкие” навыки, а так же освоите востребованные профессии вебмастера,  контент-менеджера и SEO-специалиста.'
+        },
+        {
+            icon: 'knowledge',
+            title: 'Методика и пошаговые инструкции',
+            description: 'Вы с нашей помощью научитесь создавать новые сайты самостоятельно, что может стать основным источником дохода в будущем'
+        },
+    ]
+
+section.advantages.section
+    .section__container
+        .section__row
+            .section__content
+                h2.section__title(class="wow animate__fadeInLeft" data-wow-duration="1s") что вам даст данный курс?
+                .advantages__slider
+                    - let i = .2;
+                    each val, index in advantage
+                        .card.advantages__card(class="wow animate__fadeInUp" data-wow-duration=`${i = i+.5}s`)
+                            img.card__icon(src=`./img/svg/slider-${val.icon}.svg` alt=`${val.icon}`)
+                            h3.card__title= val.title
+                            p= val.description

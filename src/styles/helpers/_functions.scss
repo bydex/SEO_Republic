@@ -1,0 +1,6 @@
+@function rem($px) {
+    @return ($px / 16) +rem;
+}
+@function col($col) {
+    @return (100% / 12 * $col);
+}

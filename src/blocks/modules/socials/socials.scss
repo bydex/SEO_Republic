@@ -1,0 +1,21 @@
+.socials {
+    @include md(text-align, center);
+    &__links {
+        @include md(justify-content, center);
+       display: flex;
+       flex-flow: row wrap;
+       margin: {
+           left: rem(-10);
+           right: rem(-10);
+       }
+    }
+    &__link {
+        margin: {
+            left: rem(10);
+            right: rem(10);
+        }
+    }
+    &__title {
+        margin-bottom: rem(8);
+    }
+}
