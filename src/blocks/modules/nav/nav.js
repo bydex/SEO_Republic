@@ -31,7 +31,7 @@ $(document).ready(() => {
     menuBtn.click(function() {
         navbar.toggleClass('nav_menu_active');
         if($('.modal[aria-hidden="false"]').length === 0) {
-            $("body").toggleClass("overflow-hidden");
+            $("body, html").toggleClass("overflow-hidden");
         }
     })
 
@@ -42,7 +42,7 @@ $(document).ready(() => {
             if (!$('.header').hasClass('another-page')) {
                 e.preventDefault();
                 if (navbar.hasClass('nav_menu_active')) {
-                    $("body").removeClass("overflow-hidden");
+                    $("body, html").removeClass("overflow-hidden");
                     navbar.removeClass('nav_menu_active');
                 }
                 $('html, body').animate({

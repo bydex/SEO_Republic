@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add jquery-input-mask-phone-number.js --save-dev
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add plugin-transform-object-assign --save-dev
 
 PATH: 
   C:\Python38\Scripts\;C:\Python38\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Yarn\bin\;C:\Users\erok_\AppData\Local\Microsoft\WindowsApps;;C:\Users\erok_\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\erok_\AppData\Roaming\npm;C:\Users\erok_\AppData\Local\Yarn\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/jquery-input-mask-phone-number.js: Not found
+  Error: https://registry.yarnpkg.com/plugin-transform-object-assign: Not found
       at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66084:18)
       at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140727:22)
       at Request.emit (events.js:321:20)
@@ -100,6 +100,7 @@ npm manifest:
       },
       "dependencies": {
           "animate.css": "^4.1.0",
+          "babel-plugin-transform-object-assign": "^6.22.0",
           "before-after": "^2.0.4",
           "before-after.js": "^1.0.1",
           "core-js": "2",
@@ -107,15 +108,19 @@ npm manifest:
           "imaskjs": "^1.1.1",
           "input-masking": "^1.0.4",
           "jquery": "^3.5.0",
+          "jquery-input-mask-phone-number": "^1.0.11",
           "jquery.event.move": "^1.3.6",
+          "maskerjs": "^1.8.3",
           "micromodal": "^0.4.6",
           "modernizr": "^3.11.0",
           "parallax-js": "^3.1.0",
           "picturefill": "^3.0.3",
+          "save": "^2.4.0",
           "slider-before-after": "^1.0.0",
           "smart-grid": "^2.1.2",
           "tippy.js": "^6.2.2",
           "vanilla-masker": "^1.2.0",
+          "vanilla-text-mask": "^5.1.1",
           "wowjs": "^1.1.3",
           "zurb-twentytwenty": "^0.1.1"
       },
@@ -2253,7 +2258,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
     integrity sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
   
-  async@^2.6.1:
+  async@^2.6.1, async@^2.6.2:
     version "2.6.3"
     resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
     integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
@@ -2346,7 +2351,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
     integrity sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
   
-  babel-runtime@^6.26.0:
+  babel-plugin-transform-object-assign@^6.22.0:
+    version "6.22.0"
+    resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-assign/-/babel-plugin-transform-object-assign-6.22.0.tgz#f99d2f66f1a0b0d498e346c5359684740caa20ba"
+    integrity sha1-+Z0vZvGgsNSY40bFNZaEdAyqILo=
+    dependencies:
+      babel-runtime "^6.22.0"
+  
+  babel-runtime@^6.22.0, babel-runtime@^6.26.0:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
     integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -4452,6 +4464,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
     integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
   
+  duplexer@^0.1.1, duplexer@~0.1.1:
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
+    integrity sha1-rOb/gIwc5mtX0ev5eXessCM0z8E=
+  
   duplexify@^3.2.0, duplexify@^3.4.2, duplexify@^3.5.0, duplexify@^3.6.0:
     version "3.7.1"
     resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-3.7.1.tgz#2a4df5317f6ccfd91f86d6fd25d8d8a103b88309"
@@ -4882,6 +4899,19 @@ Lockfile:
     dependencies:
       d "1"
       es5-ext "~0.10.14"
+  
+  event-stream@^4.0.1:
+    version "4.0.1"
+    resolved "https://registry.yarnpkg.com/event-stream/-/event-stream-4.0.1.tgz#4092808ec995d0dd75ea4580c1df6a74db2cde65"
+    integrity sha512-qACXdu/9VHPBzcyhdOWR5/IahhGMf0roTeZJfzz077GwylcDd90yOHLouhmv7GJ5XzPi6ekaQWd8AvPP2nOvpA==
+    dependencies:
+      duplexer "^0.1.1"
+      from "^0.1.7"
+      map-stream "0.0.7"
+      pause-stream "^0.0.11"
+      split "^1.0.1"
+      stream-combiner "^0.2.2"
+      through "^2.3.8"
   
   eventemitter3@1.x.x:
     version "1.2.0"
@@ -5577,6 +5607,11 @@ Lockfile:
       inherits "^2.0.1"
       readable-stream "^2.0.0"
   
+  from@^0.1.7:
+    version "0.1.7"
+    resolved "https://registry.yarnpkg.com/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
+    integrity sha1-g8YK/Fi5xWmXAH7Rp2izqzA6RP4=
+  
   fs-constants@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
@@ -5678,6 +5713,11 @@ Lockfile:
     integrity sha512-BRdNm8hbWzFzWHERTrejLqwHDfS4GibPoq5wjTPIoJHoBtKGPg3xAFfxmM+9ztbXelxcf2hwQcaz1PtmFeue8g==
     dependencies:
       globule "^1.0.0"
+  
+  generate-js@^3.1.2:
+    version "3.1.2"
+    resolved "https://registry.yarnpkg.com/generate-js/-/generate-js-3.1.2.tgz#25ff8dd4c38090a938f648887d536bad46b47b62"
+    integrity sha1-Jf+N1MOAkKk49kiIfVNrrUa0e2I=
   
   gensync@^1.0.0-beta.1:
     version "1.0.0-beta.1"
@@ -7617,6 +7657,11 @@ Lockfile:
       bin-wrapper "^4.0.0"
       logalot "^2.0.0"
   
+  jquery-input-mask-phone-number@^1.0.11:
+    version "1.0.11"
+    resolved "https://registry.yarnpkg.com/jquery-input-mask-phone-number/-/jquery-input-mask-phone-number-1.0.11.tgz#ff29145621233c5931bce7b423b901d727d4c857"
+    integrity sha512-0klpk2QmPiUqeKBj84jAYghNeTYsxwEJmfyJNn2dK3LqeQ2hjaUOMGFWYhDubQEL7owtDY3DT1+RwVI7jBqFtQ==
+  
   jquery.event.move@^1.3.6:
     version "1.3.6"
     resolved "https://registry.yarnpkg.com/jquery.event.move/-/jquery.event.move-1.3.6.tgz#ae8a03376f332895971b460442e166886d0789ec"
@@ -8153,6 +8198,11 @@ Lockfile:
     dependencies:
       lodash.isarray "^3.0.0"
   
+  lodash.assign@^4.2.0:
+    version "4.2.0"
+    resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
+    integrity sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=
+  
   lodash.clone@^4.3.2:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.clone/-/lodash.clone-4.5.0.tgz#195870450f5a13192478df4bc3d23d2dea1907b6"
@@ -8460,6 +8510,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-4.1.0.tgz#b91221b542734b9f14256c0132c897c5d7256fd5"
     integrity sha512-glc9y00wgtwcDmp7GaE/0b0OnxpNJsVf3ael/An6Fe2Q51LLwN1er6sdomLRzz5h0+yMpiYLhWYF5R7HeqVd4g==
   
+  map-stream@0.0.7:
+    version "0.0.7"
+    resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.0.7.tgz#8a1f07896d82b10926bd3744a2420009f88974a8"
+    integrity sha1-ih8HiW2CsQkmvTdEokIACfiJdKg=
+  
   map-visit@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
@@ -8494,6 +8549,13 @@ Lockfile:
     integrity sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==
     dependencies:
       repeat-string "^1.0.0"
+  
+  maskerjs@^1.8.3:
+    version "1.8.3"
+    resolved "https://registry.yarnpkg.com/maskerjs/-/maskerjs-1.8.3.tgz#acde47628f241271d382e616916a9b99ce7014b9"
+    integrity sha1-rN5HYo8kEnHTguYWkWqbmc5wFLk=
+    dependencies:
+      generate-js "^3.1.2"
   
   matchdep@^2.0.0:
     version "2.0.0"
@@ -8781,6 +8843,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
     integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
+  
+  mingo@1:
+    version "1.3.3"
+    resolved "https://registry.yarnpkg.com/mingo/-/mingo-1.3.3.tgz#6922c4d147efc771a01425a2c4c8f7784478c546"
+    integrity sha1-aSLE0Ufvx3GgFCWixMj3eER4xUY=
   
   minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
     version "1.0.1"
@@ -9897,6 +9964,13 @@ Lockfile:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
     integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
+  
+  pause-stream@^0.0.11:
+    version "0.0.11"
+    resolved "https://registry.yarnpkg.com/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
+    integrity sha1-/lo0sMvOErWqaitAPuLnO2AvFEU=
+    dependencies:
+      through "~2.3"
   
   pbkdf2@^3.0.3:
     version "3.0.17"
@@ -11256,6 +11330,16 @@ Lockfile:
       scss-tokenizer "^0.2.3"
       yargs "^7.0.0"
   
+  save@^2.4.0:
+    version "2.4.0"
+    resolved "https://registry.yarnpkg.com/save/-/save-2.4.0.tgz#af93ff9b3d7a41d0aff49a23433870613a460f9b"
+    integrity sha512-wd5L2uVnsKYkIUaK6i8Ie66IOHaI328gMF0MPuTJtYOjXgUolC33LSIk7Qr8WVA55QHaGwfiVS8a7EFIeGOR3w==
+    dependencies:
+      async "^2.6.2"
+      event-stream "^4.0.1"
+      lodash.assign "^4.2.0"
+      mingo "1"
+  
   sax@>=0.6.0, sax@~1.2.4:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -11810,6 +11894,13 @@ Lockfile:
     dependencies:
       extend-shallow "^3.0.0"
   
+  split@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/split/-/split-1.0.1.tgz#605bd9be303aa59fb35f9229fbea0ddec9ea07d9"
+    integrity sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==
+    dependencies:
+      through "2"
+  
   sprintf-js@~1.0.2:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
@@ -11911,6 +12002,14 @@ Lockfile:
     dependencies:
       duplexer2 "~0.1.0"
       readable-stream "^2.0.2"
+  
+  stream-combiner@^0.2.2:
+    version "0.2.2"
+    resolved "https://registry.yarnpkg.com/stream-combiner/-/stream-combiner-0.2.2.tgz#aec8cbac177b56b6f4fa479ced8c1912cee52858"
+    integrity sha1-rsjLrBd7Vrb0+kec7YwZEs7lKFg=
+    dependencies:
+      duplexer "~0.1.1"
+      through "~2.3.4"
   
   stream-each@^1.1.0:
     version "1.2.3"
@@ -12686,7 +12785,7 @@ Lockfile:
       readable-stream ">=1.0.33-1 <1.1.0-0"
       xtend ">=4.0.0 <4.1.0-0"
   
-  through@^2.3.6, through@^2.3.8:
+  through@2, through@^2.3.6, through@^2.3.8, through@~2.3, through@~2.3.4:
     version "2.3.8"
     resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
     integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
@@ -13387,6 +13486,11 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/vanilla-masker/-/vanilla-masker-1.2.0.tgz#c2830e9d994a5fecd2261506477c2707fe589756"
     integrity sha1-woMOnZlKX+zSJhUGR3wnB/5Yl1Y=
+  
+  vanilla-text-mask@^5.1.1:
+    version "5.1.1"
+    resolved "https://registry.yarnpkg.com/vanilla-text-mask/-/vanilla-text-mask-5.1.1.tgz#f854819b2785191cef651e3ee94869f45855f365"
+    integrity sha512-JhjoMbCx3DG4GN/M/j06n1bVLeJPsZ7XelyCx8q87M9d5k3jwuWaY+a+09XBq1uOGQAW8QaWska66hOzXNKiQg==
   
   verror@1.10.0:
     version "1.10.0"

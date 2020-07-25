@@ -28,11 +28,11 @@ section.bonus.section
                             .bonus__form-btn.input.input_btn
                                 span.bonus__form-info.input__info
                                 input.bonus__input.input__field(placeholder="Ваш номер телефона" required)
-                                button.bonus__btn.input__btn.btn.btn_theme_transparent.btn_size_small
+                                button.bonus__btn.input__btn.btn.btn_theme_transparent.btn_size_small(class=`ga${g+=1}`)
                                     |   Записаться
                                     +icon('slider-arrow-right', 'bonus__btn-icon')
                         .bonus__btn-mobile(class="wow animate__fadeInLeft" data-wow-duration=`${i}s`)
-                            button.bonus__btn.input__btn.btn.btn_theme_filled.btn_size_small(data-micromodal-trigger="modal-1")
+                            button.bonus__btn.input__btn.btn.btn_theme_filled.btn_size_small(class=`ga${g+=1}` data-micromodal-trigger="modal-1")
                                 |   Записаться
                                 <span class="btn__right-icon">
                                     +icon('btn-arrow')

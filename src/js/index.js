@@ -1,3 +1,8 @@
+import "core-js/fn/object/assign";
+import "core-js/fn/symbol/iterator.js";
+import "core-js/es6/symbol.js";
+import "core-js/fn/array/from";
+import "nodelist-foreach-polyfill";
 import "./import/modules";
 import "./import/components";
 import $ from 'jquery';
@@ -11,6 +16,7 @@ $(document).ready(() => {
       animateClass: "animated",
       offset: 0,
       mobile: true,
+      live: false
     });
     wow.init();
 

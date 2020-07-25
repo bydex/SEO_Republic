@@ -7,10 +7,10 @@ section.socials.section
                 h3.section__subtitle(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.2}s`) Мы вам непременно ответим
                 ul.socials__links(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.2}s`)
                     li.socials__link
-                        a.btn.btn_theme_whatsapp.btn_size_normal(href="https://wa.me/79101510855")
+                        a.btn.btn_theme_whatsapp.btn_size_normal(class=`ga${g+=1}` href="https://wa.me/79101510855")
                             +icon('whatsapp', 'btn__icon')
                             |   Whatsapp
                     li.socials__link
-                        a.btn.btn_theme_telegram.btn_size_normal(href="https://t.me/79101510855")
+                        a.btn.btn_theme_telegram.btn_size_normal(class=`ga${g+=1}` href="https://t.me/79101510855")
                             +icon('telegram', 'btn__icon')
                             |   Telegram

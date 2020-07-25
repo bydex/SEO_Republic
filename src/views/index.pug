@@ -41,11 +41,11 @@ block content
 						.form__input.input.input_size_normal
 							span.input__info
 							input.input__field(placeholder="Ваш номер телефона" name="Телефон" required)
-						button.form__send.btn.btn_theme_filled.btn_size_normal(type="submit") Записаться на курс
+						button.form__send.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` type="submit") Записаться на курс
 							<span class="btn__right-icon">
 								+icon('btn-arrow')
 							</span>
-				button.header__btn-mobile.form__send.btn.btn_theme_filled.btn_size_normal(data-micromodal-trigger="modal-1") Записаться на курс
+				button.header__btn-mobile.form__send.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-1") Записаться на курс
 					<span class="btn__right-icon">
 						+icon('btn-arrow')
 					</span>

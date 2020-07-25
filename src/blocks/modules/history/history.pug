@@ -52,5 +52,5 @@ section.history.section(id="history")
                             h3.card__title Хочу так же!
                             form.input.input_btn.history__form(data-activity="Хочу также")
                                 span.input__info
-                                input.input__field(placeholder="Ваш номер телефона" required)
-                                button.input__btn.btn.btn_theme_transparent.btn_size_small Записаться
+                                input.input__field(placeholder="Ваш номер телефона" name="phone" required)
+                                button.input__btn.btn.btn_theme_transparent.btn_size_small(class=`ga${g+=1}`) Записаться

@@ -3,7 +3,7 @@ import MicroModal from 'micromodal';
 
 MicroModal.init({
   onShow: (modal) => {
-    $("body").addClass("overflow-hidden");
+    $("body, html").addClass("overflow-hidden");
     let video = $(modal).find('iframe');
 
     if (video.length > 0) {
@@ -15,7 +15,7 @@ MicroModal.init({
   },
   onClose: (modal) => {
     if(!$('[data-nav]').hasClass("nav_menu_active")) {
-      $("body").removeClass("overflow-hidden");
+      $("body, html").removeClass("overflow-hidden");
     }
     let video = $(modal).find("iframe");
 

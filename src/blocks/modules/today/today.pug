@@ -13,7 +13,7 @@ section.today.section
                             .form__input.input.input_size_normal
                                 span.input__info
                                 input.input__field(placeholder="Ваш номер телефона" required)
-                            button.form__send.btn.btn_theme_filled.btn_size_normal(class=buttonClassname) Записаться на курс
+                            button.form__send.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Записаться на курс
                                 <span class="btn__right-icon">
                                     +icon('btn-arrow')
                                 </span>
@@ -21,9 +21,9 @@ section.today.section
                         h3.today__title.today__title_mobile запишитесь сегодня
                         .tiday__img-wrapper(data-parallax)
                             picture(data-depth-x=".1")
-                                source(srcset="./img/today-woman_mobile.webp" media=`(max-width: ${media.md})`)
-                                source(srcset="./img/today-woman_mobile.png" media=`(max-width: ${media.md})`)
-                                source(srcset="./img/today-woman.webp")
+                                source(srcset="./img/today-woman_mobile.webp" media=`(max-width: ${media.md})` type="image/webp")
+                                source(srcset="./img/today-woman_mobile.png" media=`(max-width: ${media.md})` type="image/png")
+                                source(srcset="./img/today-woman.webp" type="image/webp")
                                 img(src="./img/today-woman.png" class="today__img" alt="Today-woman")
                         span.today__img-circle-wrapper.today__img-circle-wrapper_1(data-parallax)
                             span.today__img-circle.today__img-circle_1(data-depth="1")

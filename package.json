@@ -70,7 +70,9 @@
         "yargs": "~13.2.4"
     },
     "dependencies": {
+        "@babel/plugin-transform-object-assign": "^7.8.3",
         "animate.css": "^4.1.0",
+        "babel-plugin-transform-object-assign": "^6.22.0",
         "before-after": "^2.0.4",
         "before-after.js": "^1.0.1",
         "core-js": "2",
@@ -83,6 +85,7 @@
         "maskerjs": "^1.8.3",
         "micromodal": "^0.4.6",
         "modernizr": "^3.11.0",
+        "nodelist-foreach-polyfill": "^1.2.0",
         "parallax-js": "^3.1.0",
         "picturefill": "^3.0.3",
         "save": "^2.4.0",

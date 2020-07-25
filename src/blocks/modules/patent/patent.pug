@@ -12,14 +12,14 @@ section.patent.section
                                     p.card__paragraph Посмотрите, что делают наши ученики за время обучения. Это примеры дипломных работ — да, каждый ученик защищает свой проект в конце курса.
                                     p.card__paragraph Во-первых, ученики, которые защищают свой проект получают сертификат об окончании курса. Сертификаты любят как клиенты, так и работодатели.
                                     p.card__paragraph Во-вторых, по окончанию курса у вас уже будет кейс, который поможет вам как в поиске клиентов, так и при трудоустройстве.
-                                a.btn.btn_theme_transparent.btn_size_normal.patent__btn(href="#") Дипломные проекты студентов
+                                a.btn.btn_theme_transparent.btn_size_normal.patent__btn(class=`ga${g+=1}` href="#") Дипломные проекты студентов
                                     <span class="btn__right-icon">
                                         +icon('btn-arrow')
                                     </span>
                     .patent__img
                         div(data-parallax data-z="1")
                             picture(data-depth-x=".2")
-                                source(srcset="./img/patent-mac.webp")
+                                source(srcset="./img/patent-mac.webp" type="image/webp")
                                 img(src="./img/patent-mac.png" class="patent__img-main" alt="MacBook")
                         .patent__parallax.patent__parallax_worm(data-parallax)
                             img(src="./img/sprites/sprite.svg#parallax-big-worm", alt="Parallax worm" data-depth-x=".75" data-depth-y="-.75")

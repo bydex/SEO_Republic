@@ -16,7 +16,7 @@ gulp.task("favicons", () => {
                 android: false,
                 firefox: false,
                 yandex: false,
-                windows: false,
+                windows: true,
                 coast: false
             }
         }))

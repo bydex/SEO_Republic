@@ -28,8 +28,6 @@
 
         &_mobile {
             @media (max-width: $break_md) {
-                min-height: rem(400);
-                min-height: calc(100vh - #{rem(150)});
                 flex-direction: column;
                 justify-content: flex-end;
             }

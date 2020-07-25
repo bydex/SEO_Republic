@@ -26,9 +26,7 @@ body, html {
     @include xl(max-width, rem(1110));
 }
 .overflow-hidden {
-    position: fixed;
-    width: 100%;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 .icon-sprite {
     max-width: 100%;

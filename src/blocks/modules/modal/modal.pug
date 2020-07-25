@@ -11,8 +11,8 @@
                             h3.modal__title Успейте записаться на бесплатный мастер-класс!
                             p.modal__description Получите ценный опыт и уникальную возможность выиграть полный курс абсолютно бесплатно.
                         picture
-                            source(srcset="./img/modal-video_mobile.webp" media=`(max-width: ${media.md})`)
-                            source(srcset="./img/modal-video_mobile.png" media=`(max-width: ${media.md})`)
+                            source(srcset="./img/modal-video_mobile.webp" media=`(max-width: ${media.md})` type="image/webp")
+                            source(srcset="./img/modal-video_mobile.png" media=`(max-width: ${media.md})` type="image/png")
                             source(srcset="./img/modal-video.webp")
                             img(class="modal__video" src="./img/modal-video.png" alt="Modal picture")
                     section.modal__form-wrapper
@@ -21,7 +21,7 @@
                             .form__input.input.input_blue.input_size_normal.modal__input
                                 span.input__info
                                 input.input__field(placeholder="Ваш номер телефона" required)
-                            button.modal__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=buttonClassname) Записаться на
+                            button.modal__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=`ga${g+=1}`) Записаться на
                                 <span class="master-class">мастер-класс
                                     <span class="btn__right-icon">
                                         +icon('btn-arrow')

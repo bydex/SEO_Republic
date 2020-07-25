@@ -37,7 +37,7 @@ section.price.section(id="price")
                                 .form__input.course__input.input.input_size_medium
                                     span.input__info
                                     input.input__field.course__field(placeholder="Ваш номер телефона" required)
-                                button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=buttonClassname) Записаться на <span class="master-class">мастер-класс</span><span class="master-class master-class_mobile">МК</span>
+                                button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Записаться на <span class="master-class">мастер-класс</span><span class="master-class master-class_mobile">МК</span>
                                     <span class="btn__right-icon">
                                         +icon('btn-arrow')
                                     </span>
@@ -59,7 +59,7 @@ section.price.section(id="price")
                                     .form__input.course__input.input.input_size_medium
                                         span.input__info
                                         input.input__field.course__field(placeholder="Ваш номер телефона" required)
-                                    button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal Узнать цену
+                                    button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Узнать цену
                                         <span class="btn__right-icon">
                                             +icon('btn-arrow')
                                         </span>
