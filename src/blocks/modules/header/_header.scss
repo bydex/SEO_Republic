@@ -35,10 +35,6 @@
     }
     &__btn-mobile {
         @include sm(display, block);
-        @include col();
-        @include size-sm(8);
-        @include size-xs(12);
-        display: none;
         margin-bottom: rem(40);
     }
     &__notify-mobile {
@@ -82,14 +78,7 @@
         @include h3();
 
         @include md(display, none);
-    }
-    &__form {
-        @include col();
-        @include size(4);
-        @include size-lg(12);
-        @include sm(display, none);
-        display: flex;
-        justify-content: center;
+        margin-bottom: 48px;
     }
     &__form-wrapper {
         display: flex;
@@ -108,5 +97,104 @@
 
         @include size-xs(11);
         margin-top: rem(65);
+    }
+    &__video {
+        @include col();
+        @include size(4);
+        @include size-lg(12);
+        display: flex;
+        justify-content: center;
+    }
+    &__img {
+        @media (max-width: $break_xl) {
+            right: -170px;
+        }
+        @media (max-width: $break_lg) {
+            display: none;
+        }
+        max-width: 620px;
+        position: absolute;
+        top: 9%;
+        right: -80px;
+    }
+    &__knowing {
+        z-index: 10;
+    }
+    &__knowing-wrp {
+        @media (max-width: $break_xl) {
+            right: 360px;
+            top: 508px;
+        }
+        @media (max-width: $break_lg) {
+            top: 640px;
+            left: 50%;
+            right: 50%;
+            transform: translateX(-50%) rotate(-4deg);
+        }
+        @media (max-width: $break_md) {
+            top: 429px;
+        }
+        position: absolute;
+        width: 311px;
+        top: 495px;
+        right: 450px;
+        transform: rotate(-4deg);
+
+        background-color: white;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 16px; 
+        padding-right: 34px;
+        border-radius: 8px;
+    }
+    &__paragraph {
+        @media (max-width: $break_lg) {
+            font-size: 16px;
+        }
+        margin: 0;
+        padding: 0;
+        position: relative;
+        &::before {
+            @media (max-width: $break_lg) {
+                left: 52%;
+                right: 50%;
+                transform: translateY(-50%);
+                top: 27px;
+                animation: none;
+            }
+            content: '';
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            background-color: $red;
+            border-radius: 50%;
+            position: absolute;
+            right: -13px;
+            top: 50%;
+            bottom: 50%;
+            transform: translateY(-50%);
+            animation: dot 1.3s infinite linear
+        }
+        span {
+            color: red;
+        }
+    }
+    &__button-wrp {
+        @media (max-width: $break_md) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@keyframes dot {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: $red;
+    }
+    100% {
+        background-color: transparent;
     }
 }
