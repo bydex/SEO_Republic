@@ -1,40 +1,41 @@
--
-    let teacherAdvantages = [
-        'Co-founder школы SEO Republic',
-        'Интернет-маркетолог с 8-и летним стажем',
-        'Специалист по таргетированной рекламе в соц сетях',
-        'Опыт запуска рекламы более 7 лет',
-        'Настроил более 300 рекламных кампаний'
-    ];
+mixin teacher()
+    -
+        let teacherAdvantages = [
+            'Co-founder школы SEO Republic',
+            'Интернет-маркетолог с 8-и летним стажем',
+            'Специалист по таргетированной рекламе в соц сетях',
+            'Опыт запуска рекламы более 7 лет',
+            'Настроил более 300 рекламных кампаний'
+        ];
 
-section.teacher.section(id="teacher")
-    .section__container
-        .section__row
-            .section__content
-                h2.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) ПРЕПОДАВАТЕЛь и АВТОР КУРСА
-    .teacher__wrapper
+    section.teacher.section(id="teacher")
         .section__container
             .section__row
                 .section__content
-                    .teacher__row
-                        .teacher__img-wrapper
-                            div.teacher__teacher-wrapper(data-parallax)
-                                picture(data-depth-x=".2")
-                                    source(srcset="./img/teacher-man.webp" type="image/webp")
-                                    img(src="./img/teacher-man.png" alt="Антон Зауркин: Преподаватель и автор курса")
-                            .teacher__parallax.teacher__parallax_chevron(data-parallax)
-                                img(src="./img/sprites/sprite.svg#parallax-chevron", alt="Parallax chevron" data-depth-x="-1.5" data-depth-y="1.5")
-                            .teacher__parallax.teacher__parallax_up(data-parallax)
-                                img(src="./img/sprites/sprite.svg#parallax-up", alt="Parallax up" data-depth="-1")
-                            .teacher__parallax.teacher__parallax_worm(data-parallax)
-                                img(src="./img/sprites/sprite.svg#parallax-worm", alt="Parallax worm" data-depth-x=".75" data-depth-y=".75")
-                        .teacher__info(class="wow animate__fadeInRight" data-wow-duration=`2s`)
-                            h3.teacher__title Антон Зарукин
-                            .card.card_pink
-                                .card__inner
-                                    h3.teacher__title.teacher__title_mobile Антон Зарукин
-                                    ul.list
-                                        each val, index in teacherAdvantages
-                                            li.list__item
-                                                +icon('twice-check', 'list__icon')
-                                                p.list__details= val
+                    h2.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) ПРЕПОДАВАТЕЛь и АВТОР КУРСА
+        .teacher__wrapper
+            .section__container
+                .section__row
+                    .section__content
+                        .teacher__row
+                            .teacher__img-wrapper
+                                div.teacher__teacher-wrapper(data-parallax)
+                                    picture(data-depth-x=".2")
+                                        source(srcset="./img/teacher-man.webp" type="image/webp")
+                                        img(src="./img/teacher-man.png" alt="Антон Зауркин: Преподаватель и автор курса")
+                                .teacher__parallax.teacher__parallax_chevron(data-parallax)
+                                    img(src="./img/sprites/sprite.svg#parallax-chevron", alt="Parallax chevron" data-depth-x="-1.5" data-depth-y="1.5")
+                                .teacher__parallax.teacher__parallax_up(data-parallax)
+                                    img(src="./img/sprites/sprite.svg#parallax-up", alt="Parallax up" data-depth="-1")
+                                .teacher__parallax.teacher__parallax_worm(data-parallax)
+                                    img(src="./img/sprites/sprite.svg#parallax-worm", alt="Parallax worm" data-depth-x=".75" data-depth-y=".75")
+                            .teacher__info(class="wow animate__fadeInRight" data-wow-duration=`2s`)
+                                h3.teacher__title Антон Зарукин
+                                .card.card_pink
+                                    .card__inner
+                                        h3.teacher__title.teacher__title_mobile Антон Зарукин
+                                        ul.list
+                                            each val, index in teacherAdvantages
+                                                li.list__item
+                                                    +icon('twice-check', 'list__icon')
+                                                    p.list__details= val

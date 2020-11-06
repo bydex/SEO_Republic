@@ -327,6 +327,11 @@
         }
     }
 
+    &_font {
+        &_regular {
+            font-weight: 400;
+        }
+    }
 
     $circle: 34;
     &__img-circle-wrapper {

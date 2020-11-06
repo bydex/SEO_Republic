@@ -1,4 +1,5 @@
 .history {
+    padding-top: rem(144);
     &__items {
         @include row-flex();
 
@@ -36,8 +37,22 @@
             text-align: center;
 
             .history__form {
-                margin-top: rem(45);
+                margin-top: rem(22);
             }
         }
+    }
+    &__card-img {
+        min-height: rem(160);
+        @include sm(min-height, rem(130));
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__btn {
+        width: 100%;
+        max-width: 241px;
+        margin-top: 24px;
     }
 }

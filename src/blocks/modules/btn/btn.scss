@@ -97,6 +97,16 @@
             top: rem(24);
             right: rem(30);
         }
+        &_red {
+            background-color: $red;
+            border-color: $red;
+
+            &:hover {
+                color: $white;
+                fill: $white;
+                background-color: rgba($color: $red, $alpha: .85);
+            }
+        }
     }
     &_size {
         &_normal {

@@ -1,5 +1,14 @@
 extends layouts/default
 include helpers/mixins
+include ../blocks/modules/history/history
+include ../blocks/modules/result/result
+include ../blocks/modules/assurance/assurance
+include ../blocks/modules/price/price
+include ../blocks/modules/structure/structure
+include ../blocks/modules/teacher/teacher
+include ../blocks/modules/faq/faq
+
+
 
 block variables
 	- const title = "SEO Republic";
@@ -40,31 +49,31 @@ block content
 							<span class="btn__right-icon">
 								+icon('btn-arrow')
 							</span>
-				.header__video
-					img.header__img(src="img/notebook-vid.png", alt="Ноутбук")
-					img.header__img-mob(src="img/notebook-vid-mod.png", alt="Ноутбук")
-				.header__knowing
-					.header__knowing-wrp
-						p.header__paragraph Узнайте все о курсе <span>за одну минуту</span>
-				p.header__notify-mobile
-					+icon('union-top', 'header__notify-icon')
-					| Пролистните вверх
+				.header__video-wrp
+					.header__video
+						img.header__img(src="img/notebook-vid.png", alt="Ноутбук")
+						img.header__img-mob(src="img/notebook-vid-mod.png", alt="Ноутбук")
+					.header__knowing
+						.header__knowing-wrp
+							p.header__paragraph Узнайте все о курсе <span>за одну минуту</span>
+					.header__link-wrp
+						a.header__link(href="#")
 	main
-		include ../blocks/modules/promo-video/promo-video
-		include ../blocks/modules/modal/modal
-		include ../blocks/modules/advantages/advantages
-		include ../blocks/modules/compare-section/compare-section
-		include ../blocks/modules/history/history
-		include ../blocks/modules/today/today
-		include ../blocks/modules/result/result
-		include ../blocks/modules/structure/structure
-		include ../blocks/modules/bonus/bonus
-		include ../blocks/modules/teacher/teacher
-		include ../blocks/modules/price/price
-		include ../blocks/modules/assurance/assurance
-		include ../blocks/modules/patent/patent
-		include ../blocks/modules/feedback/feedback
-		include ../blocks/modules/faq/faq
+		+history()
+		+result()
+		+assurance()
+		+price()
+		+structure()
+		+teacher()
+		+faq()
+		//- include ../blocks/modules/promo-video/promo-video
+		//- include ../blocks/modules/modal/modal
+		//- include ../blocks/modules/advantages/advantages
+		//- include ../blocks/modules/compare-section/compare-section
+		//- include ../blocks/modules/today/today
+		//- include ../blocks/modules/bonus/bonus
+		//- include ../blocks/modules/patent/patent
+		//- include ../blocks/modules/feedback/feedback
 		include ../blocks/modules/socials/socials
 	include ../blocks/modules/footer/footer
 block scripts

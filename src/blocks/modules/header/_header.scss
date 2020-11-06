@@ -98,7 +98,13 @@
         @include size-xs(11);
         margin-top: rem(65);
     }
-    &__video {
+    &__video-wrp {
+        @media (max-width: $break_md) {
+            margin-right: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+        @include lg(position, relative);
         @include col();
         @include size(4);
         @include size-lg(12);
@@ -117,8 +123,31 @@
         top: 9%;
         right: -80px;
     }
+    &__img-mob {
+        @include lg(display, block);
+        display: none;
+        max-width: 100%;
+    }
     &__knowing {
         z-index: 10;
+    }
+    &__link {
+        @media (max-width: $break_md) {
+            top: 50%;
+            right: 50%;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+        }
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        top: 31%;
+        right: 114px;
     }
     &__knowing-wrp {
         @media (max-width: $break_xl) {
@@ -126,17 +155,48 @@
             top: 508px;
         }
         @media (max-width: $break_lg) {
-            top: 640px;
+            width: 293px;
+            padding-right: 16px;
+            top: -10px;
             left: 50%;
             right: 50%;
             transform: translateX(-50%) rotate(-4deg);
+            &:before {
+                content: '';
+                width: 1px;
+                height: 52px;
+                background-color: #000;
+                display: inline-block;
+                position: absolute;
+                right: 50%;
+                left: 49.6%;
+                transform: translateX(-50%) rotate(5deg);
+                top: 38px;
+            }
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 8px 4px 0 4px;
+                border-color: #000000 transparent transparent transparent;
+                position: absolute;
+                right: 50%;
+                left: 48.9%;
+                transform: translateX(-50%) rotate(5deg);
+                top: 87px;
+            }
         }
-        @media (max-width: $break_md) {
-            top: 429px;
+        @media (max-width: $break_sm) {
+            top: -10px;
+        }
+        @media (max-width: $break_xs) {
+            top: -28px;
         }
         position: absolute;
         width: 311px;
-        top: 495px;
+        top: 470px;
         right: 450px;
         transform: rotate(-4deg);
 
@@ -156,7 +216,7 @@
         position: relative;
         &::before {
             @media (max-width: $break_lg) {
-                left: 52%;
+                left: 49%;
                 right: 50%;
                 transform: translateY(-50%);
                 top: 27px;
