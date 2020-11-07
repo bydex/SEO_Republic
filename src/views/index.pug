@@ -8,16 +8,10 @@ include ../blocks/modules/structure/structure
 include ../blocks/modules/teacher/teacher
 include ../blocks/modules/faq/faq
 
-
-
 block variables
 	- const title = "SEO Republic";
 	-
 		let nav = [
-			{
-				title: 'О курсе',
-				href: '#about'
-			},
 			{
 				title: 'Истории успеха',
 				href: '#history'
@@ -27,12 +21,12 @@ block variables
 				href: '#teacher'
 			},
 			{
-				title: 'Стоимость',
-				href: '#price'
-			},
-			{
 				title: 'Гарантии',
 				href: '#assurance'
+			},
+			{
+				title: 'Стоимость',
+				href: '#price'
 			},
 		]
 
@@ -67,7 +61,7 @@ block content
 		+teacher()
 		+faq()
 		//- include ../blocks/modules/promo-video/promo-video
-		//- include ../blocks/modules/modal/modal
+		include ../blocks/modules/modal/modal
 		//- include ../blocks/modules/advantages/advantages
 		//- include ../blocks/modules/compare-section/compare-section
 		//- include ../blocks/modules/today/today
