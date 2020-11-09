@@ -60,8 +60,11 @@ img {
 }
 
 h2 {
-    font-size: rem(42);
-    font-weight: 600;
+    font: {
+        family: 'Gotham';
+        size: rem(42);
+        weight: 900;
+    }
     @include md(font-size, rem(28));
 }
 h3 {
@@ -128,6 +131,8 @@ h3 {
         @include size-md(12);
     }
     &__title {
+        font-family: 'Gotham';
+        @include md(font-family, inherit);
         @include h2();
         margin-bottom: rem(80);
 

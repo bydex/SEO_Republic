@@ -143,6 +143,9 @@
         margin-top: rem(24);
     }
     &__input {
+        @media (max-width: $break_md) {
+            display: none;
+        }
         width: 100%;
         max-width: none;
         display: flex;
@@ -228,6 +231,9 @@
     &__container {
         @media (max-width: $break_md) {
             padding-bottom: 0;
+            padding-right: rem(45);
+            padding-left: rem(45);
+            text-align: center;
         }
         padding: rem(35) rem(48);
         padding-bottom: 0;
@@ -238,11 +244,17 @@
         margin-bottom: 32px;
     }
     &__title {
+        @media (max-width: $break_md) {
+            margin-bottom: 0;
+            text-align: center;
+            font-size: rem(18);
+        }
         margin-bottom: 0;
-        @include md(margin-bottom, 0);
-        @include md(text-align, left);
     }
     &__subtitle {
+        @media (max-width: $break_md) {
+            font-size: rem(16);
+        }
         margin-bottom: 0;
         color: $red;
     }
@@ -262,6 +274,9 @@
         justify-content: space-between;
     }
     &__paragraph {
+        @media (max-width: $break_md) {
+            font-size: 16px;
+        }
         margin-bottom: 29px;
     }
     &__img {
@@ -273,6 +288,7 @@
     &__main-img-wrp {
         @media (max-width: $break_md) {
             display: block;
+            max-width: 300px;
         }
         display: none;
         position: relative;
@@ -281,16 +297,15 @@
         margin-top: -49px;
         margin-left: auto;
         margin-right: auto;
-        padding-right: 3.125rem;
-        padding-left: 3.125rem;
     }
     &__main-img {
         max-width: 100%;
+        width: 225px;
     }
     &__form-wrapper {
         @media (max-width: $break_md) {
-            margin-right: rem(-15);
-            margin-left: rem(-15);
+            margin-right: rem(-45);
+            margin-left: rem(-45);
         }
         margin-right: rem(-48);
         margin-left: rem(-48);
@@ -352,6 +367,60 @@
         font-size: 18px;
         font-weight: 900;
         color: $black;
+    }
+}
+
+.modal-sign-up {
+    &__container {
+        padding: 49px 48px;
+        background-color: $accordeon;
+        max-width: rem(352);
+        text-align: center;
+        height: rem(440);
+        &_agree {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+    }
+    &__svg-wrp {
+        margin-bottom: 32px;
+    }
+    &__svg {
+        max-width: 72px;
+    }
+    &__form {
+        padding: 0;
+        margin: 0;
+    }
+    &__form-wrp {
+        margin: 0;
+        padding: 0;
+    }
+    &__accept {
+        width: 120px;
+        height: 120px;
+        background-color: $green;
+        border-radius: 50%;
+        background-image: url(#{$sprite}tick);
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 auto;
+    }
+    &__title {
+        @include md(font-size, 22px);
+        font-size: rem(24);
+        margin-bottom: 10px;
+    }
+    &__subtitle {
+        font-size: 14px;
+        color: $light-brack;
+    }
+    &_mb-large {
+        margin-bottom: 24px;
+    }
+    &__btn {
+        fill: $red;
     }
 }
 

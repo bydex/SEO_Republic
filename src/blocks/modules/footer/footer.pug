@@ -7,6 +7,8 @@ footer.footer.section(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.
                         +icon('logo', 'footer__logo')
                     nav.nav.footer__nav
                         ul.nav__list.footer__list
+                            li.nav__item.footer__item
+                                a.nav__link.footer__link(href='#structure') Cтруктура курса
                             each val, index in nav
                                 li.nav__item.footer__item
                                     a.nav__link.footer__link(href=val.href)= val.title

@@ -65,7 +65,7 @@ $(document).ready(() => {
         //     navbarHeight = navbar.innerHeight();
         // }
 
-        // let scrolled = $(window).scrollTop();
+        let scrolled = $(window).scrollTop();
 
         // if (scrolled >= navbarHeight) {
         //     $('body').css('padding-top', navbarHeight / 16 + 'rem');

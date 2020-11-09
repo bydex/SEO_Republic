@@ -83,3 +83,46 @@
             .modal__container.modal__container_video(role='dialog', aria-modal='true')
                 .video
                     iframe(width="560" height="315" data-src="https://youtube.com/embed/ub374Fhs-8Y?enablejsapi=1&" data-video="false" allowfullscreen)
+
+
+include ../../../../node_modules/bemto.pug/bemto.pug
++b.modal-sign-up.modal.micromodal-slide(id="modal-4" aria-hidden='true')
+    +e.overlay.modal__overlay(tabindex='-1', data-micromodal-close='')
+        +e.container.card.card_pink(role='dialog', aria-modal='true')
+            +e.top
+                +e.svg-wrp
+                    +icon('logo', 'modal-sign-up__svg', '0 0 92 72')
+            +e.bottom
+                form.form.modal-sign-up__form(data-activity="Регистрация")
+                    .modal-reg__input.input.input_red.form_flex.modal-sign-up__form-wrp
+                        label.input__label.modal-sign-up__label( for="")
+                            input.input__field.modal-reg__field(placeholder="Ваше полное имя" name="name" type="text" required)
+                        label.input__label.modal-sign-up__label(for="")
+                            input.input__field.modal-reg__field(placeholder="Адрес электронной почты" name="email" type="email" required)
+                        label.input__label.modal-sign-up__label(for="")
+                            span.input__info
+                            input.input__field.modal-reg__field(placeholder="Номер телефона" name="phone" type="tel" required)
+                        button.modal-reg__btn.btn.btn_theme_filled.btn_size_normal.ga7 записаться на курс
+                            <span class="master-class">
+                                <span class="btn__right-icon">
+                                    +icon('btn-arrow')
+                                </span>
+                            </span>
+                            
++b.modal-sign-up.modal.micromodal-slide(id="modal-5" aria-hidden='true')
+    +e.overlay.modal__overlay(tabindex='-1', data-micromodal-close='')
+        +e.container._agree.card.card_pink(role='dialog', aria-modal='true')
+            +e.agree
+                +e.top.modal-sign-up_mb-large.svg-wrp
+                    +icon('logo', 'modal-sign-up__svg', '0 0 92 72')
+                +e.bottom
+                    +e.accept.modal-sign-up_mb-large
+                    +e.H2.title Спасибо за заявку!
+                    +e.p.subtitle.modal-sign-up_mb-large Наш менеджер свяжется с вами в течение 15 минут
+                    button.modal-sign-up__btn.btn.btn_theme_white.btn_size_normal.ga7 Получить доступ
+                        <span class="master-class">
+                            <span class="btn__right-icon">
+                                +icon('btn-arrow')
+                            </span>
+                        </span>
+        
