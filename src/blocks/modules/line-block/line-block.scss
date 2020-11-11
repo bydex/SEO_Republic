@@ -1,17 +1,36 @@
 .line-block {
+    @media (max-width: $break_lg) {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    @media (max-width: $break_md) {
+        margin-bottom: 20px;
+    }
     padding: {
         top: rem(60);
         bottom: rem(60);
     };
     margin-bottom: rem(100);
-    color: $white;
-    background-color: $red;
-    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+    color: $black;
+    text-align: center;
+    // clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
 
-    @media (max-width: $break_md) {
-        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    // @media (max-width: $break_md) {
+    //     clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    // }
+    &__row {
+        background-color: $white;
+        box-shadow: 0px 4px 48px #FFE2DD;
+        border-radius: 16px;
+        padding: {
+            top: 52px;
+            bottom: 52px;
+        }
     }
-
+    &__wrp {
+        width: 100%;
+        display: flex;
+    }
     &_profile {
         @include lg(margin-top, rem(-50));
         @include md(margin-top, 0);
@@ -30,19 +49,55 @@
             right: auto;
         }
     }
+    &__item + &__item {
+        @media (max-width: $break_md) {
+            margin-top: 40px;
+        }
+    }
 
     &__item {
         @include col();
-        @include size(4);
-        @include size-md(7);
-        @include size-sm(10);
-        @include size-xs(12);
-        @include md(margin-bottom, rem(40));
+        // @include size(4);
+        // @include size-md(7);
+        // @include size-sm(10);
+        // @include size-xs(12);
+        // @include md(margin-bottom, rem(40));
         @include xl(padding-left, rem(0));
         @include xl(padding-right, rem(0));
         padding: {
-            left: rem(15);
-            right: rem(15);
+            left: rem(14);
+            right: rem(14);
+        }
+        &:first-child, &:last-child {
+            @media (max-width: $break_md) {
+                width: 80%;
+            }
+            width: calc(31.25% - 1.875rem);
+        }
+        &:nth-child(2) {
+            @media (max-width: $break_md) {
+                width: 80%;
+            }
+            width: calc(37.5% - 1.875rem);
+        }
+        position: relative;
+        &:not(:last-child):after {
+            @media (max-width: $break_md) {
+                width: 100%;
+                height: 1px;
+                bottom: -20px;
+                left: 0;
+                right: 0;
+                top: inherit;
+            }
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 100%;
+            background-color: $red;
+            position: absolute;
+            right: -15px;
+            top: 0;
         }
 
         &:last-child {
@@ -50,6 +105,9 @@
         }
     }
     &__title {
+        @media (max-width: $break_md) {
+
+        }
         @include h3();
         margin-bottom: rem(15);
 

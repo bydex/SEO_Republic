@@ -1,6 +1,8 @@
 extends ../layouts/default
 include ../helpers/mixins
 
+include ../../blocks/modules/profile/profile
+
 block variables
     - const title = "New Page";
     -
@@ -32,7 +34,9 @@ block content
         include ../../blocks/modules/nav/nav
     main
         include ../../blocks/modules/modal/modal
-        include ../../blocks/modules/profile/profile
+        +profile({
+            img: 'profile-1'
+        })
 block scripts
     script.
         let timerInfo = {
