@@ -33,6 +33,9 @@ block variables
 block content
 	header.header(id="about")
 		include ../blocks/modules/nav/nav
+		.header__cover(class="wow animate__fadeInRight" data-wow-duration="1s")
+		.header__link-wrp.header__link-wrp_desk
+			a.header__link(href="#")
 		.header__container
 			.header__wrapper.header__wrapper_mobile
 				.header__info(class="wow animate__fadeInLeft" data-wow-duration="1s")
@@ -45,13 +48,13 @@ block content
 							</span>
 				.header__video-wrp
 					.header__video
-						img.header__img(src="img/notebook-vid.png", alt="Ноутбук" class="wow animate__fadeInRight" data-wow-duration="1s")
 						img.header__img-mob(src="img/notebook-vid-mod.png", alt="Ноутбук" class="wow animate__fadeInRight" data-wow-duration="1s")
+						.header__link-wrp.header__link-wrp_mob
+							a.header__link(href="#")
 					.header__knowing
 						.header__knowing-wrp
 							p.header__paragraph Узнайте все о курсе <span>за одну минуту</span>
-					.header__link-wrp
-						a.header__link(href="#")
+					img(src="img/notebook-vid-label.png", alt="")
 	main
 		+history()
 		+result()

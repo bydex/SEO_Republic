@@ -57,7 +57,7 @@
     &__inner {
         padding: rem(35);
         padding-top: rem(22);
-        @include sm(padding-bottom, 22px);
+        @include sm(padding-bottom, rem(22));
         @include sm(text-align, center);
     }
     &__detail {
@@ -69,6 +69,6 @@
         margin-bottom: rem(35);
     }
     &__item-svg {
-        width: 96px;
+        width: rem(96);
     }
 }

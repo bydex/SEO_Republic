@@ -1,4 +1,59 @@
-mixin profile(value = false)
+mixin profile1(value = false)
+    section.profile.section
+        .profile__background
+        .profile__wrapper
+            .section__container
+                .section__row
+                    .profile__content
+                        .profile__img
+                            div(data-parallax data-z="1")
+                                picture(data-depth-x=".2")
+                                    source(srcset="./img/" + value.img + ".webp" type="image/webp")
+                                    img(class="profile__member" src="./img/" + value.img + ".png" alt="Майк Майерс, участник марафона")
+                            div(class="profile__parallax profile__parallax_chevron" data-parallax)
+                                img(data-depth="1" src="./img/sprites/sprite.svg#parallax-chevron-white" alt="Parallax chrevon")
+                            div(class="profile__parallax profile__parallax_dots" data-parallax)
+                                img(data-depth-x="1" data-depth-y=".75" src="./img/sprites/sprite.svg#parallax-profile-dots" alt="Parallax dots")
+                            div(class="profile__parallax profile__parallax_up" data-parallax)
+                                img(data-depth="-1" src="./img/sprites/sprite.svg#parallax-up" alt="Parallax up")
+                        .profile__info
+                            h2.section__title.profile__title Всеволод Козлов
+                            .profile__card.card.card_pink
+                                .card__inner.profile__card-inner
+                                    h3.card__title.profile__card-title У меня уже были знания в области сайтов, но Марафон разложил все по полочкам и позволил заработать в разы больше
+                                    p.profile__beforeafter <span class='profile__beforeafter-item profile__beforeafter-item_red'>Было 80 000 руб/мес</span><span class="profile__beforeafter-item profile__beforeafter-item_green">Стало 250 000 руб/мес</span>
+        .line-block.line-block_profile
+            .section__container
+                ul.section__row.line-block__row
+                    .line-block__list.line-block__wrp
+                        li.line-block__item
+                            h3.line-block__title Бесконечное развитие
+                            p.line-block__description Необходимо постоянно учиться, чтобы быть в курсе свежих трендов и не оказаться за бортом
+                        li.line-block__item
+                            h3.line-block__title Не бойся делиться информацией и помогать другим
+                            p.line-block__description Если ты уже достиг того уровня, когда тебе есть чем поделиться - делись. Земля круглая и сделанное тобой добро обязательно вернется
+                        li.line-block__item
+                            h3.line-block__title Одному не справиться
+                            p.line-block__description Если хочешь больше успевать в жизни и быстро расти, больше делегируй и автоматизируй
+        .section__container.profile__conclusion
+            .section__row
+                .section__content
+                    .profile__conclusion-card.card.card_pink
+                        .card__inner.profile__conclusion-inner
+                            h3.profile__conclusion-title Старт в сайтах
+                            p.card__description В 2005 году у меня было много свободного времени на работе. В тот момент я решил сделать небольшой строительный портал. Статьи писали мои коллеги — технологи в лакокрасочной компании и моя девушка (ставшая впоследствии женой). На сайте был каталог строительных компаний, на нем я планировал зарабатывать предлагая размещаться прямым рекламодателям. В свободное время ездил по строительным рынкам и предлагал разместить рекламу на моем портале, но в результате переговоров получал заказы на изготовление сайтов.
+                            p.card__description Через несколько месяцев я наткнулся на Google Adsense и кейс Shoe Money, зарегистрировался и в первый день работы получил $5. Воодушевленный таким способом пассивного заработка я стал делать небольшие MFA сайты (сайты, созданные целенаправленно только для заработка в системе контекстной рекламы Google AdSense).
+                            .card__inner.profle__card-inner.profile__quote
+                                h3.card__title.profile__card-title На занятиях стало понятно, как правильно выбрать перспективную нишу, как собрать семантическое ядро, как быстро составлять ТЗ для авторов
+                            h3.profile__conclusion-title Команда и будущее проекта
+                            ul.profile__list
+                                li.profile__list-item Онлайн команда — это мой бессменный КМ-помощница и несколько авторов, с которыми работаем 2-3 года. 
+                                li.profile__list-item Оффлайн — редактор/корректор, плюс какие-то сайты курирует жена 
+                                li.profile__list-item В ближайшем будущем планирую найти менеджера проектов, которому можно будет полностью поручить координацию работы на одном или двух сайтах
+                            h3.profile__conclusion-title Выводы после марафона
+                            p.card__description В 2003 году, на 3 курсе института сокурсник пристроил меня на первую работу веб-программистом, но приходилось также выполнять обязанности верстальщика. После нее я успел поработать веб-дизайнером, интернет-маркетологом, руководителем отдела разработки. На каждом этапе я старался изучать что-то новое и повышать уровень зарплаты. Благодаря тому, что я прошел весь путь от веб-дизайнера до руководителя отдела разработки, я знал весь цикл создания сайтов. Зарплата на тот момент составляла $1000.
+
+mixin profile2(value = false)
     section.profile.section
         .profile__wrapper
             .section__container
@@ -37,8 +92,71 @@ mixin profile(value = false)
         .section__container.profile__conclusion
             .section__row
                 .section__content
-                    h3.profile__conclusion-title Выводы после марафона
                     .profile__conclusion-card.card.card_pink
                         .card__inner.profile__conclusion-inner
-                            p.card__description В 2003 году, на 3 курсе института сокурсник пристроил меня на первую работу веб-программистом, но приходилось также выполнять обязанности верстальщика. После нее я успел поработать веб-дизайнером, интернет-маркетологом, руководителем отдела разработки. На каждом этапе я старался изучать что-то новое и повышать уровень зарплаты.
-                            p.card__description Благодаря тому, что я прошел весь путь от веб-дизайнера до руководителя отдела разработки, я знал весь цикл создания сайтов. Зарплата на тот момент составляла $1000.
+                            h3.profile__conclusion-title Старт в сайтах
+                            p.card__description В 2005 году у меня было много свободного времени на работе. В тот момент я решил сделать небольшой строительный портал. Статьи писали мои коллеги — технологи в лакокрасочной компании и моя девушка (ставшая впоследствии женой). На сайте был каталог строительных компаний, на нем я планировал зарабатывать предлагая размещаться прямым рекламодателям. В свободное время ездил по строительным рынкам и предлагал разместить рекламу на моем портале, но в результате переговоров получал заказы на изготовление сайтов.
+                            p.card__description Через несколько месяцев я наткнулся на Google Adsense и кейс Shoe Money, зарегистрировался и в первый день работы получил $5. Воодушевленный таким способом пассивного заработка я стал делать небольшие MFA сайты (сайты, созданные целенаправленно только для заработка в системе контекстной рекламы Google AdSense).
+                            .card__inner.profle__card-inner.profile__quote
+                                h3.card__title.profile__card-title На занятиях стало понятно, как правильно выбрать перспективную нишу, как собрать семантическое ядро, как быстро составлять ТЗ для авторов
+                            h3.profile__conclusion-title Команда и будущее проекта
+                            ul.profile__list
+                                li.profile__list-item Онлайн команда — это мой бессменный КМ-помощница и несколько авторов, с которыми работаем 2-3 года. 
+                                li.profile__list-item Оффлайн — редактор/корректор, плюс какие-то сайты курирует жена 
+                                li.profile__list-item В ближайшем будущем планирую найти менеджера проектов, которому можно будет полностью поручить координацию работы на одном или двух сайтах
+                            h3.profile__conclusion-title Выводы после марафона
+                            p.card__description В 2003 году, на 3 курсе института сокурсник пристроил меня на первую работу веб-программистом, но приходилось также выполнять обязанности верстальщика. После нее я успел поработать веб-дизайнером, интернет-маркетологом, руководителем отдела разработки. На каждом этапе я старался изучать что-то новое и повышать уровень зарплаты. Благодаря тому, что я прошел весь путь от веб-дизайнера до руководителя отдела разработки, я знал весь цикл создания сайтов. Зарплата на тот момент составляла $1000.
+
+mixin profile3(value = false)
+    section.profile.section
+        .profile__wrapper
+            .section__container
+                .section__row
+                    .profile__content
+                        .profile__img
+                            div(data-parallax data-z="1")
+                                picture(data-depth-x=".2")
+                                    source(srcset="./img/" + value.img + ".webp" type="image/webp")
+                                    img(class="profile__member" src="./img/" + value.img + ".png" alt="Майк Майерс, участник марафона")
+                            div(class="profile__parallax profile__parallax_chevron" data-parallax)
+                                img(data-depth="1" src="./img/sprites/sprite.svg#parallax-chevron-white" alt="Parallax chrevon")
+                            div(class="profile__parallax profile__parallax_dots" data-parallax)
+                                img(data-depth-x="1" data-depth-y=".75" src="./img/sprites/sprite.svg#parallax-profile-dots" alt="Parallax dots")
+                            div(class="profile__parallax profile__parallax_up" data-parallax)
+                                img(data-depth="-1" src="./img/sprites/sprite.svg#parallax-up" alt="Parallax up")
+                        .profile__info
+                            h2.section__title.profile__title Айдар Уаликеев
+                            .profile__card.card.card_pink
+                                .card__inner.profile__card-inner
+                                    h3.card__title.profile__card-title У меня уже были знания в области сайтов, но Марафон разложил все по полочкам и позволил заработать в разы больше
+                                    p.profile__beforeafter <span class='profile__beforeafter-item profile__beforeafter-item_red'>Было 80 000 руб/мес</span><span class="profile__beforeafter-item profile__beforeafter-item_green">Стало 250 000 руб/мес</span>
+        .line-block.line-block_profile
+            .section__container
+                ul.section__row.line-block__row
+                    .line-block__list.line-block__wrp
+                        li.line-block__item
+                            h3.line-block__title Бесконечное развитие
+                            p.line-block__description Необходимо постоянно учиться, чтобы быть в курсе свежих трендов и не оказаться за бортом
+                        li.line-block__item
+                            h3.line-block__title Не бойся делиться информацией и помогать другим
+                            p.line-block__description Если ты уже достиг того уровня, когда тебе есть чем поделиться - делись. Земля круглая и сделанное тобой добро обязательно вернется
+                        li.line-block__item
+                            h3.line-block__title Одному не справиться
+                            p.line-block__description Если хочешь больше успевать в жизни и быстро расти, больше делегируй и автоматизируй
+        .section__container.profile__conclusion
+            .section__row
+                .section__content
+                    .profile__conclusion-card.card.card_pink
+                        .card__inner.profile__conclusion-inner
+                            h3.profile__conclusion-title Старт в сайтах
+                            p.card__description В 2005 году у меня было много свободного времени на работе. В тот момент я решил сделать небольшой строительный портал. Статьи писали мои коллеги — технологи в лакокрасочной компании и моя девушка (ставшая впоследствии женой). На сайте был каталог строительных компаний, на нем я планировал зарабатывать предлагая размещаться прямым рекламодателям. В свободное время ездил по строительным рынкам и предлагал разместить рекламу на моем портале, но в результате переговоров получал заказы на изготовление сайтов.
+                            p.card__description Через несколько месяцев я наткнулся на Google Adsense и кейс Shoe Money, зарегистрировался и в первый день работы получил $5. Воодушевленный таким способом пассивного заработка я стал делать небольшие MFA сайты (сайты, созданные целенаправленно только для заработка в системе контекстной рекламы Google AdSense).
+                            .card__inner.profle__card-inner.profile__quote
+                                h3.card__title.profile__card-title На занятиях стало понятно, как правильно выбрать перспективную нишу, как собрать семантическое ядро, как быстро составлять ТЗ для авторов
+                            h3.profile__conclusion-title Команда и будущее проекта
+                            ul.profile__list
+                                li.profile__list-item Онлайн команда — это мой бессменный КМ-помощница и несколько авторов, с которыми работаем 2-3 года. 
+                                li.profile__list-item Оффлайн — редактор/корректор, плюс какие-то сайты курирует жена 
+                                li.profile__list-item В ближайшем будущем планирую найти менеджера проектов, которому можно будет полностью поручить координацию работы на одном или двух сайтах
+                            h3.profile__conclusion-title Выводы после марафона
+                            p.card__description В 2003 году, на 3 курсе института сокурсник пристроил меня на первую работу веб-программистом, но приходилось также выполнять обязанности верстальщика. После нее я успел поработать веб-дизайнером, интернет-маркетологом, руководителем отдела разработки. На каждом этапе я старался изучать что-то новое и повышать уровень зарплаты. Благодаря тому, что я прошел весь путь от веб-дизайнера до руководителя отдела разработки, я знал весь цикл создания сайтов. Зарплата на тот момент составляла $1000.

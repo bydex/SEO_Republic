@@ -241,7 +241,7 @@
         width: 100%;
     }
     &__title-wrp {
-        margin-bottom: 32px;
+        margin-bottom: rem(32);
     }
     &__title {
         @media (max-width: $break_md) {
@@ -275,9 +275,9 @@
     }
     &__paragraph {
         @media (max-width: $break_md) {
-            font-size: 16px;
+            font-size: rem(16);
         }
-        margin-bottom: 29px;
+        margin-bottom: rem(29);
     }
     &__img {
         @media (max-width: $break_md) {
@@ -288,19 +288,19 @@
     &__main-img-wrp {
         @media (max-width: $break_md) {
             display: block;
-            max-width: 300px;
+            max-width: rem(300);
         }
         display: none;
         position: relative;
-        top: 49px;
+        top: rem(49);
         z-index: -1;
-        margin-top: -49px;
+        margin-top: rem(-49);
         margin-left: auto;
         margin-right: auto;
     }
     &__main-img {
         max-width: 100%;
-        width: 225px;
+        width: rem(225);
     }
     &__form-wrapper {
         @media (max-width: $break_md) {
@@ -358,13 +358,13 @@
     }
     &__field {
         &::placeholder {
-            font-size: 14px;
+            font-size: rem(14);
         }
     }
     &__counter {
         @include md(display, inline);
         display: none;
-        font-size: 18px;
+        font-size: rem(18);
         font-weight: 900;
         color: $black;
     }
@@ -372,21 +372,21 @@
 
 .modal-sign-up {
     &__container {
-        padding: 49px 48px;
+        padding: rem(49) rem(48);
         background-color: $accordeon;
         max-width: rem(352);
         text-align: center;
         height: rem(440);
         &_agree {
-            padding-top: 32px;
-            padding-bottom: 32px;
+            padding-top: rem(32);
+            padding-bottom: rem(32);
         }
     }
     &__svg-wrp {
-        margin-bottom: 32px;
+        margin-bottom: rem(32);
     }
     &__svg {
-        max-width: 72px;
+        max-width: rem(72);
     }
     &__form {
         padding: 0;
@@ -397,8 +397,8 @@
         padding: 0;
     }
     &__accept {
-        width: 120px;
-        height: 120px;
+        width: rem(120);
+        height: rem(120);
         background-color: $green;
         border-radius: 50%;
         background-image: url(#{$sprite}tick);
@@ -408,16 +408,16 @@
         margin: 0 auto;
     }
     &__title {
-        @include md(font-size, 22px);
+        @include md(font-size, rem(22));
         font-size: rem(24);
-        margin-bottom: 10px;
+        margin-bottom: rem(10);
     }
     &__subtitle {
-        font-size: 14px;
+        font-size: rem(14);
         color: $light-brack;
     }
     &_mb-large {
-        margin-bottom: 24px;
+        margin-bottom: rem(24);
     }
     &__btn {
         fill: $red;

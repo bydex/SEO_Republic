@@ -68,8 +68,8 @@
             padding: rem(18) rem(15);
         }
         @media (max-width: $break_sm) {
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: rem(10);
+            padding-bottom: rem(10);
         }
     }
     &__label {
