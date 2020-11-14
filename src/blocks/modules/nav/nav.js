@@ -56,9 +56,6 @@ $(document).ready(() => {
         })
      });
 
-     navbarHeight = navbar.innerHeight();
-     $('body').css('padding-top', navbarHeight / 16 + 'rem');
-
     $(window).scroll(() => {
 
         if (!navbar.hasClass('nav_fixed')) {

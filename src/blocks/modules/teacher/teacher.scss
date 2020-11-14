@@ -39,14 +39,6 @@
                 max-height: 100%;
             }
         }
-        // &:before {
-        //     content: '';
-        //     width: 377px;
-        //     height: 60px;
-        //     position: absolute;
-        //     bottom: -60px;
-        //     background-color: $shadow;
-        // }
     }
     &__info {
         @include col;

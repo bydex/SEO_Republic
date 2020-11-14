@@ -18,7 +18,7 @@
     }
 
     &__container {
-        // @include container();
+        @include container();
         padding-top: rem(30);
         position: relative;
     }
@@ -53,7 +53,9 @@
     &__info {
         @include col();
         @include size(7);
-        padding-left: 40px;
+        @include size-lg(12);
+        @include lg(padding-left, 0);
+        padding-left: rem(40);
         // @include size(7);
         // @include shift-right(1);
 
@@ -61,7 +63,6 @@
         // @include shift-lg-right(0);
         @include lg(margin-bottom, rem(40));
 
-        @include size-sm(12);
 
         display: flex;
         flex-direction: column;
@@ -74,6 +75,7 @@
     }
     &__title {
         // @include h2();
+        @include sm(font-size, rem(27));
         font-size: rem(38);
         margin-bottom: rem(25);
         text-transform: uppercase;
@@ -92,7 +94,6 @@
     &__description {
         @include col();
         @include size(9);
-
         @include size-lg(10);
 
         @include size-md(6);
@@ -109,94 +110,108 @@
             margin-left: 0;
             width: 100%;
         }
+        @media (max-width: $break_sm) {
+            height: 100%;
+        }
         @include col();
-        @include size(4);
+        @include size(5);
         @include size-lg(12);
         display: flex;
         justify-content: center;
+        height: rem(355);
     }
-    &__cover {
-        // @include lg(display, none);
-        // @include xl(right, rem(-130));
-        // @include xl(top, 180px);
-        // @include xl(background-size, 80%);
-        // position: absolute;
-        // width: 100%;
-        // height: 100%;
-        // background-image: url('../img/notebook-vid-label.png');
-        // background-repeat: no-repeat;
-        // background-position: top;
-        // background-position-x: 110%;
+    &__video {
+        @media (max-width: $break_lg) {
+            display: flex;
+            justify-content: center;
+        }
+        width: 100%;
+        position: relative;
     }
-    &__img {
-        position: absolute;
-        right: 0;
-        top: 0;
-        // position: absolute;
-        // top: -240px;
-        // right: -90%;
-
-        // @media (max-width: $break_xl) {
-        //     right: rem(-170);
-        // }
-        // @media (max-width: $break_lg) {
-        //     display: none;
-        // }
-        // max-width: rem(620);
-        // position: absolute;
-        // top: 13%;
-        // right: rem(-80);
+    &__image {
+        @media (max-width: $break_xl) {
+            right: rem(-16);
+        }
+        @media (max-width: $break_lg) {
+            top: inherit;
+            right: inherit;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        @media (max-width: $break_md) {
+            max-width: rem(550);
+        }
+        @media (max-width: $break_sm) {
+            max-width: rem(310);
+        }
+        position: relative;
+        top: rem(-50);
+        right: rem(65);
     }
     &__img-mob {
         @include lg(display, block);
         display: none;
         max-width: 100%;
     }
-    &__knowing {
-        z-index: 10;
+    &__link-wrp {
+        @media (max-width: $break_xl) {
+            right: 9%;
+        }
+        @media (max-width: $break_lg) {
+            right: 50%;
+            left: 50%;
+            transform: inherit;
+            transform: translate(-50%, -50%);
+        }
+        @media (max-width: $break_md) {
+            top: 39%;
+        }
+        @media (max-width: $break_sm) {
+            top: 40%;
+        }
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        transform: translateY(-50%);
+        right: 25%;
     }
     &__link {
-        // @media (max-width: $break_md) {
-        //     top: 50%;
-        //     right: 50%;
-        //     bottom: 50%;
-        //     left: 50%;
-        //     transform: translate(-50%, -50%);
-        //     width: rem(60);
-        //     height: rem(60);
-        // }
+        @media (max-width: $break_lg) {
+            top: rem(10);
+            left: rem(-35);
+        }
+        @include sm(left, rem(-17));
         @include sm(width, rem(36));
         @include sm(height, rem(36));
-        @include sm(top, rem(-17));
-        @include sm(left, rem(-17));
         display: inline-block;
         width: rem(72);
         height: rem(72);
         border-radius: 50%;
-        position: absolute;
-        top: rem(-36);
-        left: rem(-35);
-    }
-    &__link-wrp_mob {
-        @include lg(display, inherit);
-        display: none;
-        left: 50%;
-        position: absolute;
-        right: 50%;
-        top: 50%;
-        bottom: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        top: rem(25);
     }
     &__link-wrp_desk {
         position: absolute;
-        right: 130px;
-        top: 360px;
+        right: rem(130);
+        top: rem(360);
+    }
+    &__knowing {
+        @media (max-width: $break_xl) {
+            left: rem(-206);
+        }
+        @media (max-width: $break_lg) {
+            right: 50%;
+            left: 50%;
+            top: 0;
+        }
+        @media (max-width: $break_sm) {
+            top: rem(-30);
+        }
+        position: absolute;
+        bottom: rem(-12);
+        left: rem(-277);
     }
     &__knowing-wrp {
-        // @media (max-width: $break_xl) {
-        //     right: rem(360);
-        //     top: rem(508);
-        // }
         @media (max-width: $break_lg) {
             display: block;
             width: rem(293);
@@ -239,13 +254,7 @@
         @media (max-width: $break_xs) {
             top: rem(-28);
         }
-        display: none;
-        position: absolute;
         width: rem(311);
-        // top: rem(510);
-        // right: rem(450);
-        top: 86%;
-        right: 237px;
         transform: rotate(-4deg);
 
         background-color: white;

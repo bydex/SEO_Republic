@@ -33,7 +33,6 @@ block variables
 block content
 	header.header(id="about")
 		include ../blocks/modules/nav/nav
-		.header__cover(class="wow animate__fadeInRight" data-wow-duration="1s")
 		.header__link-wrp.header__link-wrp_desk
 			a.header__link(href="#")
 		.header__container
@@ -46,15 +45,16 @@ block content
 							<span class="btn__right-icon">
 								+icon('btn-arrow')
 							</span>
-				.header__video-wrp
-					.header__video
-						img.header__img-mob(src="img/notebook-vid-mod.png", alt="Ноутбук" class="wow animate__fadeInRight" data-wow-duration="1s")
-						.header__link-wrp.header__link-wrp_mob
-							a.header__link(href="#")
-					.header__knowing
-						.header__knowing-wrp
-							p.header__paragraph Узнайте все о курсе <span>за одну минуту</span>
-					img(src="img/notebook-vid-label.png", alt="")
+				.header__video-wrp(class="wow animate__fadeIn19Right" data-wow-duration="1s")
+					.header__video.js-right
+						picture
+							source(srcset='./img/notebook-vid-mod.png' type="image/png" media="(max-width: 992px)")
+							img.header__image(src='./img/notebook-vid.png')
+						.header__knowing
+							.header__knowing-wrp
+								p.header__paragraph Узнайте все о курсе <span>за одну минуту</span>
+						.header__link-wrp
+							a.header__link(href="#" data-micromodal-trigger="modal-3")
 	main
 		+history()
 		+result()
