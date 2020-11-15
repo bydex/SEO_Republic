@@ -326,6 +326,7 @@
     }
     &__input {
         @media (max-width: $break_lg) {
+            flex-direction: row;
             margin-left: 0;
             margin-right: 0;
         }

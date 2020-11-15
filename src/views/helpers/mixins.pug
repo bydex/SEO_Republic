@@ -1,4 +1,4 @@
-mixin icon(iconName, className = '', vb = '')
+mixin icon(iconName, className = '', vb = false)
     svg(class=`icon-sprite ${className}`, viewbox=vb)
         use(xlink:href=`./img/sprites/sprite.svg#${iconName}`)
 

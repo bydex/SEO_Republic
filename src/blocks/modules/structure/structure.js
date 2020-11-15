@@ -49,7 +49,7 @@ $(document).ready(() => {
         prevArrow: $(".structure__arrow_left"),
         nextArrow: $(".structure__arrow_right"),
         asNavFor: ".structure__dots",
-        infinite: false
+        infinite: false,
     });
     sliderDots.slick({
         asNavFor: '.structure__slides',
@@ -62,4 +62,32 @@ $(document).ready(() => {
         autoplay: true,
         autoplaySpeed: 3000
     })
+
+    function structureTabs() {
+        sliderMain.on('afterChange', function(e, slick, indexSlider) {
+            var structureTabs = $('.structure__tabs-item'),
+                structureTabsActive = 'structure__tabs-item_active';
+
+            structureTabs.each(function(index, el) {
+                if ($(this).hasClass(structureTabsActive)) {
+                    $(this).removeClass(structureTabsActive);
+                }
+                if (index === indexSlider) {
+                    $(this).addClass(structureTabsActive);
+                }
+            });
+        });
+    }
+    
+    var breakPoint = 768;
+
+    $(window).resize(function() {
+        if ($(window).width() > breakPoint) {
+            structureTabs()
+        };
+    });
+
+    if ($(window).width > breakPoint) {
+        structureTabs();
+    }
 })

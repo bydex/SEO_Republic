@@ -244,4 +244,23 @@
         }
         will-change: fill;
     }
+    &__tabs {
+        @include md(display, none)
+    }
+    &__tabs-list {
+        position: absolute;
+        top: rem(120);
+        left: 0;
+    }
+    &__tabs-item {
+        font-weight: 500;
+        font-size: rem(26);
+        display: none;
+    }
+    &__tabs-item_active {
+        display: block;
+    }
+    &__content {
+        position: relative;
+    }
 }

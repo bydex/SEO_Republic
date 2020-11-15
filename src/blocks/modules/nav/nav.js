@@ -54,21 +54,19 @@ $(document).ready(() => {
                 localStorage.setItem("link", navItem.eq(el).attr("href")); //теперь у вас в localStorage хранится ключ "myKey" cо значением "myValue"
             }
         })
-     });
+    });
+
+    // navbarHeight = navbar.innerHeight();
+    // $('#about').css('padding-top', navbarHeight / 16 + 'rem');
 
     $(window).scroll(() => {
-
-        if (!navbar.hasClass('nav_fixed')) {
-            navbarHeight = navbar.innerHeight();
-        }
 
         let scrolled = $(window).scrollTop();
 
         if (scrolled >= navbarHeight) {
-            $('body').css('padding-top', navbarHeight / 16 + 'rem');
+            
             navbar.addClass('nav_fixed');
         } else {
-            $('body').css("padding-top", 0);
             navbar.removeClass('nav_fixed');
         }
 

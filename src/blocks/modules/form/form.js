@@ -78,6 +78,7 @@ $(document).ready(function() {
             if (btn.hasClass('modal-reg__btn') && windowWidth < breakPoint) {
                 var form = btn.closest('form'),
                     inputs = form.find('input');
+                    MicroModal.close('modal-1');
                     MicroModal.close('modal-2');
                     MicroModal.show('modal-4');
 
@@ -123,7 +124,9 @@ $(document).ready(function() {
         var nav = $('.nav');
 
         MicroModal.close('modal-5');
-        nav.removeClass('nav_menu_active')
+        if ($(nav).hasClass('nav_menu_active')) {
+            nav.removeClass('nav_menu_active');
+        }
     })    
 
 });
