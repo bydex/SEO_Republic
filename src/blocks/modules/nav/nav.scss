@@ -3,14 +3,14 @@
         top: rem(20);
         bottom: rem(20);
     }
-    display: none;
-    @include md(display, block);
     &_header {
         @include lg(width, 100%);
         @include lg(padding-top, rem(14));
         @include lg(padding-bottom, rem(14));
         @include lg(background-color, $white);
         @include lg(box-shadow, 0 rem(4) rem(4) rgba($color: $red, $alpha: .2));
+        display: none;
+        @include md(display, block);
     }
     &_fixed {
         position: fixed;

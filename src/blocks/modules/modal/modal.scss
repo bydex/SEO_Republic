@@ -352,12 +352,15 @@
     }
     &__btn {
         @include md(margin-top, rem(32));
-        display: inherit;
+        display: inline-block;
         width: 100%;
         max-width: rem(304);
         margin: {
             right: auto;
             left: auto;
+        }
+        .master-class {
+            @include md(display,none);
         }
     }
     &__field {

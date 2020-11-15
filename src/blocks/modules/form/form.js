@@ -56,7 +56,7 @@ $(document).ready(function() {
     }
 
     function filedForm(th) {
-        buildChip(3000, "Один из полей введен не верно!", "red");
+        buildChip(3000, "Одно из полей введено не верно!", "red");
         th.addClass("form_fail");
         setTimeout(() => {
             th.removeClass("form_fail");
