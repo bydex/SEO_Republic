@@ -65,9 +65,11 @@
     }
     &__teacher-wrapper {
         z-index: 1;
-
         img {
+            display: block;
             max-width: 100%;
+            width: rem(377);
+            margin: 0 auto;
         }
     }
     &__parallax {
@@ -86,6 +88,9 @@
             max-width: rem(145);
         }
         &_worm {
+            @include lg(right, rem(-20));
+            @include md(right, rem(-50));
+            @include sm(right, rem(-32));
             top: 68%;
             right: 0;
             max-width: rem(115);

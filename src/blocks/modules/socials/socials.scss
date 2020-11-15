@@ -1,6 +1,9 @@
 .socials {
     @include md(text-align, center);
     &__links {
+        @media (max-width: $break_sm) {
+            flex-direction: column;
+        }
         @include md(justify-content, center);
        display: flex;
        flex-flow: row wrap;
@@ -15,7 +18,21 @@
             right: rem(10);
         }
     }
+    &__link + &__link {
+        @include sm(margin-top, rem(16));
+    }
     &__title {
+        @media (max-width: $break_md) {
+            margin-bottom: rem(8);
+            text-align: left;
+        }
         margin-bottom: rem(8);
+        text-align: left;
+    }
+    &__subtitle {
+        @media (max-width: $break_md) {
+            text-align: left;
+        }
+        text-align: left;
     }
 }

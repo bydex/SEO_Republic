@@ -9,13 +9,12 @@
     }
 
     &__info {
-        @include lg(display, none);
         &:before {
             content: 'i';
         }
         position: absolute;
         top: 50%;
-        right: rem(15);
+        right: rem(25);
         z-index: 1;
         transform: translate3d(0,-50%,0);
         width: rem(24);
@@ -51,7 +50,7 @@
     &__field {
         display: block;
         width: 100%;
-        max-width: none;
+        text-align: center;
         padding: rem(15) rem(15);
         outline: 0;
         border: {
@@ -67,6 +66,16 @@
             }
             padding: rem(18) rem(15);
         }
+        @media (max-width: $break_sm) {
+            padding-top: rem(10);
+            padding-bottom: rem(10);
+        }
+    }
+    &__label {
+        position: relative;
+    }
+    &__label + &__label {
+        margin-top: rem(12);
     }
     &__btn {
         position: absolute;
@@ -89,11 +98,6 @@
         }
         &_medium {
             max-width: rem(270);
-        }
-    }
-    &_btn {
-        .input__info {
-            right: rem(120);
         }
     }
     &_blue {

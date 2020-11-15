@@ -1,27 +1,43 @@
+import 'micromodal';
 import buildChip from '../chip/chip';
 $(document).ready(function() {
-	//E-mail Ajax Send
-    $("form button").click(function(e) { //Change
-        e.preventDefault();
-        var th = $(this).closest('form'),
-            valuePhone = th.find('.input__field').val(),
-            slicePhone = () => {
-                let underscore = valuePhone.indexOf('_');
 
-                if (underscore === -1) {
-                    return valuePhone;
-                } else {
-                    return valuePhone.slice(0,underscore);
+    function checkValueLength(element) {
+        var boolean = false,
+            inputs = element;
+
+        inputs.each(function(index, el) {
+            var input = $(el);
+            if (input.type === 'tel') {
+                if (input.val().length !== 16) {
+                    boolean = true;
                 }
-            };
+            } else if (input.val().length === 0) {
+                boolean = true;
+            }
+        });
+        return boolean;
+    }
 
-        let formData = {
-            phone: slicePhone(),
-            moves: th.data('activity'),
-        }
-        console.log(formData)
-        if (formData.phone.length === 16) {
-            buildChip(3000, "Заявка обрабатывается.", "yellow");
+    function getElByType(el, type) {
+        var inputs = el,
+            value = undefined;
+        
+        inputs.each(function(index, el) {
+            if (el.name === type) {
+                value = $(el).val()
+            };
+        });
+        return value;
+    }
+
+    function sendForm(obj) {
+        var formData = obj.formData,
+            th = obj.th,
+            inputs = obj.inputs,
+            inputsValue = obj.inputsValue;
+
+        buildChip(3000, "Заявка обрабатывается.", "yellow");
             $.ajax({
                 type: "POST",
                 url: "mail.php", //Change
@@ -37,13 +53,80 @@ $(document).ready(function() {
                 }, 1000);
             });
             return false;
-        } else {
-            buildChip(3000, "Телефон введен неверно!", "red");
-            th.addClass("form_fail");
-            setTimeout(() => {
-                th.removeClass("form_fail");
-            }, 300);
+    }
+
+    function filedForm(th) {
+        buildChip(3000, "Один из полей введен не верно!", "red");
+        th.addClass("form_fail");
+        setTimeout(() => {
+            th.removeClass("form_fail");
+        }, 300);
+    }
+
+    var breakPoint = 768;
+
+	//E-mail Ajax Send
+    $("form button").click(function(e) { //Change
+        e.preventDefault();
+
+        var windowWidth = $(window).width(),
+            btn = $(e.target),
+            btnModalParent = btn.closest('.modal').attr('id'),
+            btnForm = btn.closest('form'),
+            btnInputs = btnForm.find('input');
+
+            if (btn.hasClass('modal-reg__btn') && windowWidth < breakPoint) {
+                var form = btn.closest('form'),
+                    inputs = form.find('input');
+                    MicroModal.close('modal-1');
+                    MicroModal.close('modal-2');
+                    MicroModal.show('modal-4');
+
+                if (btnModalParent === 'modal-4') {
+                    if (checkValueLength(btnInputs) === false) {
+                        formData = {
+                            moves: btnForm.data('activity'),
+                            name: getElByType(btnInputs, 'name'),
+                            email: getElByType(btnInputs, 'email'),
+                            phone: getElByType(btnInputs, 'phone'),
+                        }
+                        MicroModal.close('modal-4');
+                        MicroModal.show('modal-5');
+                    } else {
+                        filedForm(btnForm);
+                    }
+                } 
+            } else {
+                var th = $(this).closest('form'),
+                inputs = th.find('input'),
+                inputsValue = checkValueLength(inputs),
+                formData;
+    
+                if (!inputsValue) {
+                    formData = {
+                        moves: th.data('activity'),
+                        name: getElByType(inputs, 'name'),
+                        email: getElByType(inputs, 'email'),
+                        phone: getElByType(inputs, 'phone'),
+                    }
+                }
+        
+                if (!inputsValue) {
+                    sendForm({th, inputs, inputsValue, formData});
+                } else {
+                    filedForm(th);
+                }
+            }
+
+    });
+
+    $('#modal-5 button').click(function(e) {
+        var nav = $('.nav');
+
+        MicroModal.close('modal-5');
+        if ($(nav).hasClass('nav_menu_active')) {
+            nav.removeClass('nav_menu_active');
         }
-	});
+    })    
 
 });

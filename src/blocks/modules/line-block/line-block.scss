@@ -1,17 +1,36 @@
 .line-block {
+    @media (max-width: $break_lg) {
+        margin-right: rem(15);
+        margin-left: rem(15);
+    }
+    @media (max-width: $break_md) {
+        margin-bottom: rem(20);
+    }
     padding: {
         top: rem(60);
         bottom: rem(60);
     };
     margin-bottom: rem(100);
-    color: $white;
-    background-color: $red;
-    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+    color: $black;
+    text-align: center;
+    // clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
 
-    @media (max-width: $break_md) {
-        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    // @media (max-width: $break_md) {
+    //     clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    // }
+    &__row {
+        background-color: $white;
+        box-shadow: 0 rem(4) rem(48) #FFE2DD;
+        border-radius: rem(16);
+        padding: {
+            top: rem(52);
+            bottom: rem(52);
+        }
     }
-
+    &__wrp {
+        width: 100%;
+        display: flex;
+    }
     &_profile {
         @include lg(margin-top, rem(-50));
         @include md(margin-top, 0);
@@ -30,19 +49,55 @@
             right: auto;
         }
     }
+    &__item + &__item {
+        @media (max-width: $break_md) {
+            margin-top: rem(40);
+        }
+    }
 
     &__item {
         @include col();
-        @include size(4);
-        @include size-md(7);
-        @include size-sm(10);
-        @include size-xs(12);
-        @include md(margin-bottom, rem(40));
+        // @include size(4);
+        // @include size-md(7);
+        // @include size-sm(10);
+        // @include size-xs(12);
+        // @include md(margin-bottom, rem(40));
         @include xl(padding-left, rem(0));
         @include xl(padding-right, rem(0));
         padding: {
-            left: rem(15);
-            right: rem(15);
+            left: rem(14);
+            right: rem(14);
+        }
+        &:first-child, &:last-child {
+            @media (max-width: $break_md) {
+                width: 80%;
+            }
+            width: calc(31.25% - 1.875rem);
+        }
+        &:nth-child(2) {
+            @media (max-width: $break_md) {
+                width: 80%;
+            }
+            width: calc(37.5% - 1.875rem);
+        }
+        position: relative;
+        &:not(:last-child):after {
+            @media (max-width: $break_md) {
+                width: 100%;
+                height: rem(1);
+                bottom: rem(-20);
+                left: 0;
+                right: 0;
+                top: inherit;
+            }
+            content: '';
+            display: inline-block;
+            width: rem(1);
+            height: 100%;
+            background-color: $red;
+            position: absolute;
+            right: rem(-15);
+            top: 0;
         }
 
         &:last-child {
@@ -50,6 +105,9 @@
         }
     }
     &__title {
+        @media (max-width: $break_md) {
+
+        }
         @include h3();
         margin-bottom: rem(15);
 

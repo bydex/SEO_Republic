@@ -1,80 +1,84 @@
-section.section.result
-    .section__container
-        .section__row
-            .section__content
-                h3.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) какие результаты вы получите?
-        .result__wrapper.card.card_pink
-            .result__items
-                - i = .6;
-                .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
-                    .result__parallax-scene
-                        div(data-parallax data-z="2")
-                            picture(data-depth-x='.2' data-z="1")
-                                source(srcset="./img/result-surface.webp" type="image/webp")
-                                img(src="./img/result-surface.png" class="result__img" alt="Статьи после курса")
-                        div(data-parallax class="result__parallax result__parallax_dots")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-surface-dots" data-depth-y='1' data-depth-x='-.5' alt="")
-                        div(data-parallax class="result__parallax result__parallax_bottom")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-surface-bottom" data-depth-y='.1' data-depth-x='-.5' alt="")
-                        span.result__img-circle-wrapper.result__img-circle-wrapper_1(data-parallax)
-                            span.result__img-circle.result__img-circle_1(data-depth="1")
-                        span.result__img-circle-wrapper.result__img-circle-wrapper_2(data-parallax)
-                            span.result__img-circle.result__img-circle_2(data-depth=".5")
-                        span.result__img-circle-wrapper.result__img-circle-wrapper_3(data-parallax)
-                            span.result__img-circle.result__img-circle_3(data-depth="0.3")
-                    .result__item.card.card_bg_gradient
-                        .card__inner.result__inner
-                            h4.result__item-title Готовый сайт с первыми статьями после курса
-                    h3.result__title 1 месяц
-                .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
-                    .result__parallax-scene
-                        div(data-parallax data-z="2")
-                            picture(data-depth='-.2' data-z="1")
-                                source(srcset="./img/result-hands.webp" type="image/webp")
-                                img(src="./img/result-hands.png" class="result__img" alt="Статьи после курса")
-                        div(data-parallax class="result__parallax result__parallax_hands-dots")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-dots" data-depth-y='-.5' data-depth-x='.5' alt="")
-                        div(data-parallax class="result__parallax result__parallax_hands-bottom")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-bottom" data-depth-y='.1' data-depth-x='-.5' alt="")
-                        div(data-parallax class="result__parallax result__parallax_right")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-right" data-depth-y='-.5' data-depth-x='-.2' alt="")
-                        div(data-parallax class="result__parallax result__parallax_left")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-left" data-depth-y='.5' data-depth-x='-.2' alt="")
-                    .result__item.card.card_bg_gradient
-                        .card__inner.result__inner
-                            h4.result__item-title Получите первых посетителей и первые деньги
-                    h3.result__title 6 месяц
-                .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
-                    .result__parallax-scene
-                        div(data-parallax data-z="2")
-                            picture(data-depth-x='1' data-z="1")
-                                source(srcset="./img/result-grow.webp" type="image/webp")
-                                img(src="./img/result-grow.png" class="result__img" alt="Статьи после курса")
-                        div(data-parallax class="result__parallax result__parallax_grow-dots")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-dots" data-depth='-1' alt="")
-                        div(data-parallax class="result__parallax result__parallax_grow-left")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-grow-left" data-depth-x='1' alt="")
-                        div(data-parallax class="result__parallax result__parallax_grow-right")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-grow-right" data-depth-x='1' alt="")
-                    .result__item.card.card_bg_gradient
-                        .card__inner.result__inner
-                            h4.result__item-title Стремительный рост трафика и доходов
-                    h3.result__title 1 год
-                .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
-                    .result__parallax-scene
-                        div(data-parallax data-z="2")
-                            picture(data-depth-x='.2' data-z="1")
-                                source(srcset="./img/result-man.webp" type="image/webp")
-                                img(src="./img/result-man.png" class="result__img" alt="Статьи после курса")
-                        div(data-parallax class="result__parallax result__parallax_man-dots")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-dots" data-depth-y='1' alt="")
-                        div(data-parallax class="result__parallax result__parallax_man-bottom")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-man-bottom" data-depth-y='-.5' data-depth-x='.5' alt="")
-                        div(data-parallax class="result__parallax result__parallax_man-chevron")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#parallax-chevron-white" data-depth-y='1' data-depth-x='.5' alt="")
-                        div(data-parallax class="result__parallax result__parallax_man-up")
-                            img(class=`icon-sprite` src="./img/sprites/sprite.svg#parallax-up" data-depth-y='-.5' data-depth-x='.5' alt="")
-                    .result__item.card.card_bg_gradient
-                        .card__inner.result__inner
-                            h4.result__item-title Масштабирование, рост в доходах и дальнейшее развитие
-                    h3.result__title 2 Года
+mixin result()
+    -
+        var
+            i = .6;
+    section.section.result
+        .section__container
+            .section__row
+                .section__content
+                    h3.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) какие результаты вы получите?
+            .result__wrapper.card.card_pink
+                .result__items
+                    - i = .6;
+                    .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
+                        .result__parallax-scene
+                            div(data-parallax data-z="2")
+                                picture(data-depth-x='.2' data-z="1")
+                                    source(srcset="./img/result-surface.webp" type="image/webp")
+                                    img(src="./img/result-surface.png" class="result__img" alt="Статьи после курса")
+                            div(data-parallax class="result__parallax result__parallax_dots")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-surface-dots" data-depth-y='1' data-depth-x='-.5' alt="")
+                            div(data-parallax class="result__parallax result__parallax_bottom")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-surface-bottom" data-depth-y='.1' data-depth-x='-.5' alt="")
+                            span.result__img-circle-wrapper.result__img-circle-wrapper_1(data-parallax)
+                                span.result__img-circle.result__img-circle_1(data-depth="1")
+                            span.result__img-circle-wrapper.result__img-circle-wrapper_2(data-parallax)
+                                span.result__img-circle.result__img-circle_2(data-depth=".5")
+                            span.result__img-circle-wrapper.result__img-circle-wrapper_3(data-parallax)
+                                span.result__img-circle.result__img-circle_3(data-depth="0.3")
+                        .result__item.card.card_bg_gradient
+                            .card__inner.result__inner
+                                h4.result__item-title.result_font_regular Готовый сайт с первыми статьями после курса
+                        h3.result__title 1 месяц
+                    .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
+                        .result__parallax-scene
+                            div(data-parallax data-z="2")
+                                picture(data-depth='-.2' data-z="1")
+                                    source(srcset="./img/result-hands.webp" type="image/webp")
+                                    img(src="./img/result-hands.png" class="result__img" alt="Статьи после курса")
+                            div(data-parallax class="result__parallax result__parallax_hands-dots")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-dots" data-depth-y='-.5' data-depth-x='.5' alt="")
+                            div(data-parallax class="result__parallax result__parallax_hands-bottom")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-bottom" data-depth-y='.1' data-depth-x='-.5' alt="")
+                            div(data-parallax class="result__parallax result__parallax_right")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-right" data-depth-y='-.5' data-depth-x='-.2' alt="")
+                            div(data-parallax class="result__parallax result__parallax_left")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-left" data-depth-y='.5' data-depth-x='-.2' alt="")
+                        .result__item.card.card_bg_gradient
+                            .card__inner.result__inner
+                                h4.result__item-title.result_font_regular Получите первых посетителей и первые деньги
+                        h3.result__title 6 месяц
+                    .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
+                        .result__parallax-scene
+                            div(data-parallax data-z="2")
+                                picture(data-depth-x='1' data-z="1")
+                                    source(srcset="./img/result-grow.webp" type="image/webp")
+                                    img(src="./img/result-grow.png" class="result__img" alt="Статьи после курса")
+                            div(data-parallax class="result__parallax result__parallax_grow-dots")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-dots" data-depth='-1' alt="")
+                            div(data-parallax class="result__parallax result__parallax_grow-left")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-grow-left" data-depth-x='1' alt="")
+                            div(data-parallax class="result__parallax result__parallax_grow-right")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-grow-right" data-depth-x='1' alt="")
+                        .result__item.card.card_bg_gradient
+                            .card__inner.result__inner
+                                h4.result__item-title.result_font_regular Стремительный рост трафика и доходов
+                        h3.result__title 1 год
+                    .result__item-wrapper(class="wow animate__fadeInUp" data-wow-duration=`${i=i+.4}s`)
+                        .result__parallax-scene
+                            div(data-parallax data-z="2")
+                                picture(data-depth-x='.2' data-z="1")
+                                    source(srcset="./img/result-man.webp" type="image/webp")
+                                    img(src="./img/result-man.png" class="result__img" alt="Статьи после курса")
+                            div(data-parallax class="result__parallax result__parallax_man-dots")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-hands-dots" data-depth-y='1' alt="")
+                            div(data-parallax class="result__parallax result__parallax_man-bottom")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#result-man-bottom" data-depth-y='-.5' data-depth-x='.5' alt="")
+                            div(data-parallax class="result__parallax result__parallax_man-chevron")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#parallax-chevron-white" data-depth-y='1' data-depth-x='.5' alt="")
+                            div(data-parallax class="result__parallax result__parallax_man-up")
+                                img(class=`icon-sprite` src="./img/sprites/sprite.svg#parallax-up" data-depth-y='-.5' data-depth-x='.5' alt="")
+                        .result__item.card.card_bg_gradient
+                            .card__inner.result__inner
+                                h4.result__item-title.result_font_regular Масштабирование, рост в доходах и дальнейшее развитие
+                        h3.result__title 2 Года

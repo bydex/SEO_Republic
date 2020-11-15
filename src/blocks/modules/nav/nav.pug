@@ -8,7 +8,8 @@ nav.nav.nav_header(data-nav)
                     span
                 h4.nav__control-title
             .nav__logo-wrapper
-                +icon('logo', 'nav__logo')
+                a(href="#")
+                    +icon('logo', 'nav__logo')
             a.nav__control(class=`ga${g+=1}` href="tel:77473331538")
                 +icon('phone', 'nav__control-icon')
                 h4.nav__control-title Вызов
@@ -21,7 +22,7 @@ nav.nav.nav_header(data-nav)
                                     +icon('btn-arrow')
                                 </span>
                 a.nav__btn.btn.btn_theme_transparent.btn_size_normal(class=`ga${g+=1}` href='tel:77473331538') +7 (747) 333 15 38
-                button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-1") Записаться
+                button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-2") Записаться
                     <span class="btn__right-icon">
                         +icon('btn-arrow')
                     </span>

@@ -19,10 +19,15 @@
                         form.form.modal__form(data-activity="Мастер класс")
                             +timer('form__timer',0,0,0,'master')
                             .form__input.input.input_blue.input_size_normal.modal__input
-                                span.input__info
-                                input.input__field(placeholder="Ваш номер телефона" required)
-                            button.modal__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=`ga${g+=1}`) Записаться на
-                                <span class="master-class">мастер-класс
+                                label.input__label( for="")
+                                    input.input__field(placeholder="Ваше полное имя" name="name" type="text" required)
+                                label.input__label(for="")
+                                    input.input__field(placeholder="Адрес электронной почты" name="email" type="email" required)
+                                label.input__label(for="")
+                                    span.input__info
+                                    input.input__field(placeholder="Номер телефона" name="phone" type="tel" required)
+                            button.modal__btn.modal-reg__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=`ga${g+=1}`) Записаться на 
+                                <span class="master-class">&nbsp;мастер-класс
                                     <span class="btn__right-icon">
                                         +icon('btn-arrow')
                                     </span>
@@ -30,11 +35,90 @@
                                 <span class="master-class master-class_mobile">МК</span>
                             +icon('logo', 'modal__logo')
 
+#modal-2.modal.modal-reg.micromodal-slide(aria-hidden='true')
+  .modal__overlay(tabindex='-1', data-micromodal-close='')
+    .modal__section
+        .modal__row
+            .modal__container.modal-reg__container.card.card_pink(role='dialog', aria-modal='true')
+                button.modal__close(aria-label='Close modal', data-micromodal-close='')
+                        +icon('close', 'modal__close-icon')
+                .modal-reg__title-wrp
+                    h2.section__title.modal-reg__title ЗАРЕГИСТРИРУЙТЕСЬ
+                    h3.section__subtitle.modal-reg__subtitle и получите бесплатно
+                .modal-reg__items
+                    .modal-reg__item
+                        p.modal-reg__paragraph <span class="modal-reg__counter">1. </span>Чек-лист по созданию информационного сайта.
+                        img.modal-reg__img(src="./img/folder-1.png", alt="")
+                    .modal-reg__item
+                        p.modal-reg__paragraph <span class="modal-reg__counter">2. </span>3 видеоурока с первыми шагами в сайтах.
+                        img.modal-reg__img(src="./img/folder-2.png", alt="")
+                    .modal-reg__item
+                        p.modal-reg__paragraph <span class="modal-reg__counter">3. </span>10 лучших материалов из Базы Знаний.
+                        img.modal-reg__img(src="./img/folder-3.png", alt="")
+                    .modal-reg__main-img-wrp
+                        img.modal-reg__main-img(src="./img/folder-1.png", alt="")
+                .modal-reg__form-wrapper
+                    form.form.modal-reg__form(data-activity="Регистрация")
+                        .modal-reg__input.input.input_red
+                            label.input__label.modal-reg__label( for="")
+                                input.input__field.modal-reg__field(placeholder="Ваше полное имя" name="name" type="text" required)
+                            label.input__label.modal-reg__label(for="")
+                                input.input__field.modal-reg__field(placeholder="Адрес электронной почты" name="email" type="email" required)
+                            label.input__label.modal-reg__label(for="")
+                                span.input__info
+                                input.input__field.modal-reg__field(placeholder="Номер телефона" name="phone" type="tel" required)
+                        <button class="modal-reg__btn btn btn_theme_filled btn_size_normal ga7">Получить доступ
+                            <span class="btn__right-icon">
+                                +icon('btn-arrow')
+                            </span>
+                        </button>
+                            
 
-#modal-2.modal.micromodal-slide(aria-hidden='true')
+
+
+#modal-3.modal.micromodal-slide(aria-hidden='true')
   .modal__overlay(tabindex='-1', data-micromodal-close='')
     .modal__section
         .modal__row
             .modal__container.modal__container_video(role='dialog', aria-modal='true')
                 .video
                     iframe(width="560" height="315" data-src="https://youtube.com/embed/ub374Fhs-8Y?enablejsapi=1&" data-video="false" allowfullscreen)
+
+
+include ../../../../node_modules/bemto.pug/bemto.pug
++b.modal-sign-up.modal.micromodal-slide(id="modal-4" aria-hidden='true')
+    +e.overlay.modal__overlay(tabindex='-1', data-micromodal-close='')
+        +e.container.card.card_pink(role='dialog', aria-modal='true')
+            +e.top
+                +e.svg-wrp
+                    +icon('logo', 'modal-sign-up__svg', '0 0 92 72')
+            +e.bottom
+                form.form.modal-sign-up__form(data-activity="Регистрация")
+                    .modal-reg__input.input.input_red.form_flex.modal-sign-up__form-wrp
+                        label.input__label.modal-sign-up__label( for="")
+                            input.input__field.modal-reg__field(placeholder="Ваше полное имя" name="name" type="text" required)
+                        label.input__label.modal-sign-up__label(for="")
+                            input.input__field.modal-reg__field(placeholder="Адрес электронной почты" name="email" type="text" required)
+                        label.input__label.modal-sign-up__label(for="")
+                            span.input__info
+                            input.input__field.modal-reg__field(placeholder="Номер телефона" name="phone" type="tel" required)
+                        button.modal-reg__btn.btn.btn_theme_filled.btn_size_normal.ga7 записаться на курс
+                            <span class="btn__right-icon">
+                                +icon('btn-arrow')
+                            </span>
+                            
++b.modal-sign-up.modal.micromodal-slide(id="modal-5" aria-hidden='true')
+    +e.overlay.modal__overlay(tabindex='-1', data-micromodal-close='')
+        +e.container._agree.card.card_pink(role='dialog', aria-modal='true')
+            +e.agree
+                +e.top.modal-sign-up_mb-large.svg-wrp
+                    +icon('logo', 'modal-sign-up__svg', '0 0 92 72')
+                +e.bottom
+                    +e.accept.modal-sign-up_mb-large
+                    +e.H2.title Спасибо за заявку!
+                    +e.p.subtitle.modal-sign-up_mb-large Наш менеджер свяжется с вами в течение 15 минут
+                    button.modal-sign-up__btn.btn.btn_theme_white.btn_size_normal.ga7 На главную
+                        <span class="btn__right-icon">
+                                +icon('btn-arrow')
+                        </span>
+        

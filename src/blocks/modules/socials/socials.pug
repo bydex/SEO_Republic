@@ -4,8 +4,12 @@ section.socials.section
             .section__content
                 - i = 1;
                 h2.section__title.socials__title(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.2}s`) ОСТАЛИСЬ ВОПРОСЫ?
-                h3.section__subtitle(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.2}s`) Мы вам непременно ответим
+                h3.section__subtitle.socials__subtitle(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.2}s`) Мы вам непременно ответим
                 ul.socials__links(class="wow animate__fadeInLeft" data-wow-duration=`${i=i+.2}s`)
+                    li.socials__link
+                        a.btn.btn_theme_insta.btn_size_normal(class=`ga${g+=1}` href="https://wa.me/79101510855")
+                            +icon('insta', 'btn__icon')
+                            |   Instagram
                     li.socials__link
                         a.btn.btn_theme_whatsapp.btn_size_normal(class=`ga${g+=1}` href="https://wa.me/79101510855")
                             +icon('whatsapp', 'btn__icon')

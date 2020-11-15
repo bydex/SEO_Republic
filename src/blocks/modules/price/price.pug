@@ -1,65 +1,53 @@
--
-    let courseList = {
-        blue: [
-            'Получите важные знания в области продвижения информационных вебсайтов',
-            'Узнаете о лучших проффесиональных инструментах',
-            'Сможете поучаствовать в розыгрыше бесплатного курса',
-        ],
-        red: [
-            '23 видео-урока + 126 документов',
-            'Проверка домашних заданий',
-            'Поддержка куратора 5 месяцев',
-            'Доступ в закрытую группу ВКонтакте',
-            'Практическая дипломная работа',
-        ]
-    };
+mixin price()
+    -
+        let courseList = {
+            blue: [
+                'Получите важные знания в области продвижения информационных вебсайтов',
+                'Узнаете о лучших проффесиональных инструментах',
+                'Сможете поучаствовать в розыгрыше бесплатного курса',
+            ],
+            red: [
+                '23 видео-урока + 126 документов',
+                'Проверка домашних заданий',
+                'Поддержка куратора 5 месяцев',
+                'Доступ в закрытую группу ВКонтакте',
+                'Практическая дипломная работа',
+            ]
+        };
 
-section.price.section(id="price")
-    .section__container
-        .section__row
-            .section__content
-                h2.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) Стоимость КУРСа
-                .price__courses
-                    .price__course.course.course_blue(class="wow animate__fadeInUp" data-wow-duration=`1.5s`)
-                        .course__header
-                            .course__info
-                                h3.course__title Мастер-класс
-                                h4.course__subtitle Бесплатно!
-                        .course__inner
-                            ul.list.course__list
-                                each val, index in courseList.blue
-                                    li.list__item
-                                        +icon('check', 'list__icon')
-                                        p.list__details= val
-                            +timer('course__timer', '0', '0', '0', 'course')
-                            .timer-mobile.course__timer-mobile(data-type="course") Начало: <span data-mobile-month>0</span> <span data-mobile-year>0</span>, <span data-mobile-time>0</span>
-                            form.form.course__form(data-activity="Мастер класс")
-                                .form__input.course__input.input.input_size_medium
-                                    span.input__info
-                                    input.input__field.course__field(placeholder="Ваш номер телефона" required)
-                                button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Записаться на <span class="master-class">мастер-класс</span><span class="master-class master-class_mobile">МК</span>
-                                    <span class="btn__right-icon">
-                                        +icon('btn-arrow')
-                                    </span>
-                    .price__course.course.course_red(class="wow animate__fadeInUp" data-wow-duration=`2s`)
-                        .course__header
-                            .course__info
-                                h3.course__title Курс «SEO President»
-                        .course__inner
-                            .course__body
+    section.price.section(id="price")
+        .section__container
+            .section__row
+                .section__content
+                    h2.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) Стоимость КУРСа
+                    .price__courses
+                        .price__course.course.course_blue(class="wow animate__fadeInUp" data-wow-duration=`1.5s`)
+                            .course__header
+                                .course__info
+                                    h3.course__title Мастер-класс
+                                    h4.course__subtitle Бесплатно!
+                            .course__inner
                                 ul.list.course__list
-                                    each val, index in courseList.red
+                                    each val, index in courseList.blue
                                         li.list__item
                                             +icon('check', 'list__icon')
                                             p.list__details= val
-                            .course__footer
-                                +timer('course__timer',0,0,0,'master')
-                                .timer-mobile.course__timer-mobile(data-type="master") Начало: <span data-mobile-month>0</span> <span data-mobile-year>0</span>, <span data-mobile-time>0</span>
-                                form.form.course__form(data-activity="Курс «SEO President»")
-                                    .form__input.course__input.input.input_size_medium
-                                        span.input__info
-                                        input.input__field.course__field(placeholder="Ваш номер телефона" required)
-                                    button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Узнать цену
-                                        <span class="btn__right-icon">
-                                            +icon('btn-arrow')
-                                        </span>
+                                button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-1")
+                                    |   Записаться
+                                    span.btn__right-icon
+                                        +icon('btn-arrow')
+                        .price__course.course.course_red(class="wow animate__fadeInUp" data-wow-duration=`2s`)
+                            .course__header
+                                .course__info
+                                    h3.course__title Курс «SEO President»
+                            .course__inner
+                                .course__body
+                                    ul.list.course__list
+                                        each val, index in courseList.red
+                                            li.list__item
+                                                +icon('check', 'list__icon')
+                                                p.list__details= val
+                                button.form__send.course__btn.btn.btn_theme_filled.btn_theme_red.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-2") Узнать цену
+                                    <span class="btn__right-icon">
+                                        +icon('btn-arrow')
+                                    </span>

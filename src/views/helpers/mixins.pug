@@ -1,5 +1,5 @@
-mixin icon(iconName, className = '')
-    svg(class=`icon-sprite ${className}`)
+mixin icon(iconName, className = '', vb = false)
+    svg(class=`icon-sprite ${className}`, viewbox=vb)
         use(xlink:href=`./img/sprites/sprite.svg#${iconName}`)
 
 mixin webp(imgName, type = 'jpg', className = '')

@@ -87,7 +87,7 @@
     }
     &__title {
         @include h3();
-        margin-bottom: rem(18);
+        margin-bottom: rem(18); 
     }
     &__description {
         @include h4();
@@ -106,7 +106,7 @@
         @include md(margin-bottom, rem(-60));
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
     &__form-wrapper {
         @include col();
@@ -120,7 +120,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: rem(48) rem(38);
+        padding: rem(36) rem(38);
         background-color: rgba($color: $white, $alpha: .65);
         border: {
             width: rem(1);
@@ -140,11 +140,16 @@
     &__logo {
         max-width: rem(54);
         max-height: rem(58);
-        margin-top: rem(35);
+        margin-top: rem(24);
     }
     &__input {
+        @media (max-width: $break_md) {
+            display: none;
+        }
         width: 100%;
         max-width: none;
+        display: flex;
+        flex-direction: column;
     }
     &__btn {
         width: 100%;
@@ -168,8 +173,11 @@
         }
 
         @media (max-width: $break_md) {
-            top: rem(25);
-            right: rem(15);
+            // top: rem(25);
+            // right: rem(15);
+            right: 50%;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
             border: {
@@ -219,6 +227,204 @@
             fill: none;
             stroke: $red;
         }
+    }
+}
+
+.modal-reg {
+    &__container {
+        @media (max-width: $break_md) {
+            padding-bottom: 0;
+            padding-right: rem(45);
+            padding-left: rem(45);
+            text-align: center;
+        }
+        padding: rem(35) rem(48);
+        padding-bottom: 0;
+        max-width: rem(833);
+        width: 100%;
+    }
+    &__title-wrp {
+        margin-bottom: rem(32);
+    }
+    &__title {
+        @media (max-width: $break_md) {
+            margin-bottom: 0;
+            text-align: center;
+            font-size: rem(18);
+        }
+        margin-bottom: 0;
+    }
+    &__subtitle {
+        @media (max-width: $break_md) {
+            font-size: rem(16);
+        }
+        margin-bottom: 0;
+        color: $red;
+    }
+    &__items {
+        @include row-flex();
+        @media (max-width: $break_md) {
+            position: relative;
+        }
+    }
+    &__item {
+        @include col();
+        @include size(4);
+        @include size-md(12);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__paragraph {
+        @media (max-width: $break_md) {
+            font-size: rem(16);
+        }
+        margin-bottom: rem(29);
+    }
+    &__img {
+        @media (max-width: $break_md) {
+            display: none;
+        }
+        max-width: 100%;
+    }
+    &__main-img-wrp {
+        @media (max-width: $break_md) {
+            display: block;
+            max-width: rem(300);
+        }
+        display: none;
+        position: relative;
+        top: rem(49);
+        z-index: -1;
+        margin-top: rem(-49);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__main-img {
+        max-width: 100%;
+        width: rem(225);
+    }
+    &__form-wrapper {
+        @media (max-width: $break_md) {
+            margin-right: rem(-45);
+            margin-left: rem(-45);
+        }
+        margin-right: rem(-48);
+        margin-left: rem(-48);
+    }
+    &__form {
+        @media (max-width: $break_md) {
+            padding-right: rem(15);
+            padding-left: rem(15);
+        }
+        background: rgba($white, 0.65);
+        padding-top: rem(24);
+        padding-left: rem(48);
+        padding-right: rem(48);
+        padding-bottom: rem(24);
+    }
+    &__input {
+        @media (max-width: $break_lg) {
+            flex-direction: row;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        margin: {
+            left: rem(-5);
+            right: rem(-5);
+        }
+        max-width: 100%;
+        padding-bottom: rem(24);
+    }
+    &__label {
+        @include md(display, none);
+        width: calc(33.33333% - #{rem(10)});
+        margin: {
+            left: rem(5);
+            right: rem(5);
+        }
+    }
+    &__label + &__label {
+        margin-top: 0;
+    }
+    &__btn {
+        @include md(margin-top, rem(32));
+        display: inherit;
+        width: 100%;
+        max-width: rem(304);
+        margin: {
+            right: auto;
+            left: auto;
+        }
+    }
+    &__field {
+        &::placeholder {
+            font-size: rem(14);
+        }
+    }
+    &__counter {
+        @include md(display, inline);
+        display: none;
+        font-size: rem(18);
+        font-weight: 900;
+        color: $black;
+    }
+}
+
+.modal-sign-up {
+    &__container {
+        padding: rem(49) rem(48);
+        background-color: $accordeon;
+        max-width: rem(352);
+        text-align: center;
+        height: rem(440);
+        &_agree {
+            padding-top: rem(32);
+            padding-bottom: rem(32);
+        }
+    }
+    &__svg-wrp {
+        margin-bottom: rem(32);
+    }
+    &__svg {
+        max-width: rem(72);
+    }
+    &__form {
+        padding: 0;
+        margin: 0;
+    }
+    &__form-wrp {
+        margin: 0;
+        padding: 0;
+    }
+    &__accept {
+        width: rem(120);
+        height: rem(120);
+        background-color: $green;
+        border-radius: 50%;
+        background-image: url(#{$sprite}tick);
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 auto;
+    }
+    &__title {
+        @include md(font-size, rem(22));
+        font-size: rem(24);
+        margin-bottom: rem(10);
+    }
+    &__subtitle {
+        font-size: rem(14);
+        color: $light-brack;
+    }
+    &_mb-large {
+        margin-bottom: rem(24);
+    }
+    &__btn {
+        fill: $red;
     }
 }
 

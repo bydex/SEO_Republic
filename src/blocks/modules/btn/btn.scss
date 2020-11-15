@@ -23,7 +23,7 @@
     border: {
         width: rem(1);
         style: solid;
-        radius: rem(4);
+        radius: rem(8);
     }
     transition: {
         property: color, background-color;
@@ -82,6 +82,20 @@
                 fill: $white;
             }
         }
+        &_insta {
+            display: inline-flex;
+            align-items: center;
+            background: {
+                color: $insta;
+            };
+            color: $white;
+            fill: $white;
+
+            &:hover {
+                background-color: rgba($color: $insta, $alpha: .8);
+                fill: $white;
+            }
+        }
         &_blue {
             background-color: $blue;
             color: $white;
@@ -96,6 +110,26 @@
             position: absolute;
             top: rem(24);
             right: rem(30);
+        }
+        &_red {
+            background-color: $red;
+            border-color: $red;
+
+            &:hover {
+                color: $white;
+                fill: $white;
+                background-color: rgba($color: $red, $alpha: .85);
+            }
+        }
+        &_white {
+            background-color: #fff;
+            border-color: #fff;
+            color: red;
+            &:hover {
+                color: $white;
+                fill: $white;
+                background-color: rgba($color: $red, $alpha: .85);
+            }
         }
     }
     &_size {

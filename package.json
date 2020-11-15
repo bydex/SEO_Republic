@@ -75,6 +75,7 @@
         "babel-plugin-transform-object-assign": "^6.22.0",
         "before-after": "^2.0.4",
         "before-after.js": "^1.0.1",
+        "bemto.pug": "^2.1.0",
         "core-js": "2",
         "easytimer": "^1.1.1",
         "imaskjs": "^1.1.1",

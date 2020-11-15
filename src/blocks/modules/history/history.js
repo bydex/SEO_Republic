@@ -15,7 +15,7 @@ $(document).ready(() => {
                 {
                   breakpoint: 380,
                   settings: {
-                    slidesToShow: 1.1,
+                    slidesToShow: 1,
                   },
                 },
                 {

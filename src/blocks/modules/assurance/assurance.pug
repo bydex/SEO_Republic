@@ -1,29 +1,30 @@
-section.assurance.section(id="assurance")
-    .section__container
-        .section__row
-            .section__content
-                h2.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) А КАКИЕ ГАРАНТИИ?
-    .assurance__wrapper
+mixin assurance()
+    section.assurance.section(id="assurance")
         .section__container
             .section__row
                 .section__content
-                    .card.card_pink.assurance__card-mobile
-                        .card__inner.assurance__card
-                            .section__row.assurance__row
-                                .assurance__description(class="wow animate__fadeInRight" data-wow-duration=`1.5s`)
-                                    p Если вы изучили все занятия, выполнили все домашние задания, но не получили результат, мы готовы выкупить ваш сайт. Такого у нас пока не было, но вдруг!
-                                .assurance__img-wrapper
-                                    div(data-parallax data-z="1")
-                                        picture(data-depth-x=".2")
-                                            source(srcset="./img/assurance-letter.webp" type="image/webp")
-                                            img(src="./img/assurance-letter.png" class="assurance__img" alt="Гарантия")
-                                    .assurance__parallax.assurance__parallax_chevron(data-parallax)
-                                        img(src="./img/sprites/sprite.svg#parallax-chevron-white" alt="Parallax chevron" data-depth-x="-.5" data-depth-y=".75")
-                                    .assurance__parallax.assurance__parallax_line(data-parallax)
-                                        img(src="./img/sprites/sprite.svg#today-line-mirrored" alt="Parallax line" data-depth-x="1.5" data-depth-y="-2")
-                                    span.assurance__img-circle-wrapper.assurance__img-circle-wrapper_1(data-parallax)
-                                        span.assurance__img-circle.assurance__img-circle_1(data-depth="1")
-                                    span.assurance__img-circle-wrapper.assurance__img-circle-wrapper_2(data-parallax)
-                                        span.assurance__img-circle.assurance__img-circle_2(data-depth=".3")
-                                    span.assurance__img-circle-wrapper.assurance__img-circle-wrapper_3(data-parallax)
-                                        span.assurance__img-circle.assurance__img-circle_3(data-depth="0.1")
+                    h2.section__title(class="wow animate__fadeInLeft" data-wow-duration=`1s`) А КАКИЕ ГАРАНТИИ?
+        .assurance__wrapper
+            .section__container
+                .section__row
+                    .section__content
+                        .card.card_pink.assurance__card-mobile
+                            .card__inner.assurance__card
+                                .section__row.assurance__row
+                                    .assurance__description(class="wow animate__fadeInRight" data-wow-duration=`1.5s`)
+                                        p Если вы изучили все занятия, выполнили все домашние задания, но не получили результат, мы готовы выкупить ваш сайт. Такого у нас пока не было, но вдруг!
+                                    .assurance__img-wrapper
+                                        div(data-parallax data-z="1")
+                                            picture(data-depth-x=".2")
+                                                source(srcset="./img/assurance-letter.webp" type="image/webp")
+                                                img(src="./img/assurance-letter.png" class="assurance__img" alt="Гарантия")
+                                        .assurance__parallax.assurance__parallax_chevron(data-parallax)
+                                            img(src="./img/sprites/sprite.svg#parallax-chevron-white" alt="Parallax chevron" data-depth-x="-.5" data-depth-y=".75")
+                                        .assurance__parallax.assurance__parallax_line(data-parallax)
+                                            img(src="./img/sprites/sprite.svg#today-line-mirrored" alt="Parallax line" data-depth-x="1.5" data-depth-y="-2")
+                                        span.assurance__img-circle-wrapper.assurance__img-circle-wrapper_1(data-parallax)
+                                            span.assurance__img-circle.assurance__img-circle_1(data-depth="1")
+                                        span.assurance__img-circle-wrapper.assurance__img-circle-wrapper_2(data-parallax)
+                                            span.assurance__img-circle.assurance__img-circle_2(data-depth=".3")
+                                        span.assurance__img-circle-wrapper.assurance__img-circle-wrapper_3(data-parallax)
+                                            span.assurance__img-circle.assurance__img-circle_3(data-depth="0.1")

@@ -9,6 +9,45 @@ import $ from 'jquery';
 import { WOW } from "wowjs";
 import Parallax from "parallax-js/dist/parallax";
 import './modernizr';
+// import {offsetfix} from './offsetfix';
+
+$(function() {
+
+    var headerbg = $('.header__wrapper');
+
+    function offsetfix(context) {
+        var item = $('.js-right'),
+            context = context || 'body',
+            siteWidth = $(window).width(),
+            breakPoint = 992;
+
+        $('.js-right', context).each(function (i,e) {
+            $(this).css('margin-right', '');
+            var w = $('body').width();
+            var o = $(this).offset().left;
+            var iw = $(this).width();
+            var d = (w - o - iw) * 2;
+            // $(this).css('margin-right', -d);
+            if (siteWidth > breakPoint) {
+                $(this).css({
+                    'min-width': 507,
+                    'margin-right': -d,
+                });
+            } else {
+                $(this).css({
+                    'min-width': 'inherit',
+                    'margin-right': -d,
+                });
+            }
+        });
+    }
+    
+        $(window).resize(function () {
+            offsetfix(headerbg);
+        });
+
+    offsetfix(headerbg);
+})
 
 $(document).ready(() => {
     let wow = new WOW({
