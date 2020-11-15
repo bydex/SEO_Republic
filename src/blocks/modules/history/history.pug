@@ -8,7 +8,8 @@ mixin history()
                     detail: [
                         'Айдар Уаликеев',
                         '28 лет, Алматы, Казахстан',
-                    ]
+                    ],
+                    link: './profile.html'
                 },
                 {
                     img: 'history-2',
@@ -17,7 +18,8 @@ mixin history()
                     detail: [
                         'Всеволод Козлов',
                         '34 лет, Нур-Султан, Казахстан',
-                    ]
+                    ],
+                    link: './profile2.html'
                 },
                 {
                     img: 'history-3',
@@ -26,7 +28,8 @@ mixin history()
                     detail: [
                         'Виктория Олиярник',
                         '24 года, Усть-Каменегорск, Казахстан',
-                    ]
+                    ],
+                    link: './profile3.html'
                 },
             ]
         let i = .2
@@ -39,7 +42,7 @@ mixin history()
                     .history__items
                         each val, index in histories
                             .history__item.card.card_pink(class="wow animate__slideInUp" data-wow-duration=`${i=i+.4}s`)
-                                a.history__card-wrp(href="")
+                                a.history__card-wrp(href=val.link)
                                     .card__img
                                         +webp(val.img, 'jpg')
                                     .card__inner
