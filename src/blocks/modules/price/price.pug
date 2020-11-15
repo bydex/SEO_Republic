@@ -32,8 +32,10 @@ mixin price()
                                         li.list__item
                                             +icon('check', 'list__icon')
                                             p.list__details= val
-                                button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Записаться на <span class="master-class">мастер-класс</span><span class="master-class master-class_mobile">МК</span>
-                                    <span class="btn__right-icon">
+                                button.form__send.course__btn.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-1")
+                                    |   Записаться
+                                    span.btn__right-icon
+                                        +icon('btn-arrow')
                         .price__course.course.course_red(class="wow animate__fadeInUp" data-wow-duration=`2s`)
                             .course__header
                                 .course__info
@@ -45,7 +47,7 @@ mixin price()
                                             li.list__item
                                                 +icon('check', 'list__icon')
                                                 p.list__details= val
-                                button.form__send.course__btn.btn.btn_theme_filled.btn_theme_red.btn_size_normal(class=`ga${g+=1}`) Узнать цену
+                                button.form__send.course__btn.btn.btn_theme_filled.btn_theme_red.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-2") Узнать цену
                                     <span class="btn__right-icon">
                                         +icon('btn-arrow')
                                     </span>

@@ -41,6 +41,9 @@
             }
         }
     }
+    &__card-wrp {
+        display: block;
+    }
     &__card-img {
         min-height: rem(160);
         @include sm(min-height, rem(130));

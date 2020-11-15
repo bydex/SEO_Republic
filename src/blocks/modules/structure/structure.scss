@@ -48,7 +48,8 @@
         };
         .slick-list {
             width: 100%;
-            @include md(overflow, visible);
+            max-height: 306px;
+            @include md(overflow, auto);
             @media (max-width: $break_md) {
                 position: absolute;
                 left: 0;

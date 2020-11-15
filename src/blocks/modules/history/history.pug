@@ -39,13 +39,14 @@ mixin history()
                     .history__items
                         each val, index in histories
                             .history__item.card.card_pink(class="wow animate__slideInUp" data-wow-duration=`${i=i+.4}s`)
-                                .card__img
-                                    +webp(val.img, 'jpg')
-                                .card__inner
-                                    h3.card__title= val.title
-                                    h4.card__subtitle= val.subtitle
-                                    each value, index in val.detail
-                                        p.card__detail= value
+                                a.history__card-wrp(href="")
+                                    .card__img
+                                        +webp(val.img, 'jpg')
+                                    .card__inner
+                                        h3.card__title= val.title
+                                        h4.card__subtitle= val.subtitle
+                                        each value, index in val.detail
+                                            p.card__detail= value
                         .history__item.history__item_form.card.card_pink.card_bg_transparent(class="wow animate__slideInUp" data-wow-duration=`${i=i+.4}s`)
                             .card__img.history__card-img
                                 +icon('card-icon', className="card__item-svg", vb = "0 0 160 160")

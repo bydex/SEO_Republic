@@ -26,8 +26,8 @@
                                 label.input__label(for="")
                                     span.input__info
                                     input.input__field(placeholder="Номер телефона" name="phone" type="tel" required)
-                            button.modal__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=`ga${g+=1}`) Записаться на
-                                <span class="master-class">мастер-класс
+                            button.modal__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=`ga${g+=1}`) Записаться на 
+                                <span class="master-class">&nbsp;мастер-класс
                                     <span class="btn__right-icon">
                                         +icon('btn-arrow')
                                     </span>
@@ -67,12 +67,12 @@
                             label.input__label.modal-reg__label(for="")
                                 span.input__info
                                 input.input__field.modal-reg__field(placeholder="Номер телефона" name="phone" type="tel" required)
-                            button.modal-reg__btn.btn.btn_theme_filled.btn_size_normal.ga7 Получить доступ
-                                <span class="master-class">
-                                    <span class="btn__right-icon">
-                                        +icon('btn-arrow')
-                                    </span>
-                                </span>
+                        <button class="modal-reg__btn btn btn_theme_filled btn_size_normal ga7">Получить доступ
+                            <span class="btn__right-icon">
+                                +icon('btn-arrow')
+                            </span>
+                        </button>
+                            
 
 
 
@@ -98,15 +98,13 @@ include ../../../../node_modules/bemto.pug/bemto.pug
                         label.input__label.modal-sign-up__label( for="")
                             input.input__field.modal-reg__field(placeholder="Ваше полное имя" name="name" type="text" required)
                         label.input__label.modal-sign-up__label(for="")
-                            input.input__field.modal-reg__field(placeholder="Адрес электронной почты" name="email" type="email" required)
+                            input.input__field.modal-reg__field(placeholder="Адрес электронной почты" name="email" type="text" required)
                         label.input__label.modal-sign-up__label(for="")
                             span.input__info
                             input.input__field.modal-reg__field(placeholder="Номер телефона" name="phone" type="tel" required)
                         button.modal-reg__btn.btn.btn_theme_filled.btn_size_normal.ga7 записаться на курс
-                            <span class="master-class">
-                                <span class="btn__right-icon">
-                                    +icon('btn-arrow')
-                                </span>
+                            <span class="btn__right-icon">
+                                +icon('btn-arrow')
                             </span>
                             
 +b.modal-sign-up.modal.micromodal-slide(id="modal-5" aria-hidden='true')
@@ -119,10 +117,8 @@ include ../../../../node_modules/bemto.pug/bemto.pug
                     +e.accept.modal-sign-up_mb-large
                     +e.H2.title Спасибо за заявку!
                     +e.p.subtitle.modal-sign-up_mb-large Наш менеджер свяжется с вами в течение 15 минут
-                    button.modal-sign-up__btn.btn.btn_theme_white.btn_size_normal.ga7 Получить доступ
-                        <span class="master-class">
-                            <span class="btn__right-icon">
+                    button.modal-sign-up__btn.btn.btn_theme_white.btn_size_normal.ga7 На главную
+                        <span class="btn__right-icon">
                                 +icon('btn-arrow')
-                            </span>
                         </span>
         

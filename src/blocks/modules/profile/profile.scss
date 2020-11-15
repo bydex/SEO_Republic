@@ -1,6 +1,7 @@
 .profile {
     padding-bottom: rem(10);
     position: relative;
+    padding-bottom: rem(100);
     &__content {
         @include md(flex-direction, column);
         @include md(align-items, center);

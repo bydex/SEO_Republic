@@ -9,7 +9,6 @@
     }
 
     &__info {
-        @include lg(display, none);
         &:before {
             content: 'i';
         }

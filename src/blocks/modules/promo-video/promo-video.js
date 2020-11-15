@@ -2,7 +2,11 @@
 import MicroModal from 'micromodal';
 
 MicroModal.init({
+  debugMode: true,
   onShow: (modal) => {
+    // if ($(modal).find('button').hasClass('modal-reg__btn')) {
+    //   modal.stop(stopAll);
+    // }
     $("body, html").addClass("overflow-hidden");
     let video = $(modal).find('iframe');
 

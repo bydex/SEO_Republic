@@ -37,6 +37,7 @@ $(document).ready(() => {
             swapNumberOfLesson();
             dropdown.toggleClass('active');
         })
+        
         mobileBtn.on("focusout", function () {
           dropdown.removeClass("active");
         });
