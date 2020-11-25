@@ -2,6 +2,7 @@ extends ../layouts/default
 include ../helpers/mixins
 
 include ../../blocks/modules/profile/profile
+include ../../blocks/modules/socials/socials
 
 block variables
     - const title = "New Page";
@@ -30,14 +31,13 @@ block variables
         ];
 
 block content
-    header.header.header_no-bg.another-page(id="about")
-        include ../../blocks/modules/nav/nav
+    header.header.header_no-bg.another-page.header_profile(id="about")
     main
         include ../../blocks/modules/modal/modal
         +profile3({
             img: 'profile-3'
         })
-        include ../../blocks/modules/socials/socials
+        +socials
     include ../../blocks/modules/footer/footer
 block scripts
     script.

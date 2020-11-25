@@ -1,6 +1,7 @@
 // IE 11 polyfills
 // import 'core-js/fn/object/assign'
 // import 'core-js/fn/array/find'
+import 'micromodal';
 $(document).ready(() => {
 
     $(window).scrollTop(0);
@@ -104,4 +105,27 @@ $(document).ready(() => {
         }
     })
 
+})
+
+$(function() {
+    var navBtnModal = $('#profile-btn'),
+        navForm = $('.nav-form'),
+        navCloseBtn = $('.nav-form__close');
+
+    if (navForm.length > 0) {
+        navBtnModal.on('click', function() {
+            var windowWidth = $(window).width(),
+                breakPointLg = 992;
+
+            if (windowWidth > breakPointLg) {
+                navForm.addClass('nav_fixed');
+            } else {
+                MicroModal.show('modal-4');
+            }
+        })
+
+        navCloseBtn.on('click', function() {
+            navForm.removeClass('nav_fixed');
+        })
+    }
 })

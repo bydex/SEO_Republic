@@ -36,7 +36,6 @@ $(document).ready(function() {
             th = obj.th,
             inputs = obj.inputs,
             inputsValue = obj.inputsValue;
-
         buildChip(3000, "Заявка обрабатывается.", "yellow");
             $.ajax({
                 type: "POST",
@@ -50,6 +49,10 @@ $(document).ready(function() {
                     // Done Functions
                     th.removeClass("form_success");
                     th.trigger("reset");
+
+                    if (th.closest('nav').length > 0 && th.closest('nav').hasClass('nav-form') && th.closest('nav').hasClass('nav_fixed')) {
+                        th.closest('nav').removeClass('nav_fixed');
+                    }
                 }, 1000);
             });
             return false;
@@ -124,6 +127,7 @@ $(document).ready(function() {
         var nav = $('.nav');
 
         MicroModal.close('modal-5');
+        $('body').style('')
         if ($(nav).hasClass('nav_menu_active')) {
             nav.removeClass('nav_menu_active');
         }

@@ -1,28 +1,72 @@
-nav.nav.nav_header(data-nav)
-    .nav__container
-        .nav__inner
-            .nav__control.nav__control_menu(data-nav-menu)
-                div.nav__control-icon
-                    span
-                    span
-                    span
-                h4.nav__control-title
-            .nav__logo-wrapper
-                a(href="#")
-                    +icon('logo', 'nav__logo')
-            a.nav__control(class=`ga${g+=1}` href="tel:77473331538")
-                +icon('phone', 'nav__control-icon')
-                h4.nav__control-title Вызов
-            .nav__list-wrapper
-                ul.nav__list.nav__list_header
-                    each val, index in nav
-                        li.nav__item
-                            a.nav__link(href=val.href)= val.title
-                                <span class="nav__arrow btn__right-icon">
-                                    +icon('btn-arrow')
-                                </span>
-                a.nav__btn.btn.btn_theme_transparent.btn_size_normal(class=`ga${g+=1}` href='tel:77473331538') +7 (747) 333 15 38
-                button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-2") Записаться
-                    <span class="btn__right-icon">
-                        +icon('btn-arrow')
-                    </span>
+mixin nav({profile = false} = false)
+    nav.nav.nav_header(data-nav)
+        .nav__container
+            .nav__inner
+                .nav__control.nav__control_menu(data-nav-menu)
+                    div.nav__control-icon
+                        span
+                        span
+                        span
+                    h4.nav__control-title
+                .nav__logo-wrapper
+                    a(href="#")
+                        +icon('logo', 'nav__logo')
+                a.nav__control(class=`ga${g+=1}` href="tel:77473331538")
+                    +icon('phone', 'nav__control-icon')
+                    h4.nav__control-title Вызов
+                .nav__list-wrapper
+                    ul.nav__list.nav__list_header
+                        each val, index in nav
+                            li.nav__item
+                                a.nav__link(href=val.href)= val.title
+                                    <span class="nav__arrow btn__right-icon">
+                                        +icon('btn-arrow')
+                                    </span>
+                    a.nav__btn.btn.btn_theme_transparent.btn_size_normal(class=`ga${g+=1}` href='tel:77473331538') +7 (747) 333 15 38
+                    if (profile = true)
+                        button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` id="profile-btn") Записаться
+                            <span class="btn__right-icon">
+                                +icon('btn-arrow')
+                            </span>
+                    else
+                        button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Записаться
+                            <span class="btn__right-icon">
+                                +icon('btn-arrow')
+                            </span>
+
+mixin nav-profile()
+    nav.nav.nav-profile.nav_header(data-nav)
+        .nav__container
+            .nav__inner
+                .nav__control.nav__control_menu(data-nav-menu)
+                    div.nav__control-icon
+                        span
+                        span
+                        span
+                    h4.nav__control-title
+                .nav__logo-wrapper
+                    a(href="#")
+                        +icon('logo', 'nav__logo')
+                a.nav__control(class=`ga${g+=1}` href="tel:77473331538")
+                    +icon('phone', 'nav__control-icon')
+                    h4.nav__control-title Вызов
+                .nav__list-wrapper.nav-profile__list-wrapper
+                    a.nav__btn.btn.btn_theme_transparent.btn_size_normal(class=`ga${g+=1}` href='tel:77473331538') +7 (747) 333 15 38
+                    button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-4") Записаться
+                        <span class="btn__right-icon">
+                            +icon('btn-arrow')
+                        </span>
+
+mixin nav-form()
+    nav.nav.nav-form
+        form.input.input_btn.nav-form__input(data-activity="Хочу также")
+            .nav-form__input-wrp
+                label.input__label.nav-form__label( for="")
+                    input.input__field.nav-form__field(placeholder="Ваше полное имя" name="name" type="text" required)
+                label.input__label.nav-form__label(for="")
+                    input.input__field.nav-form__field(placeholder="Адрес электронной почты" name="email" type="email" required)
+                label.input__label.nav-form__label(for="")
+                    span.input__info
+                    input.input__field.nav-form__field(placeholder="Номер телефона" name="phone" type="tel" required)
+                button.btn.nav-form__btn.btn_theme_filled.btn_size_normal.ga7 Хочу также!
+                div.nav-form__close

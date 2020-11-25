@@ -1,7 +1,9 @@
 extends ../layouts/default
 include ../helpers/mixins
 
+include ../../blocks/modules/nav/nav
 include ../../blocks/modules/profile/profile
+include ../../blocks/modules/socials/socials
 
 block variables
     - const title = "New Page";
@@ -31,13 +33,20 @@ block variables
 
 block content
     header.header.header_no-bg.another-page(id="about")
-        include ../../blocks/modules/nav/nav
+        +nav-profile()
+        //- include ../../blocks/modules/nav/nav
+        .header__svg-logo-wrp.header-profile__svg
+            a(href="./index.html")
+                +icon('logo', 'header__svg-logo', '0 0 92 72')
     main
         include ../../blocks/modules/modal/modal
         +profile1({
             img: 'profile-1'
         })
-        include ../../blocks/modules/socials/socials
+        +socials
+        +b.sign-up
+            +e.wrp
+                +e.btn.btn.btn_theme_filled.btn_size_normal.ga7(data-micromodal-trigger="modal-4") Хочу так же!
     include ../../blocks/modules/footer/footer
 block scripts
     script.

@@ -196,32 +196,42 @@ h3 {
         color: $shadow;
         radius: rem(8);
     }
-    &:after {
+    &:before, &:after {
         content: '';
-        position: absolute;
-        top: calc(100% - #{rem(5)});
-        left: 50%;
-        z-index: -1;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: {
-            width: rem(10);
-            style: solid;
-            color: transparent;
+            position: absolute;
+            left: 50%;
+            z-index: -1;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: {
+                width: rem(10);
+                style: solid;
+                color: transparent;
+            }
+            border-right: {
+                width: rem(10);
+                style: solid;
+                color: transparent;
+            }
+            border-top: {
+                width: rem(15);
+                style: solid;
+                color: $white;
+            }
+            border-radius: rem(4);
+            filter: drop-shadow(rem(2) rem(4) rem(10) rgba($color: black, $alpha: .1));
+    }
+    &_top {
+        &:after {
+            top: calc(100% - #{rem(5)});
         }
-        border-right: {
-            width: rem(10);
-            style: solid;
-            color: transparent;
+    }
+    &_bottom {
+        &:after {
+            bottom: calc(100% - #{rem(5)});
+            transform: translateX(-50%) rotate(180deg);
         }
-        border-top: {
-            width: rem(15);
-            style: solid;
-            color: $white;
-        }
-        border-radius: rem(4);
-        filter: drop-shadow(rem(2) rem(4) rem(10) rgba($color: black, $alpha: .1));
     }
 }
 
@@ -248,4 +258,25 @@ h3 {
   to {
     stroke-dashoffset: 300;
   }
+}
+
+.sign-up__btn {
+    width: 231px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.sign-up {
+    @media (max-width: $break_md) {
+        display: flex;
+    }
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: {
+        top: rem(8);
+        bottom: rem(8);
+    }
+    background-color: #fff7f6;
 }
