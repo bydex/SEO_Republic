@@ -1,6 +1,7 @@
 extends ../layouts/default
 include ../helpers/mixins
 
+include ../../blocks/modules/nav/nav
 include ../../blocks/modules/profile/profile
 include ../../blocks/modules/socials/socials
 
@@ -32,7 +33,12 @@ block variables
         ];
 
 block content
-    header.header.header_no-bg.another-page.header_profile(id="about")
+    header.header.header_no-bg.another-page(id="about")
+        +nav-profile()
+        //- include ../../blocks/modules/nav/nav
+        .header__svg-logo-wrp.header-profile__svg
+            a(href="./index.html")
+                +icon('logo', 'header__svg-logo', '0 0 92 72')
     main
         include ../../blocks/modules/modal/modal
         +profile1({
