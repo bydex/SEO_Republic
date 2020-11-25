@@ -1,5 +1,8 @@
 .socials {
     @include md(text-align, center);
+    @media (max-width: $break_sm) {
+        padding-bottom: rem(8);
+    }
     &__links {
         @media (max-width: $break_sm) {
             flex-direction: column;
@@ -23,6 +26,8 @@
     }
     &__title {
         @media (max-width: $break_md) {
+            font-size: rem(28);
+            line-height: rem(33);
             margin-bottom: rem(8);
             text-align: left;
         }
@@ -31,6 +36,8 @@
     }
     &__subtitle {
         @media (max-width: $break_md) {
+            font-size: rem(21);
+            line-height: rem(25);
             text-align: left;
         }
         text-align: left;

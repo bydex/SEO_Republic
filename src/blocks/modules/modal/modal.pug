@@ -28,11 +28,10 @@
                                     input.input__field(placeholder="Номер телефона" name="phone" type="tel" required)
                             button.modal__btn.modal-reg__btn.form__send.btn.btn_theme_blue.btn_size_normal(class=`ga${g+=1}`) Записаться на 
                                 <span class="master-class">&nbsp;мастер-класс
-                                    <span class="btn__right-icon">
-                                        +icon('btn-arrow')
-                                    </span>
                                 </span>
-                                <span class="master-class master-class_mobile">МК</span>
+                                <span class="btn__right-icon">
+                                        +icon('btn-arrow')
+                                </span>
                             +icon('logo', 'modal__logo')
 
 #modal-2.modal.modal-reg.micromodal-slide(aria-hidden='true')
@@ -60,7 +59,7 @@
                 .modal-reg__form-wrapper
                     form.form.modal-reg__form(data-activity="Регистрация")
                         .modal-reg__input.input.input_red
-                            label.input__label.modal-reg__label( for="")
+                            label.input__label.modal-reg__label(for="")
                                 input.input__field.modal-reg__field(placeholder="Ваше полное имя" name="name" type="text" required)
                             label.input__label.modal-reg__label(for="")
                                 input.input__field.modal-reg__field(placeholder="Адрес электронной почты" name="email" type="email" required)

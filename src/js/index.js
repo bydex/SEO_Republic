@@ -95,24 +95,51 @@ window.onscroll = checkImages;
 $(document).ready(function(){
     if ($('.input__info').length > 0) {
         $('.input__info').hover(function(event){
-            var titleText = "Мы напишем вам в WhatsApp";
+            var titleText = "Мы напишем вам в WhatsApp",
+                coordinateY,
+                coordinateX = event.pageX + "px";
 
+            if (event.clientY < 70) {
+                coordinateY = event.pageY + 75 + "px";
+            } else {
+                coordinateY = event.pageY - 5 + "px";
+            }
             $('<span class="tooltip">Мы напишем вам в WhatsApp</span>')
               .text(titleText)
               .appendTo("body")
-              .css("top", event.pageY - 5 + "px")
-              .css("left", event.pageX + 20 + "px")
+              .css("top", coordinateY)
+              .css("left", coordinateX)
               .fadeIn("slow");
         },function(){
-
+            console.log(event.clientY < 70)
             $(".tooltip").fadeOut("slow");
             setTimeout(() => {
                 $(".tooltip").remove();
             },100)
         }).mousemove(function(event){
+            var coordinateY,
+                coordinateX = event.pageX + "px";
+
+            if (event.clientY < 70) {
+                coordinateY = event.pageY + 75 + "px";
+                var tooltip = $('.tooltip');
+
+                if (!tooltip.hasClass('tooltip_bottom')) {
+                    tooltip.addClass('tooltip_bottom');
+                }
+            } else {
+                coordinateY = event.pageY - 15 + "px";
+
+                var tooltip = $('.tooltip');
+
+                if (!tooltip.hasClass('tooltip_top')) {
+                    tooltip.addClass('tooltip_top');
+                }
+            }
+
             $(".tooltip")
-              .css("top", event.pageY - 20 + "px")
-              .css("left", event.pageX + "px");
+              .css("top", coordinateY)
+              .css("left", coordinateX);
         });
     }
 });

@@ -351,13 +351,16 @@
         margin-top: 0;
     }
     &__btn {
-        @include md(margin-top, rem(32));
-        display: inherit;
+        margin-top: 32px;
+        display: inline-block;
         width: 100%;
         max-width: rem(304);
         margin: {
             right: auto;
             left: auto;
+        }
+        .master-class {
+            @include md(display,none);
         }
     }
     &__field {
@@ -379,6 +382,10 @@
         padding: rem(49) rem(48);
         background-color: $accordeon;
         max-width: rem(352);
+        margin: {
+            right: 15px;
+            left: 15px;
+        }
         text-align: center;
         height: rem(440);
         &_agree {
@@ -425,6 +432,9 @@
     }
     &__btn {
         fill: $red;
+    }
+    &__label {
+        width: 100%;
     }
 }
 

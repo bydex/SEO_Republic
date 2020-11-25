@@ -346,6 +346,18 @@
     }
 }
 
+.header-profile {
+    @media (max-width: $break_sm) {
+        padding-top: rem(210)
+    }
+    &__svg {
+        @media (max-width: $break_sm) {
+            display: block;
+        }
+        top: rem(32);
+    }
+}
+
 @keyframes dot {
     0% {
         background-color: transparent;

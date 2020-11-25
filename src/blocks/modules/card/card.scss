@@ -55,10 +55,17 @@
         }
     }
     &__inner {
-        padding: rem(35);
+        padding: rem(67);
         padding-top: rem(22);
+        padding: {
+            top: rem(22);
+            right: rem(67);
+            left: rem(67);
+        }
+        @media (max-width: $break_lg) {
+            padding: rem(22);
+        }
         @include sm(padding-bottom, rem(22));
-        @include sm(text-align, center);
     }
     &__detail {
         &:not(:last-child) {

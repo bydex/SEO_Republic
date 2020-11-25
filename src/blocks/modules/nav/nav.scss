@@ -3,14 +3,17 @@
         top: rem(20);
         bottom: rem(20);
     }
-    display: none;
-    @include md(display, block);
     &_header {
         @include lg(width, 100%);
         @include lg(padding-top, rem(14));
         @include lg(padding-bottom, rem(14));
         @include lg(background-color, $white);
         @include lg(box-shadow, 0 rem(4) rem(4) rgba($color: $red, $alpha: .2));
+        display: none;
+        @include md(display, block);
+    }
+    &-form {
+        display: none;
     }
     &_fixed {
         position: fixed;
@@ -303,5 +306,91 @@
     &__control-title {
         color: $red;
         user-select: none;
+    }
+}
+
+.nav-profile {
+    @media (max-width: $break_md) {
+        display: none;
+    }
+    &__list-wrapper {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+.nav-form {
+    padding: {
+        right: 15px;
+        left: 15px;
+    }
+    border-bottom: 0;
+    background-color: $yellow;
+    &__label + &__label {
+        margin-top: 0;
+        margin-left: 12px;
+    }
+    &__input {
+        max-width: none;
+        display: flex;
+        justify-content: center;
+    }
+    &__input-wrp {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__btn {
+        margin-left: rem(24);
+        padding: {
+            top: rem(12);
+            right: rem(46);
+            bottom: rem(12);
+            left: rem(46);
+        }
+        white-space: nowrap;
+    }
+    &__close {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 50%;
+        background-color: rgba($red, .7);
+        margin-left: 40px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color .3s linear;
+        &:before, &:after {
+            content: '';
+            width: 3px;
+            height: 18px;
+            background-color: $yellow;
+            border-radius: 4px;
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        &:hover {
+            background-color: $red;
+        }
+    }
+    &__field {
+        @media (max-width: $break_lg) {
+            padding: {
+                top: rem(12);
+                bottom: rem(12);
+            }
+        }
+        padding-top: rem(12);
+        padding-bottom: rem(12);
     }
 }
