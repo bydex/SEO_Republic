@@ -208,6 +208,11 @@
         @include sm(margin-top, rem(30));
         @include sm(margin-bottom, rem(30));
         max-width: rem(500);
+        padding: {
+            top: rem(22);
+            right: rem(67);
+            left: rem(67);
+        }
         margin: 0 auto;
         text-transform: uppercase;
         font-size: rem(18);
