@@ -38,7 +38,7 @@
         }
     }
     &__btn {
-        min-width: 250px;
+        min-width: rem(250);
         @include sm(display, block);
         margin-bottom: rem(40);
     }
@@ -337,7 +337,7 @@
     &__svg-logo-wrp {
         @include md(display, none);
         position: absolute;
-        top: 18px;
+        top: rem(18);
         left: 50%;
         right: 50%;
         transform: translate(-50%);

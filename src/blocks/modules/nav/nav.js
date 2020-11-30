@@ -108,7 +108,7 @@ $(document).ready(() => {
 })
 
 $(function() {
-    var navBtnModal = $('#profile-btn'),
+    var navBtnModal = $('#nav-sign-up'),
         navForm = $('.nav-form'),
         navCloseBtn = $('.nav-form__close');
 

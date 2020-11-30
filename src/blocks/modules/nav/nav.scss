@@ -60,6 +60,10 @@
             }
         }
     }
+    &_fixed_bottom {
+        top: inherit;
+        bottom: 0;
+    }
     &__btn {
         @media (max-width: $break_lg) {
             padding: {
@@ -316,28 +320,36 @@
     &__list-wrapper {
         width: 100%;
         justify-content: flex-end;
+        margin: {
+            right: rem(15);
+            left: rem(15);
+        }
     }
 }
 
 .nav-form {
     padding: {
-        right: 15px;
-        left: 15px;
+        right: rem(15);
+        left: rem(15);
     }
     border-bottom: 0;
     background-color: $yellow;
+    &__label {
+        width: 244px;
+    }
     &__label + &__label {
         margin-top: 0;
-        margin-left: 12px;
+        margin-left: rem(12);
     }
-    &__input {
-        max-width: none;
+    &__input { 
+        max-width: 100%;
         display: flex;
         justify-content: center;
     }
     &__input-wrp {
+        width: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
     }
     &__btn {
@@ -351,21 +363,21 @@
         white-space: nowrap;
     }
     &__close {
-        width: 36px;
-        height: 36px;
-        min-width: 36px;
+        width: rem(36);
+        height: rem(36);
+        min-width: rem(36);
         border-radius: 50%;
         background-color: rgba($red, .7);
-        margin-left: 40px;
+        margin-left: rem(40);
         position: relative;
         cursor: pointer;
         transition: background-color .3s linear;
         &:before, &:after {
             content: '';
-            width: 3px;
-            height: 18px;
+            width: rem(3);
+            height: rem(18);
             background-color: $yellow;
-            border-radius: 4px;
+            border-radius: rem(4);
             position: absolute;
             top: 50%;
             right: 50%;

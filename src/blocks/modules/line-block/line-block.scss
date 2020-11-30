@@ -107,7 +107,7 @@
     &__title {
         @media (max-width: $break_md) {
             font: {
-                size: 18px;
+                size: rem(18);
                 weight: 600;
             }
             margin-bottom: rem(10);
@@ -122,7 +122,7 @@
 
     &__description {
         @media (max-width: $break_md) {
-            font-size: 16px;
+            font-size: rem(16);
         }
         @include h4();
         margin-bottom: rem(15);

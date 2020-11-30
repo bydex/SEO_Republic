@@ -143,3 +143,100 @@ $(document).ready(function(){
         });
     }
 });
+
+class signUp {
+    constructor() {
+        this.popup = $('.sign-up');
+        this.signUpActiveClass = 'sign-up_active';
+        this.form = $('.nav-form');
+        this.navFixedClass = 'nav_fixed';
+        this.navFixedBottomClass = 'nav_fixed_bottom';
+        this.navFormCloseBtn = $('.nav-form__close');
+    };
+
+    offScrollEvt() {
+        this.navFormCloseBtn.on('click', () => {
+            $(document).off('scroll');
+            $(window).off('resize');
+        });
+    }
+    
+    init() {
+        $(document).on('scroll', () => {
+            var windowWidth = $(window).width(),
+            windowHeight = $(window).height(),
+            offsetTop = $(window).scrollTop(),
+            breakPointMd = 768;
+
+            if (windowWidth <= breakPointMd) {
+                if (offsetTop > windowHeight) {
+                    this.addSignUpActiveClass();
+                } else {
+                    this.removeSignUpActiveClass();
+                }
+            }
+            
+            if (windowWidth > breakPointMd) {
+                if (offsetTop > 50) {
+                    this.addNavFormClass();
+                } else {
+                    this.removeNavFormClass();
+                }
+            }
+        });
+
+        // удалят eventHandler scroll и resize при условии
+        // если бы нажата кнопка отключения формы
+        this.offScrollEvt();
+
+        // меняем форму хочу так же на кнопку хочу так же
+        // при ресайзе
+        this.resize();
+    };
+
+    resize() {
+        $(window).on('resize', () => {
+            this.checkActiveSignUpForm();
+        });
+    };
+
+    checkActiveSignUpForm() {
+        var windowWidth = $(window).width(),
+            breakPointMd = 768;
+
+        if (windowWidth <= breakPointMd) {
+            if (this.form.hasClass(this.navFixedClass))  {
+                this.removeNavFormClass();
+                this.addSignUpActiveClass();
+            };
+        };
+
+        if (windowWidth > breakPointMd) {
+            if (this.popup.hasClass(this.signUpActiveClass))  {
+                this.removeSignUpActiveClass();
+                this.addNavFormClass();
+            };
+        };
+    };
+
+    addSignUpActiveClass() {
+        this.popup.addClass(this.signUpActiveClass);
+    };
+    
+    removeSignUpActiveClass() {
+        this.popup.removeClass(this.signUpActiveClass);
+    };
+    
+    addNavFormClass() {
+        this.form.addClass(`${this.navFixedClass} ${this.navFixedBottomClass}`);
+    };
+    
+    removeNavFormClass() {
+        this.form.removeClass(`${this.navFixedClass} ${this.navFixedBottomClass}`);
+    };
+}
+
+if ($('.sign-up').length > 0) {
+    const signUpControler = new signUp();
+    signUpControler.init();
+}

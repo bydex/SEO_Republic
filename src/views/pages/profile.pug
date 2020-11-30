@@ -6,7 +6,7 @@ include ../../blocks/modules/profile/profile
 include ../../blocks/modules/socials/socials
 
 block variables
-    - const title = "New Page";
+    - const title = "SEO Republic - Айдар Уаликеев";
     -
         let nav = [
             {
@@ -33,7 +33,10 @@ block variables
 
 block content
     header.header.header_no-bg.another-page(id="about")
-        +nav-profile()
+        +nav({
+            profile: false
+        })
+        +nav-form
         //- include ../../blocks/modules/nav/nav
         .header__svg-logo-wrp.header-profile__svg
             a(href="./index.html")

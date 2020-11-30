@@ -1,7 +1,7 @@
 .socials {
     @include md(text-align, center);
     @media (max-width: $break_sm) {
-        padding-bottom: rem(8);
+        padding-bottom: rem(73);
     }
     &__links {
         @media (max-width: $break_sm) {

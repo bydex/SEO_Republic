@@ -1,4 +1,4 @@
-mixin nav({profile = false} = false)
+mixin nav({profile = true} = false)
     nav.nav.nav_header(data-nav)
         .nav__container
             .nav__inner
@@ -23,13 +23,8 @@ mixin nav({profile = false} = false)
                                         +icon('btn-arrow')
                                     </span>
                     a.nav__btn.btn.btn_theme_transparent.btn_size_normal(class=`ga${g+=1}` href='tel:77473331538') +7 (747) 333 15 38
-                    if (profile = true)
-                        button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` id="profile-btn") Записаться
-                            <span class="btn__right-icon">
-                                +icon('btn-arrow')
-                            </span>
-                    else
-                        button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}`) Записаться
+                    if profile
+                        button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` id="nav-sign-up" data-micromodal-trigger="modal-4") Записаться
                             <span class="btn__right-icon">
                                 +icon('btn-arrow')
                             </span>
@@ -52,7 +47,7 @@ mixin nav-profile()
                     h4.nav__control-title Вызов
                 .nav__list-wrapper.nav-profile__list-wrapper
                     a.nav__btn.btn.btn_theme_transparent.btn_size_normal(class=`ga${g+=1}` href='tel:77473331538') +7 (747) 333 15 38
-                    button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` data-micromodal-trigger="modal-4") Записаться
+                    button.nav__btn.nav__btn_modal.btn.btn_theme_filled.btn_size_normal(class=`ga${g+=1}` id="nav-sign-up") Записаться
                         <span class="btn__right-icon">
                             +icon('btn-arrow')
                         </span>

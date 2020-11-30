@@ -7,7 +7,7 @@ include ../../blocks/modules/socials/socials
 
 
 block variables
-    - const title = "New Page";
+    - const title = "Seo Republic - Всеволод Козлов";
     -
         let nav = [
             {
@@ -34,7 +34,10 @@ block variables
 
 block content
     header.header.header_no-bg.another-page(id="about")
-        +nav-profile()
+        +nav({
+            profile: false
+        })
+        +nav-form
         //- include ../../blocks/modules/nav/nav
         .header__svg-logo-wrp.header-profile__svg
             a(href="./index.html")
@@ -45,6 +48,9 @@ block content
             img: 'profile-2'
         })
         +socials
+        +b.sign-up
+            +e.wrp
+                +e.btn.btn.btn_theme_filled.btn_size_normal.ga7(data-micromodal-trigger="modal-4") Хочу так же!
     include ../../blocks/modules/footer/footer
 block scripts
     script.

@@ -261,7 +261,7 @@ h3 {
 }
 
 .sign-up__btn {
-    width: 231px;
+    width: rem(231);
     text-align: center;
     margin: 0 auto;
     display: block;
@@ -270,6 +270,13 @@ h3 {
 .sign-up {
     @media (max-width: $break_md) {
         display: flex;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .4s linear;
+        &_active {
+            opacity: 1;
+            pointer-events: auto;
+        }
     }
     position: fixed;
     bottom: 0;
